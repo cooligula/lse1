@@ -1,0 +1,16 @@
+SPI (SSI3)
+- PD0 : CLK
+- PD1 : CS
+- PD2 : RX
+- PD3 : TX
+
+PWM
+- PB5 (M0PWM3)
+- PE4 (M0PWM4 / M1PWM2)
+- PE5 (M0PWM5 / M1PWM3)
+- PB4 (M0PWM2)
+- PA6 (M1PWM2)
+- PA7 (M1PWM3)
+
+ADC (Potenciometre)
+- PE0 (ADC3)

@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "lse1_pcb")(type "KiCad")(uri "/home/adria/Documents/Uni/lse1/hw/models")(options "")(descr ""))
+)
