@@ -1,0 +1,92 @@
+
+(footprint SOIC8_N_EP (layer F.Cu) (tedit 68768852)
+  (descr "<b>Small Outline IC</b> <p><a href=\"http://www.analog.com/en/technical-library/packages/soic-small-outline-ic/psop-soic-w-heatslug/index.html\">analog devices</a><p>8-Lead Standard Small Outline Package, with Expose Pad [SOIC_N_EP]Narrow Body(RD-8-1)")
+  (attr smd)
+  (fp_text reference REF** (at -3.702 -0.61 900) (layer F.SilkS)
+    (effects (font (size 1.0 1.0) (thickness 0.15)))
+  )
+  (fp_text value SOIC8_N_EP (at 4.182 -3.785 900) (layer F.SilkS)
+    (effects (font (size 1.0 1.0) (thickness 0.15)))
+  )
+  (pad 2 smd rect (at -0.64 2.72) (size 0.55 1.49) (layers F.Cu F.Mask F.Paste) (solder_mask_margin 0.102))
+  (pad 7 smd rect (at -0.64 -2.72) (size 0.55 1.49) (layers F.Cu F.Mask F.Paste) (solder_mask_margin 0.102))
+  (pad 1 smd rect (at -1.92 2.72) (size 0.55 1.49) (layers F.Cu F.Mask F.Paste) (solder_mask_margin 0.102))
+  (pad 3 smd rect (at 0.64 2.72) (size 0.55 1.49) (layers F.Cu F.Mask F.Paste) (solder_mask_margin 0.102))
+  (pad 4 smd rect (at 1.92 2.72) (size 0.55 1.49) (layers F.Cu F.Mask F.Paste) (solder_mask_margin 0.102))
+  (pad 8 smd rect (at -1.92 -2.72) (size 0.55 1.49) (layers F.Cu F.Mask F.Paste) (solder_mask_margin 0.102))
+  (pad 6 smd rect (at 0.64 -2.72) (size 0.55 1.49) (layers F.Cu F.Mask F.Paste) (solder_mask_margin 0.102))
+  (pad 5 smd rect (at 1.92 -2.72) (size 0.55 1.49) (layers F.Cu F.Mask F.Paste) (solder_mask_margin 0.102))
+  (pad PAD smd rect (at 0.0 0.0) (size 2.29 2.29) (layers F.Cu F.Mask F.Paste) (solder_mask_margin 0.102))
+  (fp_line (start 2.45 -1.95) (end 2.45 1.3) (layer F.SilkS) (width 0.2032))
+  (fp_line (start 2.45 1.3) (end 2.45 1.95) (layer F.SilkS) (width 0.2032))
+  (fp_line (start -2.45 1.3) (end 2.45 1.3) (layer F.SilkS) (width 0.2032))
+  (fp_line (start -2.45 1.95) (end -2.45 1.3) (layer F.SilkS) (width 0.2032))
+  (fp_line (start -2.45 1.3) (end -2.45 -1.95) (layer F.SilkS) (width 0.2032))
+  (fp_line (start -2.45 -1.95) (end 2.45 -1.95) (layer F.SilkS) (width 0.2032))
+  (fp_line (start 2.45 1.95) (end -2.45 1.95) (layer F.SilkS) (width 0.2032))
+  (fp_circle (center -1.8 0.85) (end -1.6 0.85) (layer F.SilkS) (width 0.127))
+  (fp_poly
+    (pts
+      (xy -2.12 1.95)
+      (xy -1.72 1.95)
+      (xy -1.72 3.0)
+      (xy -2.12 3.0)
+    ) (layer F.SilkS) (width 0.01)
+  )
+  (fp_poly
+    (pts
+      (xy -0.84 1.95)
+      (xy -0.44 1.95)
+      (xy -0.44 3.0)
+      (xy -0.84 3.0)
+    ) (layer F.SilkS) (width 0.01)
+  )
+  (fp_poly
+    (pts
+      (xy 0.44 1.95)
+      (xy 0.84 1.95)
+      (xy 0.84 3.0)
+      (xy 0.44 3.0)
+    ) (layer F.SilkS) (width 0.01)
+  )
+  (fp_poly
+    (pts
+      (xy 1.72 1.95)
+      (xy 2.12 1.95)
+      (xy 2.12 3.0)
+      (xy 1.72 3.0)
+    ) (layer F.SilkS) (width 0.01)
+  )
+  (fp_poly
+    (pts
+      (xy -2.12 -3.0)
+      (xy -1.72 -3.0)
+      (xy -1.72 -1.95)
+      (xy -2.12 -1.95)
+    ) (layer F.SilkS) (width 0.01)
+  )
+  (fp_poly
+    (pts
+      (xy -0.84 -3.0)
+      (xy -0.44 -3.0)
+      (xy -0.44 -1.95)
+      (xy -0.84 -1.95)
+    ) (layer F.SilkS) (width 0.01)
+  )
+  (fp_poly
+    (pts
+      (xy 0.44 -3.0)
+      (xy 0.84 -3.0)
+      (xy 0.84 -1.95)
+      (xy 0.44 -1.95)
+    ) (layer F.SilkS) (width 0.01)
+  )
+  (fp_poly
+    (pts
+      (xy 1.72 -3.0)
+      (xy 2.12 -3.0)
+      (xy 2.12 -1.95)
+      (xy 1.72 -1.95)
+    ) (layer F.SilkS) (width 0.01)
+  )
+)

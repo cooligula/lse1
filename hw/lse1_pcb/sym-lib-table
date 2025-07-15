@@ -1,0 +1,6 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "IR2301")(type "KiCad")(uri "C:/Users/HP/kDrive/University/12e/LSE1/hw/models/IR2301.kicad_sym")(options "")(descr ""))
+  (lib (name "AZ1084CD-5.0TRG1")(type "KiCad")(uri "C:/Users/HP/kDrive/University/12e/LSE1/hw/models/AZ1084CD-5.0TRG1.kicad_sym")(options "")(descr ""))
+  (lib (name "EK-TM4C123GXL")(type "KiCad")(uri "C:/Users/HP/kDrive/University/12e/LSE1/hw/models/EK-TM4C123GXL.kicad_sym")(options "")(descr ""))
+)
