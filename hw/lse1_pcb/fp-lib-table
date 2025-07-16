@@ -1,4 +1,5 @@
 (fp_lib_table
   (version 7)
-  (lib (name "lse1_pcb")(type "KiCad")(uri "/home/adria/Documents/Uni/lse1/hw/models")(options "")(descr ""))
+  (lib (name "lse1_pcb")(type "KiCad")(uri "/home/adria/Documents/Uni/lse1/hw/models")(options "")(descr "")(disabled))
+  (lib (name "models")(type "KiCad")(uri "C:/Users/HP/kDrive/University/12e/LSE1/hw/models")(options "")(descr ""))
 )
