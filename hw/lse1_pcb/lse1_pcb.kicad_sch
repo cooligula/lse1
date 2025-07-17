@@ -4886,10 +4886,6 @@
 		(at 77.47 129.54)
 		(uuid "dbe5096f-3142-4591-8e40-50e51d712986")
 	)
-	(no_connect
-		(at 43.18 149.86)
-		(uuid "dbfd3215-310e-4446-b5b2-45991f105150")
-	)
 	(wire
 		(pts
 			(xy 232.41 41.91) (xy 232.41 44.45)
@@ -6748,6 +6744,28 @@
 			)
 		)
 	)
+	(global_label "SPICLK"
+		(shape input)
+		(at 52.07 210.82 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "073e81a3-a594-4c66-b3e8-06293f3a0fd3")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 42.4324 210.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "NEUT"
 		(shape input)
 		(at 284.48 60.96 0)
@@ -6882,28 +6900,6 @@
 	)
 	(global_label "MEAS3"
 		(shape input)
-		(at 41.91 149.86 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "2e947bce-87ba-4e3c-9009-d5af81bd1081")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 32.8168 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "MEAS3"
-		(shape input)
 		(at 284.48 170.18 0)
 		(fields_autoplaced yes)
 		(effects
@@ -7003,28 +6999,6 @@
 		(uuid "46de8d98-0a92-4312-86c5-57135d163071")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 32.2725 167.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "SPITX"
-		(shape input)
-		(at 52.07 213.36 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "4bb088ea-9c1d-4a1a-8c9a-b70c6303a958")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 43.8234 213.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7144,6 +7118,28 @@
 			)
 		)
 	)
+	(global_label "MEAS1"
+		(shape input)
+		(at 41.91 149.86 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "690cf44d-ea0c-42c2-a262-a21dd2292682")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 32.8168 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "FASE2"
 		(shape input)
 		(at 226.06 148.59 180)
@@ -7210,6 +7206,28 @@
 			)
 		)
 	)
+	(global_label "MEAS3"
+		(shape input)
+		(at 77.47 167.64 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "8cd498d1-b84a-44e1-a232-2431e268fb2d")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 86.5632 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "SPICS"
 		(shape input)
 		(at 77.47 147.32 0)
@@ -7272,28 +7290,6 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "SPICLK"
-		(shape input)
-		(at 64.77 210.82 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "9e5a2988-0e39-4752-9df4-c1c25cb352af")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 74.4076 210.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
 				(hide yes)
 			)
 		)
@@ -7386,28 +7382,6 @@
 			)
 		)
 	)
-	(global_label "SPICS"
-		(shape input)
-		(at 52.07 210.82 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "b9817758-d563-49ae-9e8c-398b51bbd96b")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 43.521 210.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "PWM1A"
 		(shape input)
 		(at 64.77 200.66 0)
@@ -7421,6 +7395,28 @@
 		(uuid "ba6bce5b-2d27-4bcd-9c8d-58aa4f727655")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 74.2261 200.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "SPITX"
+		(shape input)
+		(at 64.77 213.36 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "bb5e51a9-5589-4596-9b0c-ef572c19da74")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 73.0166 213.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7452,9 +7448,9 @@
 			)
 		)
 	)
-	(global_label "SPIRX"
+	(global_label "SPICS"
 		(shape input)
-		(at 64.77 213.36 0)
+		(at 64.77 210.82 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -7462,9 +7458,9 @@
 			)
 			(justify left)
 		)
-		(uuid "c29c0ed6-1c8c-4039-8ef5-1fc554645dd2")
+		(uuid "c3763d12-dab3-4573-9bd4-87eba1a4b055")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 73.319 213.36 0)
+			(at 73.319 210.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7531,6 +7527,28 @@
 		(uuid "dcbb7234-ebbb-4db2-8b11-9cbe1be3a736")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 117.3625 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "SPIRX"
+		(shape input)
+		(at 52.07 213.36 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "de7a1856-0090-4d14-b1db-07101a80ba38")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 43.521 213.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7685,28 +7703,6 @@
 		(uuid "f6456f5e-084f-4147-922b-6bfddc3e36bb")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 232.41 33.1796 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "MEAS1"
-		(shape input)
-		(at 77.47 167.64 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "fda179ae-2d59-4f02-aadb-fdec7a59de58")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 86.5632 167.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
