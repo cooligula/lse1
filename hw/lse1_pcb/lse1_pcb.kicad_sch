@@ -8321,6 +8321,109 @@
 		)
 	)
 	(symbol
+		(lib_id "Comparator:LM339")
+		(at 264.16 135.89 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "106a9e25-cb8d-40ec-815d-e128bf868adb")
+		(property "Reference" "U5"
+			(at 262.382 135.128 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LM339"
+			(at 262.636 136.906 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm"
+			(at 262.89 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.st.com/resource/en/datasheet/lm139.pdf"
+			(at 265.43 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Quad Differential Comparators, SOIC-14/TSSOP-14"
+			(at 264.16 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "4"
+			(uuid "c71faf4e-d913-4a5f-ba1f-4c1bc3623b40")
+		)
+		(pin "1"
+			(uuid "61170e48-80b5-4e76-85f1-64cfdcbb82c8")
+		)
+		(pin "11"
+			(uuid "fe1c21d0-398d-4877-9338-92f70396c3e5")
+		)
+		(pin "7"
+			(uuid "01f1dd9d-d286-4dd6-9d0a-8fe070533e66")
+		)
+		(pin "14"
+			(uuid "7bb80253-6d15-4ea0-8c2e-94dcf63d6cfc")
+		)
+		(pin "3"
+			(uuid "1cf3eefd-10dd-4d69-a0b8-3ab7acc16e24")
+		)
+		(pin "2"
+			(uuid "7c5323b5-46d5-476e-84e3-41216b496c4f")
+		)
+		(pin "6"
+			(uuid "b9ebcdb1-c091-426a-9306-c82c8e7869f6")
+		)
+		(pin "9"
+			(uuid "d190c5f3-ab73-45a9-9b5c-e28f34b2d694")
+		)
+		(pin "5"
+			(uuid "db600df6-052a-4151-bb94-389e34511b2b")
+		)
+		(pin "8"
+			(uuid "17d1a1ab-f3d8-4d8e-9cc7-bd9a10e553a2")
+		)
+		(pin "12"
+			(uuid "b1592b97-dcc2-476d-a23e-41a460868501")
+		)
+		(pin "13"
+			(uuid "3d0193b5-0a5c-4bc2-89cb-117651e111ea")
+		)
+		(pin "10"
+			(uuid "bca64097-a779-4e8a-98bb-46663e4bae88")
+		)
+		(instances
+			(project "lse1_pcb"
+				(path "/adaa4865-6386-49a6-8ca3-a43f702611f6"
+					(reference "U5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Diode:1N4148")
 		(at 148.59 38.1 180)
 		(unit 1)
@@ -8763,109 +8866,6 @@
 				(path "/adaa4865-6386-49a6-8ca3-a43f702611f6"
 					(reference "#PWR019")
 					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Comparator:LM339")
-		(at 264.16 135.89 0)
-		(unit 2)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "273b8cd8-81fa-4855-93e2-c0c7525a2ad6")
-		(property "Reference" "U5"
-			(at 262.382 135.128 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "LM339"
-			(at 262.636 136.906 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm"
-			(at 262.89 133.35 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.st.com/resource/en/datasheet/lm139.pdf"
-			(at 265.43 130.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Quad Differential Comparators, SOIC-14/TSSOP-14"
-			(at 264.16 135.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "4"
-			(uuid "a82e041b-62a7-4dd7-aabf-7670267021ba")
-		)
-		(pin "1"
-			(uuid "2122d74f-172d-4108-be72-460691d96213")
-		)
-		(pin "11"
-			(uuid "fe1c21d0-398d-4877-9338-92f70396c3e4")
-		)
-		(pin "7"
-			(uuid "bbb41a06-464d-4279-a77d-a48643150675")
-		)
-		(pin "14"
-			(uuid "7bb80253-6d15-4ea0-8c2e-94dcf63d6cfb")
-		)
-		(pin "3"
-			(uuid "1cf3eefd-10dd-4d69-a0b8-3ab7acc16e23")
-		)
-		(pin "2"
-			(uuid "d7c6e6f7-683c-4a6d-9696-8dfca7427406")
-		)
-		(pin "6"
-			(uuid "be77e13c-4744-440a-a6f6-b58c3de523b7")
-		)
-		(pin "9"
-			(uuid "d190c5f3-ab73-45a9-9b5c-e28f34b2d693")
-		)
-		(pin "5"
-			(uuid "184ca4bd-d4ba-4e4c-9ea0-4a9e6408bc38")
-		)
-		(pin "8"
-			(uuid "17d1a1ab-f3d8-4d8e-9cc7-bd9a10e553a1")
-		)
-		(pin "12"
-			(uuid "b1592b97-dcc2-476d-a23e-41a460868500")
-		)
-		(pin "13"
-			(uuid "3d0193b5-0a5c-4bc2-89cb-117651e111e9")
-		)
-		(pin "10"
-			(uuid "bca64097-a779-4e8a-98bb-46663e4bae87")
-		)
-		(instances
-			(project "lse1_pcb"
-				(path "/adaa4865-6386-49a6-8ca3-a43f702611f6"
-					(reference "U5")
-					(unit 2)
 				)
 			)
 		)
@@ -11749,109 +11749,6 @@
 			(project "lse1_pcb"
 				(path "/adaa4865-6386-49a6-8ca3-a43f702611f6"
 					(reference "R5")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Comparator:LM339")
-		(at 264.16 152.4 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "7258560a-89e0-4700-9060-b85d39083428")
-		(property "Reference" "U5"
-			(at 262.382 151.638 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "LM339"
-			(at 262.636 153.416 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm"
-			(at 262.89 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.st.com/resource/en/datasheet/lm139.pdf"
-			(at 265.43 147.32 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Quad Differential Comparators, SOIC-14/TSSOP-14"
-			(at 264.16 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "4"
-			(uuid "10d57dd4-f97c-4843-b314-febed215466f")
-		)
-		(pin "1"
-			(uuid "61170e48-80b5-4e76-85f1-64cfdcbb82c8")
-		)
-		(pin "11"
-			(uuid "fe1c21d0-398d-4877-9338-92f70396c3e5")
-		)
-		(pin "7"
-			(uuid "01f1dd9d-d286-4dd6-9d0a-8fe070533e66")
-		)
-		(pin "14"
-			(uuid "7bb80253-6d15-4ea0-8c2e-94dcf63d6cfc")
-		)
-		(pin "3"
-			(uuid "1cf3eefd-10dd-4d69-a0b8-3ab7acc16e24")
-		)
-		(pin "2"
-			(uuid "3964af03-0472-4afd-b4db-0f7494907090")
-		)
-		(pin "6"
-			(uuid "b9ebcdb1-c091-426a-9306-c82c8e7869f6")
-		)
-		(pin "9"
-			(uuid "d190c5f3-ab73-45a9-9b5c-e28f34b2d694")
-		)
-		(pin "5"
-			(uuid "f26051f0-7f84-4c04-bf53-1ca7b99440e0")
-		)
-		(pin "8"
-			(uuid "17d1a1ab-f3d8-4d8e-9cc7-bd9a10e553a2")
-		)
-		(pin "12"
-			(uuid "b1592b97-dcc2-476d-a23e-41a460868501")
-		)
-		(pin "13"
-			(uuid "3d0193b5-0a5c-4bc2-89cb-117651e111ea")
-		)
-		(pin "10"
-			(uuid "bca64097-a779-4e8a-98bb-46663e4bae88")
-		)
-		(instances
-			(project "lse1_pcb"
-				(path "/adaa4865-6386-49a6-8ca3-a43f702611f6"
-					(reference "U5")
 					(unit 1)
 				)
 			)
@@ -16855,6 +16752,109 @@
 				(path "/adaa4865-6386-49a6-8ca3-a43f702611f6"
 					(reference "Cfilt3")
 					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Comparator:LM339")
+		(at 264.16 152.4 0)
+		(unit 2)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "fefa1e41-305c-4fd7-9066-f2499f44beb1")
+		(property "Reference" "U5"
+			(at 262.382 151.638 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LM339"
+			(at 262.636 153.416 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm"
+			(at 262.89 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.st.com/resource/en/datasheet/lm139.pdf"
+			(at 265.43 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Quad Differential Comparators, SOIC-14/TSSOP-14"
+			(at 264.16 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "4"
+			(uuid "a82e041b-62a7-4dd7-aabf-7670267021ba")
+		)
+		(pin "1"
+			(uuid "ff7517c1-0c2c-406f-8a2b-3cdca70c3a45")
+		)
+		(pin "11"
+			(uuid "fe1c21d0-398d-4877-9338-92f70396c3e4")
+		)
+		(pin "7"
+			(uuid "7c03072d-b4dd-4f0e-bdf6-8d8b01a4e842")
+		)
+		(pin "14"
+			(uuid "7bb80253-6d15-4ea0-8c2e-94dcf63d6cfb")
+		)
+		(pin "3"
+			(uuid "1cf3eefd-10dd-4d69-a0b8-3ab7acc16e23")
+		)
+		(pin "2"
+			(uuid "d7c6e6f7-683c-4a6d-9696-8dfca7427406")
+		)
+		(pin "6"
+			(uuid "a376e265-02bd-42d8-a980-781c0435d951")
+		)
+		(pin "9"
+			(uuid "d190c5f3-ab73-45a9-9b5c-e28f34b2d693")
+		)
+		(pin "5"
+			(uuid "184ca4bd-d4ba-4e4c-9ea0-4a9e6408bc38")
+		)
+		(pin "8"
+			(uuid "17d1a1ab-f3d8-4d8e-9cc7-bd9a10e553a1")
+		)
+		(pin "12"
+			(uuid "b1592b97-dcc2-476d-a23e-41a460868500")
+		)
+		(pin "13"
+			(uuid "3d0193b5-0a5c-4bc2-89cb-117651e111e9")
+		)
+		(pin "10"
+			(uuid "bca64097-a779-4e8a-98bb-46663e4bae87")
+		)
+		(instances
+			(project "lse1_pcb"
+				(path "/adaa4865-6386-49a6-8ca3-a43f702611f6"
+					(reference "U5")
+					(unit 2)
 				)
 			)
 		)
