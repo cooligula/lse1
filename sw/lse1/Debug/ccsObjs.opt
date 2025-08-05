@@ -1,0 +1,6 @@
+"./pwm_invert.obj"
+"./startup_ccs.obj"
+"./utils/uartstdio.obj"
+"../pwm_invert_ccs.cmd"
+-l"/home/adria/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib"
+-llibc.a

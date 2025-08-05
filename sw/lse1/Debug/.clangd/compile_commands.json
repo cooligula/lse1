@@ -1,0 +1,17 @@
+[
+   {
+      "directory" : "/home/adria/Documents/Uni/lse1/sw/lse1/Debug",
+      "command"   : "clang++ -I\"/home/adria/Documents/Uni/lse1/sw/lse1\" -I\"/home/adria/ti/TivaWare_C_Series-2.2.0.295\" -I\"/home/adria/ti/ti-cgt-arm_18.12.2.LTS/include\" -Dccs=\"ccs\" -DPART_TM4C123GH6PM -DTARGET_IS_TM4C123_RB1 -xc",
+      "file"      : "/home/adria/Documents/Uni/lse1/sw/lse1/pwm_invert.c"
+   },
+   {
+      "directory" : "/home/adria/Documents/Uni/lse1/sw/lse1/Debug",
+      "command"   : "clang++ -I\"/home/adria/Documents/Uni/lse1/sw/lse1\" -I\"/home/adria/ti/TivaWare_C_Series-2.2.0.295\" -I\"/home/adria/ti/ti-cgt-arm_18.12.2.LTS/include\" -Dccs=\"ccs\" -DPART_TM4C123GH6PM -DTARGET_IS_TM4C123_RB1 -xc",
+      "file"      : "/home/adria/Documents/Uni/lse1/sw/lse1/startup_ccs.c"
+   },
+   {
+      "directory" : "/home/adria/Documents/Uni/lse1/sw/lse1/Debug",
+      "command"   : "clang++ -I\"/home/adria/Documents/Uni/lse1/sw/lse1\" -I\"/home/adria/ti/TivaWare_C_Series-2.2.0.295\" -I\"/home/adria/ti/ti-cgt-arm_18.12.2.LTS/include\" -Dccs=\"ccs\" -DPART_TM4C123GH6PM -DTARGET_IS_TM4C123_RB1 -xc",
+      "file"      : "/home/adria/ti/TivaWare_C_Series-2.2.0.295/utils/uartstdio.c"
+   }
+]
