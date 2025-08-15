@@ -2,4 +2,5 @@
   (version 7)
   (lib (name "models_cachy")(type "KiCad")(uri "/home/adria/Documents/Uni/lse1/hw/models")(options "")(descr ""))
   (lib (name "models_hp")(type "KiCad")(uri "C:/Users/HP/kDrive/University/12e/LSE1/hw/models")(options "")(descr ""))
+  (lib (name "maqueen_pics")(type "KiCad")(uri "C:/Users/HP/Desktop/lse1/lse1/hw/models/maqueen_pics")(options "")(descr ""))
 )
