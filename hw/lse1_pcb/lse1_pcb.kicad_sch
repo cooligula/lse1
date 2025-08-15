@@ -8957,7 +8957,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0706f3ff-2260-4972-a0d1-5583ca455a64")
-		(property "Reference" "DATAOUT"
+		(property "Reference" "DATAOUT1"
 			(at 58.42 194.31 0)
 			(effects
 				(font
@@ -9039,7 +9039,7 @@
 		(instances
 			(project ""
 				(path "/adaa4865-6386-49a6-8ca3-a43f702611f6"
-					(reference "DATAOUT")
+					(reference "DATAOUT1")
 					(unit 1)
 				)
 			)
@@ -15567,7 +15567,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b0890526-b665-4b77-8b23-22b5641ec80c")
-		(property "Reference" "TP_MEAS"
+		(property "Reference" "TP_MEAS1"
 			(at 283.21 102.87 0)
 			(effects
 				(font
@@ -15631,7 +15631,7 @@
 		(instances
 			(project ""
 				(path "/adaa4865-6386-49a6-8ca3-a43f702611f6"
-					(reference "TP_MEAS")
+					(reference "TP_MEAS1")
 					(unit 1)
 				)
 			)
@@ -19461,7 +19461,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ffbe7e4a-9f90-4c8b-8d59-a6ab65c4e2db")
-		(property "Reference" "NEUT"
+		(property "Reference" "NEUT1"
 			(at 292.1 68.5799 0)
 			(effects
 				(font
@@ -19516,7 +19516,7 @@
 		(instances
 			(project "lse1_pcb"
 				(path "/adaa4865-6386-49a6-8ca3-a43f702611f6"
-					(reference "NEUT")
+					(reference "NEUT1")
 					(unit 1)
 				)
 			)
