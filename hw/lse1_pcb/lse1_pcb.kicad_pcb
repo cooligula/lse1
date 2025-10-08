@@ -11,7 +11,7 @@
 		(title "PCB LSE 1")
 		(date "2025-07-17")
 		(rev "2")
-		(company "Adrià Brú & Miquel Limón")
+		(company "Adrià Brú")
 	)
 	(layers
 		(0 "F.Cu" signal)
