@@ -1,7 +1,8 @@
 View this project on [CADLAB.io](https://cadlab.io/project/29478). 
 
 # LSE1
-> [!CAUTION] **NO FABRICAR** 
+> [!CAUTION]
+> **NO FABRICAR** 
 
 Aquesta PCB no respecta les regles de disseny de SafePCB donat que es va fer per a ser fabricada amb JLCPCB durant l'estiu.
 
