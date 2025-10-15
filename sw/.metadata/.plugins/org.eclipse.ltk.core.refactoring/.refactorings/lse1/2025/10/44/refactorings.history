@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;lse1/pwm_invert.c&apos; to &apos;main.c&apos;" description="Rename resource &apos;pwm_invert.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="pwm_invert.c" name="main.c" stamp="1761752122618" updateReferences="true"/>&#x0A;&#x0A;</session>

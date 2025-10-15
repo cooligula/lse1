@@ -1,0 +1,44 @@
+\babel@toc {catalan}{}\relax 
+\contentsline {section}{\numberline {1}Introducció}{3}{section.1}%
+\contentsline {paragraph}{Avantatges}{3}{paragraph*.1}%
+\contentsline {paragraph}{Limitacions}{3}{paragraph*.2}%
+\contentsline {paragraph}{Possibles formes d’ona d’excitació}{4}{paragraph*.3}%
+\contentsline {section}{\numberline {2}Dimensionament dels components}{6}{section.2}%
+\contentsline {section}{\numberline {3}Simulacions LTSpice}{7}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Model del motor}{7}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Llaç obert}{9}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Dissipació i SOA}{11}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}\textit {Drivers} i $C_{boot}$}{12}{subsubsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.3}Presència del senyal BEMF}{12}{subsubsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.3}Detecció de BEMF}{13}{subsection.3.3}%
+\contentsline {section}{\numberline {4}Disseny de hardware}{15}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Esquemàtic}{15}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}Microcontrolador (TIVA)}{15}{subsubsection.4.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.2}Alimentació}{15}{subsubsection.4.1.2}%
+\contentsline {subsubsection}{\numberline {4.1.3}Excitació del motor}{16}{subsubsection.4.1.3}%
+\contentsline {subsubsection}{\numberline {4.1.4}Motor}{17}{subsubsection.4.1.4}%
+\contentsline {subsubsection}{\numberline {4.1.5}Detecció de posició}{17}{subsubsection.4.1.5}%
+\contentsline {subsection}{\numberline {4.2}Layout}{18}{subsection.4.2}%
+\contentsline {section}{\numberline {5}Dimensionament dels components}{20}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Model del motor BLDC}{20}{subsection.5.1}%
+\contentsline {subsubsection}{\numberline {5.1.1}Equació Elèctrica de Fase}{20}{subsubsection.5.1.1}%
+\contentsline {subsubsection}{\numberline {5.1.2}Equació Mecànica}{20}{subsubsection.5.1.2}%
+\contentsline {subsubsection}{\numberline {5.1.3}Potència Convertida}{20}{subsubsection.5.1.3}%
+\contentsline {subsubsection}{\numberline {5.1.4}Diferències amb el Motor DC d'Escombretes}{21}{subsubsection.5.1.4}%
+\contentsline {subsection}{\numberline {5.2}Velocitat del motor i rang senyal PWM}{22}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Capacitats de bootstrap i temps de càrrega/descàrrega}{23}{subsection.5.3}%
+\contentsline {subsubsection}{\numberline {5.3.1}Càlcul del Condensador Bootstrap ($C_{boot}$)}{23}{subsubsection.5.3.1}%
+\contentsline {subsubsection}{\numberline {5.3.2}Temps de Càrrega i Descàrrega}{24}{subsubsection.5.3.2}%
+\contentsline {subsubsection}{\numberline {5.3.3}Temps de Càrrega ($t_{Up}$)}{24}{subsubsection.5.3.3}%
+\contentsline {subsubsection}{\numberline {5.3.4}Temps de Descàrrega ($t_{Down}$)}{24}{subsubsection.5.3.4}%
+\contentsline {subsection}{\numberline {5.4}Consum del driver}{24}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}Consum dels MOSFETs}{25}{subsection.5.5}%
+\contentsline {subsection}{\numberline {5.6}Resistència de gate dels MOSFETs}{26}{subsection.5.6}%
+\contentsline {subsection}{\numberline {5.7}Capacitats de desacoblament}{26}{subsection.5.7}%
+\contentsline {subsection}{\numberline {5.8}Components del BEMF}{28}{subsection.5.8}%
+\contentsline {subsection}{\numberline {5.9}Verificació de l'anàlisi}{29}{subsection.5.9}%
+\contentsline {section}{\numberline {6}Conclusions}{30}{section.6}%
+\contentsline {section}{\numberline {7}Annex}{31}{section.7}%
+\contentsline {subsection}{\numberline {7.1}SVPWM}{31}{subsection.7.1}%
+\contentsline {subsubsection}{\numberline {7.1.1}Implementació amb només 3 PWM i 3 GPIO}{31}{subsubsection.7.1.1}%
+\contentsline {subsection}{\numberline {7.2}\textit {Observer-based Sensorless Estimation}}{32}{subsection.7.2}%

@@ -1,0 +1,38 @@
+*********************************************
+*SUBCKT BEMF del motor BLDC amb sortida hall*
+*********************************************
+; A, B i C son les tensions de fase (amb respecte del neutre N)
+; N es l'acces extern al punt neutre
+; THETA_T es l'angle total del rotor actual
+; WANG és la freqüència angular del rotor actual
+; HA, HB, HC son les sortides dels sensors Hall virtuals
+; {KT} es el parametre de BEMF del motor
+
+; L'angle total s'ha de canviar a l'interval [0, 2*pi] fent servir una VCVS (E)
+; S'han de generar tres senyals sinusoidals desfasats 2*pi/3 en funcio de l'angle actual [0, 2*pi]
+; L'amplitud de tots tres senyals te un valor KT*WANG
+; Fent les tensions de linia V(AB), V(BC), V(CA) obtenim tres ones avançades en 30º
+; Els passos per 0 de les tensions de linia indiquen els canvis d'estat
+; Fem servir comparadors per extreure la posicio del rotor (es necessitat comparador ideal)
+; Generem el comparador ideal amb una VCVS i condicionals
+
+.subckt BEMF A B C N THETA_T WANG HA HB HC
+; resistencia de terminacio del senyal WANG
+R1 WANG 0 10MEG
+; resistencia de terminacio del senyal THETA_T
+R2 THETA_T 0 10MEG 
+; calcul de l'angle [0, 2*pi]
+ETHETA THETA 0 value = { (V(THETA_T) / (2*pi) - floor(V(THETA_T) / (2*PI)) ) * 2*pi }
+; resistencia terminacio per al calcul de THETA
+R3 THETA 0 10MEG
+; tensions de BEMF
+EA A N value = { {KT} * V(WANG) * sin(V(THETA)) }
+EB B N value = { {KT} * V(WANG) * sin(V(THETA) + 2*pi/3) }
+EC C N value = { {KT} * V(WANG) * sin(V(THETA) + 4*pi/3) }
+;sensors hall
+EAB HA 0 value = { if((V(A) - V(B)) > 0, 5, 0)}
+EBC HB 0 value = { if((V(B) - V(C)) > 0, 5, 0)}
+ECA HC 0 value = { if((V(C) - V(A)) > 0, 5, 0)}
+
+.ENDS ; final descripcio del subcircuit
+

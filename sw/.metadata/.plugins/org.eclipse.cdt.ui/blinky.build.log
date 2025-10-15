@@ -1,0 +1,25 @@
+
+**** Build of configuration Debug for project blinky ****
+
+/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 16 all -O 
+ 
+Building file: "../startup_ccs.c"
+Invoking: ARM Compiler
+"/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="/home/adria/s3drive_crypt_webdav_frts/University/13e/lse1/lse1/sw/blinky" --include_path="/home/adria/ti/TivaWare_C_Series-2.2.0.295" --include_path="/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="startup_ccs.d_raw"  "../startup_ccs.c"
+Finished building: "../startup_ccs.c"
+ 
+Building file: "../blinky.c"
+Invoking: ARM Compiler
+"/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="/home/adria/s3drive_crypt_webdav_frts/University/13e/lse1/lse1/sw/blinky" --include_path="/home/adria/ti/TivaWare_C_Series-2.2.0.295" --include_path="/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="blinky.d_raw"  "../blinky.c"
+Finished building: "../blinky.c"
+ 
+Building target: "blinky.out"
+Invoking: ARM Linker
+"/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"blinky_ccs.map" --heap_size=0 --stack_size=512 -i"/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="blinky_linkInfo.xml" --rom_model -o "blinky.out" "./blinky.obj" "./startup_ccs.obj" "../blinky_ccs.cmd"  -l"/home/adria/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "blinky.out"
+ 
+"/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/tiobj2bin" "blinky.out" "blinky.bin" "/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****

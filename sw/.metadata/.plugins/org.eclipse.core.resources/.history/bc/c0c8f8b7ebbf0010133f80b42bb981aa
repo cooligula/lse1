@@ -1,0 +1,202 @@
+#include <stdbool.h>
+#include <stdint.h>
+#include "inc/hw_memmap.h"
+#include "driverlib/debug.h"
+#include "driverlib/gpio.h"
+#include "driverlib/pin_map.h"
+#include "driverlib/pwm.h"
+#include "driverlib/rom.h"
+#include "driverlib/rom_map.h"
+#include "driverlib/sysctl.h"
+#include "driverlib/uart.h"
+#include "utils/uartstdio.h"
+#include "mosfets.h"
+#include "comparators.h"
+
+// Controller instance.
+MosfetController mosfets;
+ComparatorController comps;
+
+#ifdef DEBUG
+void
+__error__(char *pcFilename, uint32_t ui32Line)
+{
+}
+#endif
+
+#define STOP 7
+#define S1 0
+#define S2 1
+#define S3 2
+#define S4 3
+#define S5 4
+#define S6 5
+
+#define RISE 0
+#define FALL 1
+
+uint8_t RiseFall = 0;
+/**
+ * @brief updateClosedLoopState
+ */
+void updateClosedLoopState(bool A, bool B, bool C) {
+
+    mosfets.Ph1A(A && !B);
+    mosfets.Ph2A(B && !C);
+    mosfets.Ph3A(C && !A);
+    
+    mosfets.Ph1B(!A && B);
+    mosfets.Ph2B(!B && C);
+    mosfets.Ph3B(!C && A);
+}
+
+extern void GPIOInt(void) {
+    // Disable interrupts
+    comps.enableInterrupts(0);
+
+    // Clear interrupt flags
+    uint32_t portCStatus = MAP_GPIOIntStatus(GPIO_PORTC_BASE, true);
+    uint32_t portFStatus = MAP_GPIOIntStatus(GPIO_PORTF_BASE, true);
+
+    comps.clearInterrupts();
+
+    // Read comparators
+    bool A = (portCStatus & COMP1_GPIO_PIN) != 0; // Comp1
+    bool B = (portCStatus & COMP2_GPIO_PIN) != 0; // Comp2
+    bool C = (portFStatus & COMP3_GPIO_PIN) != 0; // Comp3
+
+    volatile bool chumba = (portFStatus & COMP3_GPIO_PIN) != 0; // Comp3
+
+    comps.clearInterrupts();
+
+    RiseFall ^= 1;
+
+    if (RiseFall)
+        comps.setInterruptType(GPIO_RISING_EDGE);
+    else
+        comps.setInterruptType(GPIO_FALLING_EDGE);
+
+    updateClosedLoopState(A, B, C);
+
+    // Reenable interrupts
+    comps.enableInterrupts(1);
+}
+
+/**
+ * @brief updateState
+ * Configura sortides de GPIOs pels sis estats d'alimentació del motor
+ */
+void updateState(int state){
+    switch (state)
+    {
+        case STOP:
+            mosfets.allOff();
+            break;
+            
+        case S1:
+            mosfets.Ph1A(true);
+            mosfets.Ph2A(false);
+            mosfets.Ph3A(false);
+            
+            mosfets.Ph1B(false);
+            mosfets.Ph2B(true);
+            mosfets.Ph3B(false);
+            break;
+            
+        case S2:
+            mosfets.Ph1A(true);
+            mosfets.Ph2A(false);
+            mosfets.Ph3A(false);
+            
+            mosfets.Ph1B(false);
+            mosfets.Ph2B(false);
+            mosfets.Ph3B(true);
+            break;
+            
+        case S3:
+            mosfets.Ph1A(false);
+            mosfets.Ph2A(true);
+            mosfets.Ph3A(false);
+            
+            mosfets.Ph1B(false);
+            mosfets.Ph2B(false);
+            mosfets.Ph3B(true);
+            break;
+            
+        case S4:
+            mosfets.Ph1A(false);
+            mosfets.Ph2A(true);
+            mosfets.Ph3A(false);
+            
+            mosfets.Ph1B(true);
+            mosfets.Ph2B(false);
+            mosfets.Ph3B(false);
+            break;
+            
+        case S5:
+            mosfets.Ph1A(false);
+            mosfets.Ph2A(false);
+            mosfets.Ph3A(true);
+            
+            mosfets.Ph1B(true);
+            mosfets.Ph2B(false);
+            mosfets.Ph3B(false);
+            break;
+            
+        case S6:
+            mosfets.Ph1A(false);
+            mosfets.Ph2A(false);
+            mosfets.Ph3A(true);
+            
+            mosfets.Ph1B(false);
+            mosfets.Ph2B(true);
+            mosfets.Ph3B(false);
+            break;
+    }
+}
+
+
+//=============================================================================
+// MAIN FUNCTION
+//=============================================================================
+int
+main(void)
+{
+    // Set the clocking to run directly from the external crystal/oscillator.
+    MAP_SysCtlClockSet(SYSCTL_SYSDIV_1 | SYSCTL_USE_OSC | SYSCTL_OSC_MAIN |
+                       SYSCTL_XTAL_16MHZ);
+
+    // Set the PWM clock to the system clock.
+    MAP_SysCtlPWMClockSet(SYSCTL_PWMDIV_1);
+
+    // MOSFET Setup
+    float initial_duty = 0.9;
+    int pwm_freq = 20e3;
+    mosfets.setup(pwm_freq, initial_duty);
+
+    // Disable interrupts, setup and reenable interrupts
+    MAP_IntMasterDisable();
+    comps.setup(GPIOInt);
+    MAP_IntMasterEnable();
+
+    // Comencem apagant tots els MOSFETs
+    int state = 7;
+    updateState(state); // This will now call mosfets.allOff()
+
+    float phase_period = 4e-3;
+
+    while(1)
+    {
+        // state += 1;
+        // state %= 6; // Cycle from 0 to 5 (s1 -> s6)
+        
+        // updateState(state); // This now uses the new, clean mosfet controller
+        // updateClosedLoopState();
+        // MAP_SysCtlDelay((MAP_SysCtlClockGet() * phase_period) / 3);
+
+        // if (phase_period > 1.2e-3)
+        //     phase_period -= 1e-6;
+        // else
+        //     phase_period = 4e-3;
+    }
+}

@@ -1,0 +1,22 @@
+
+**** Build of configuration Debug for project lse1 ****
+
+/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 16 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="/home/adria/s3drive_crypt_webdav_frts/University/13e/lse1/lse1/sw/lse1" --include_path="/home/adria/ti/TivaWare_C_Series-2.2.0.295" --include_path="/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+"../comparators.h", line 100: warning #1-D: last line of file ends without a newline
+"../main.cpp", line 190: warning #179-D: variable "phase_period" was declared but never referenced
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./startup_ccs.obj" "./utils/uartstdio.obj" "../pwm_invert_ccs.cmd"  -l"/home/adria/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****

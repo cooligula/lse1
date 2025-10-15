@@ -1,4 +1,6 @@
-"./pwm_invert.obj"
+"./comparators.obj"
+"./main.obj"
+"./mosfets.obj"
 "./startup_ccs.obj"
 "./utils/uartstdio.obj"
 "../pwm_invert_ccs.cmd"

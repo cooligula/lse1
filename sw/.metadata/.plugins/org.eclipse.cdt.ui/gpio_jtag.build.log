@@ -1,0 +1,35 @@
+
+**** Build of configuration Debug for project gpio_jtag ****
+
+/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 16 all -O 
+ 
+Building file: "../startup_ccs.c"
+Invoking: ARM Compiler
+"/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="/home/adria/s3drive_crypt_webdav_frts/University/13e/lse1/lse1/sw/gpio_jtag" --include_path="/home/adria/ti/TivaWare_C_Series-2.2.0.295/examples/boards/ek-tm4c123gxl" --include_path="/home/adria/ti/TivaWare_C_Series-2.2.0.295" --include_path="/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="startup_ccs.d_raw"  "../startup_ccs.c"
+Finished building: "../startup_ccs.c"
+ 
+Building file: "/home/adria/ti/TivaWare_C_Series-2.2.0.295/examples/boards/ek-tm4c123gxl/drivers/buttons.c"
+Invoking: ARM Compiler
+"/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="/home/adria/s3drive_crypt_webdav_frts/University/13e/lse1/lse1/sw/gpio_jtag" --include_path="/home/adria/ti/TivaWare_C_Series-2.2.0.295/examples/boards/ek-tm4c123gxl" --include_path="/home/adria/ti/TivaWare_C_Series-2.2.0.295" --include_path="/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="drivers/buttons.d_raw" --obj_directory="drivers"  "/home/adria/ti/TivaWare_C_Series-2.2.0.295/examples/boards/ek-tm4c123gxl/drivers/buttons.c"
+Finished building: "/home/adria/ti/TivaWare_C_Series-2.2.0.295/examples/boards/ek-tm4c123gxl/drivers/buttons.c"
+ 
+Building file: "../gpio_jtag.c"
+Invoking: ARM Compiler
+"/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="/home/adria/s3drive_crypt_webdav_frts/University/13e/lse1/lse1/sw/gpio_jtag" --include_path="/home/adria/ti/TivaWare_C_Series-2.2.0.295/examples/boards/ek-tm4c123gxl" --include_path="/home/adria/ti/TivaWare_C_Series-2.2.0.295" --include_path="/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="gpio_jtag.d_raw"  "../gpio_jtag.c"
+Finished building: "../gpio_jtag.c"
+ 
+Building file: "/home/adria/ti/TivaWare_C_Series-2.2.0.295/utils/uartstdio.c"
+Invoking: ARM Compiler
+"/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="/home/adria/s3drive_crypt_webdav_frts/University/13e/lse1/lse1/sw/gpio_jtag" --include_path="/home/adria/ti/TivaWare_C_Series-2.2.0.295/examples/boards/ek-tm4c123gxl" --include_path="/home/adria/ti/TivaWare_C_Series-2.2.0.295" --include_path="/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="utils/uartstdio.d_raw" --obj_directory="utils"  "/home/adria/ti/TivaWare_C_Series-2.2.0.295/utils/uartstdio.c"
+Finished building: "/home/adria/ti/TivaWare_C_Series-2.2.0.295/utils/uartstdio.c"
+ 
+Building target: "gpio_jtag.out"
+Invoking: ARM Linker
+"/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"gpio_jtag_ccs.map" --heap_size=0 --stack_size=256 -i"/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="gpio_jtag_linkInfo.xml" --rom_model -o "gpio_jtag.out" "./gpio_jtag.obj" "./startup_ccs.obj" "./drivers/buttons.obj" "./utils/uartstdio.obj" "../gpio_jtag_ccs.cmd"  -l"/home/adria/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "gpio_jtag.out"
+ 
+"/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/tiobj2bin" "gpio_jtag.out" "gpio_jtag.bin" "/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****

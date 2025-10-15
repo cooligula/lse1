@@ -1,0 +1,203 @@
+#include <stdbool.h>
+#include <stdint.h>
+#include "inc/hw_memmap.h"
+#include "driverlib/debug.h"
+#include "driverlib/gpio.h"
+#include "driverlib/pin_map.h"
+#include "driverlib/pwm.h"
+#include "driverlib/rom.h"
+#include "driverlib/rom_map.h"
+#include "driverlib/sysctl.h"
+#include "driverlib/uart.h"
+#include "utils/uartstdio.h"
+#include "mosfets.h"
+
+// Controller instance.
+MosfetController mosfets;
+
+#ifdef DEBUG
+void
+__error__(char *pcFilename, uint32_t ui32Line)
+{
+}
+#endif
+
+#define STOP 7
+#define S1 0
+#define S2 1
+#define S3 2
+#define S4 3
+#define S5 4
+#define S6 5
+
+#define RISE 0
+#define FALL 1
+
+uint8_t RiseFall = GPIO_RISING_EDGE;
+/**
+ * @brief updateClosedLoopState
+ */
+void updateClosedLoopState(void){
+
+    // Read comparator pins
+    int A = MAP_GPIOPinRead(GPIO_PORTC_BASE, GPIO_PIN_4); // Comp1;
+    int B = MAP_GPIOPinRead(GPIO_PORTC_BASE, GPIO_PIN_6); // Comp2;
+    int C = MAP_GPIOPinRead(GPIO_PORTF_BASE, GPIO_PIN_2); // Comp3;
+
+    mosfets.Ph1A(A && !B);
+    mosfets.Ph2A(B && !C);
+    mosfets.Ph3A(C && !A);
+    
+    mosfets.Ph1B(!A && B);
+    mosfets.Ph2B(!B && C);
+    mosfets.Ph3B(!C && A);
+}
+
+extern void GPIOInt(void) {
+    RiseFall ^= 1;
+
+    if (RiseFall) {
+        MAP_GPIOIntTypeSet(GPIO_PORTC_BASE, GPIO_PIN_4 || GPIO_PIN_6, GPIO_RISING_EDGE);
+        MAP_GPIOIntTypeSet(GPIO_PORTF_BASE, GPIO_PIN_2, GPIO_RISING_EDGE);
+    } else {
+        MAP_GPIOIntTypeSet(GPIO_PORTC_BASE, GPIO_PIN_4 || GPIO_PIN_6, GPIO_FALLING_EDGE);
+        MAP_GPIOIntTypeSet(GPIO_PORTF_BASE, GPIO_PIN_2, GPIO_FALLING_EDGE);
+    }
+}
+
+/**
+ * @brief updateState
+ * Configura sortides de GPIOs pels sis estats d'alimentació del motor
+ */
+void updateState(int state){
+    switch (state)
+    {
+        case STOP:
+            mosfets.allOff();
+            break;
+            
+        case S1:
+            mosfets.Ph1A(true);
+            mosfets.Ph2A(false);
+            mosfets.Ph3A(false);
+            
+            mosfets.Ph1B(false);
+            mosfets.Ph2B(true);
+            mosfets.Ph3B(false);
+            break;
+            
+        case S2:
+            mosfets.Ph1A(true);
+            mosfets.Ph2A(false);
+            mosfets.Ph3A(false);
+            
+            mosfets.Ph1B(false);
+            mosfets.Ph2B(false);
+            mosfets.Ph3B(true);
+            break;
+            
+        case S3:
+            mosfets.Ph1A(false);
+            mosfets.Ph2A(true);
+            mosfets.Ph3A(false);
+            
+            mosfets.Ph1B(false);
+            mosfets.Ph2B(false);
+            mosfets.Ph3B(true);
+            break;
+            
+        case S4:
+            mosfets.Ph1A(false);
+            mosfets.Ph2A(true);
+            mosfets.Ph3A(false);
+            
+            mosfets.Ph1B(true);
+            mosfets.Ph2B(false);
+            mosfets.Ph3B(false);
+            break;
+            
+        case S5:
+            mosfets.Ph1A(false);
+            mosfets.Ph2A(false);
+            mosfets.Ph3A(true);
+            
+            mosfets.Ph1B(true);
+            mosfets.Ph2B(false);
+            mosfets.Ph3B(false);
+            break;
+            
+        case S6:
+            mosfets.Ph1A(false);
+            mosfets.Ph2A(false);
+            mosfets.Ph3A(true);
+            
+            mosfets.Ph1B(false);
+            mosfets.Ph2B(true);
+            mosfets.Ph3B(false);
+            break;
+    }
+}
+
+
+//=============================================================================
+// MAIN FUNCTION
+//=============================================================================
+int
+main(void)
+{
+    // Set the clocking to run directly from the external crystal/oscillator.
+    MAP_SysCtlClockSet(SYSCTL_SYSDIV_1 | SYSCTL_USE_OSC | SYSCTL_OSC_MAIN |
+                       SYSCTL_XTAL_16MHZ);
+
+    // Set the PWM clock to the system clock.
+    MAP_SysCtlPWMClockSet(SYSCTL_PWMDIV_1);
+
+    // Enable peripherals for Comparators (non-MOSFET logic)
+    MAP_SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOC);
+    MAP_SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOF);
+
+    // MOSFET Setup
+    float initial_duty = 0.9;
+    int pwm_freq = 20e3;
+    mosfets.setup(pwm_freq, initial_duty);
+
+    // Wait for comparator peripherals to be ready
+    while(!MAP_SysCtlPeripheralReady(SYSCTL_PERIPH_GPIOC) ||
+          !MAP_SysCtlPeripheralReady(SYSCTL_PERIPH_GPIOF));
+
+    // Enable comparator GPIOs (closed-loop)
+    MAP_GPIOPinTypeGPIOInput(GPIO_PORTC_BASE, GPIO_PIN_4); // Comp1
+    MAP_GPIOPinTypeGPIOInput(GPIO_PORTC_BASE, GPIO_PIN_6); // Comp2
+    MAP_GPIOPinTypeGPIOInput(GPIO_PORTF_BASE, GPIO_PIN_2); // Comp3
+
+    // Register interrupts (closed-loop)
+    MAP_GPIOIntRegister(GPIO_PORTC_BASE, GPIOInt);
+    MAP_GPIOIntRegister(GPIO_PORTF_BASE, GPIOInt);
+
+    MAP_GPIOIntTypeSet(GPIO_PORTC_BASE, GPIO_PIN_6 | GPIO_PIN_4, RiseFall);
+    MAP_GPIOIntTypeSet(GPIO_PORTF_BASE, GPIO_PIN_2, RiseFall);
+
+    // Comencem apagant tots els MOSFETs
+    int state = 7;
+    updateState(state); // This will now call mosfets.allOff()
+
+    //
+    // Loop forever while the PWM signals are generated.
+    //
+
+    float phase_period = 4e-3;
+
+    while(1)
+    {
+        state += 1;
+        state %= 6; // Cycle from 0 to 5 (s1 -> s6)
+        
+        updateState(state); // This now uses the new, clean mosfet controller
+        MAP_SysCtlDelay((MAP_SysCtlClockGet() * phase_period) / 3);
+
+        if (phase_period > 1.2e-3)
+            phase_period -= 1e-6;
+        else
+            phase_period = 4e-3;
+    }
+}

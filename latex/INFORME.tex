@@ -1,0 +1,847 @@
+\documentclass[12pt]{article}
+
+% Font: Times New Roman (necessita XeLaTeX o LuaLaTeX)
+%\usepackage{fontspec}
+%\setmainfont{Times New Roman}
+
+% Interlineat 1.5
+\usepackage{setspace}
+\onehalfspacing
+
+% Espai posterior de paràgraf per defecte: 6pt
+\setlength{\parskip}{6pt}
+
+% Ajustar l'espai després dels títols de secció a 12pt
+\usepackage{titlesec}
+\titlespacing*{\section}{0pt}{12pt}{12pt}
+
+
+\usepackage[utf8]{inputenc}
+\usepackage[catalan]{babel}
+\usepackage{graphicx, fancyhdr, caption}
+\usepackage[a4paper, margin=2cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{enumerate}
+\usepackage{hhline}
+\usepackage{lastpage}  
+\usepackage{multicol}
+\usepackage{hyperref}
+\usepackage{mathptmx}
+\usepackage{siunitx} % Recommended for proper unit formatting (e.g., \ohm, \kilo)
+
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{biblatex}
+
+\addbibresource{biblio_projbuck.bib}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{C}{
+    frame=tb,
+    language=C,
+    aboveskip=3mm,
+    belowskip=3mm,
+    showstringspaces=false,
+    columns=flexible,
+    basicstyle={\small\ttfamily},
+    numbers=none,
+    numberstyle=\tiny\color{gray},
+    keywordstyle=\color{blue},
+    commentstyle=\color{dkgreen},
+    stringstyle=\color{mauve},
+    breaklines=true,
+    breakatwhitespace=true,
+    tabsize=3,
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    captionpos=b, 
+    keepspaces=true,                 
+    numbers=left, 
+    numbersep=5pt,                  
+    showspaces=false,                
+    showtabs=false
+}
+
+\lstdefinestyle{Python}{
+    frame=tb,
+    language=Python,
+    aboveskip=3mm,
+    belowskip=3mm,
+    showstringspaces=false,
+    columns=flexible,
+    basicstyle={\small\ttfamily},
+    numbers=none,
+    numberstyle=\tiny\color{gray},
+    keywordstyle=\color{blue},
+    commentstyle=\color{dkgreen},
+    stringstyle=\color{mauve},
+    breaklines=true,
+    breakatwhitespace=true,
+    tabsize=3,
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    captionpos=b, 
+    keepspaces=true,                 
+    numbers=left, 
+    numbersep=5pt,                  
+    showspaces=false,                
+    showtabs=false
+}
+
+{\fontfamily{ptm}\selectfont
+
+
+\lstset{style=C}
+\setlength\parindent{0pt}
+
+\newcommand{\diff}[1]{\text{d}#1}
+
+\setlength{\headheight}{14pt}
+\newenvironment{Figure}
+  {\par\medskip\noindent\minipage{\linewidth}}
+  {\endminipage\par\medskip}
+\title{ \vspace{-15mm} \large Laboratori de Sistemes Electrònics I \\\huge
+Projecte: Motor BLDC}
+\author{Adrià Brú Cortés i Miquel Limón Vallés}
+\date{}
+\pagestyle{fancy}
+\fancyhead{LSE1 - Motor BLDC \hfill  Adrià Brú i Miquel Limón}
+
+\begin{document}
+\maketitle
+
+\thispagestyle{fancy}
+
+\cfoot{\thepage\text{/}\pageref{LastPage}}
+
+\vspace{-10mm}
+
+\tableofcontents
+
+\newpage
+
+\section{Introducció}
+
+\subsection*{Motivació per a l'ús de motors BLDC}
+Els motors de corrent continu sense escombretes (BLDC) dominen els sistemes electromecànics contemporanis; des dels sistemes de propulsió de vehicles elèctrics i els vehicles aeris no tripulats fins a la robòtica de precisió i els electrodomèstics. El seu atractiu recau en la combinació d'una alta densitat de potència, una eficiència superior i l'absència d'escombretes que es malmeten, generen espurnes o introdueixen interferències electromagnètiques. En eliminar els contactes del commutador, les màquines BLDC ofereixen un parell motor (moment de forces) més suau, requereixen menys manteniment i tenen una vida útil més llarga, fent-lo així més fiable, robust i silenciós.
+
+\subsection*{Arquitectura}
+La topologia de control proposada utilitza tres semiponts, cadascun format per un MOSFET \textit{high-side} (el qual vindrà controlat per un senyal PWM) i un MOSFET \textit{low-side} (que serà controlat per un GPIO, tot i que al nostre disseny farem servir pins que puguin funcionar tant com a GPIO com a PWM). Aquesta arquitectura permet controlar la part alta de cada pont amb modulació de cicle útil (per tal de regular el parell motor), mentre que la part baixa simplement actua com a interruptor amb commutació directa. A cada instant, dues fases s'exciten mentre que la tercera fase queda flotant, convertint-la en un punt natural per a la detecció de la força contraelectromotriu (BEMF).
+
+\paragraph{Avantatges}
+
+\begin{itemize}
+    \item \textbf{Nombre de components}: Només cal generar un senyal PWM per als tres MOSFET de la part alta; els interruptors de la part baixa es poden controlar amb GPIO senzills, simplificant significativament la programació del controlador.
+    \item \textbf{Node de BEMF integrat}: La fase flotant proporciona una tensió accessible per a l'estimació de la posició sense sensors, reduint el cost dels motors (es poden fer servir motors \textit{brushless} senzills).
+\end{itemize}
+
+\paragraph{Limitacions}
+
+\begin{itemize}
+    \item \textbf{Tensió línia-a-línia trapezoidal}: Amb només dues fases excitades, la tensió entre línies és essencialment rectangular, la qual cosa coincideix amb un perfil de BEMF trapezoidal, però produeix una ondulació del parell motor més elevada (a part de més soroll acústic) en comparació amb una excitació sinusoidal (que es pot emular fent servir pins PWM als dos terminals del \textit{\textit{driver}}).
+    \item \textbf{Sense regeneració per frenada}: En cas d'una aplicació real (com l'ús en cotxes o bicicletes elèctriques), l'arquitectura actual en semipont dificulta la recuperació d'energia durant la desacceleració, ja que l'únic camí de recuperació d'energia (la fase en desús) està flotant. Si féssim servir un controlador de pont complet, en cas d'excés d'energia al motor (durant la frenada), es podria fer ús dels MOSFET \textit{low-side} per a reconduir l'energia sobrant generada pel motor de tornada cap a l'origen (bateria, condensadors, etc).
+    \item \textbf{Dificultat de sensat a baixes velocitats}: En funció de la precisió del/s ADC, a velocitats molt baixes, la BEMF induïda pot ser massa feble per detectar creuaments per zero de manera fiable i consistent.
+\end{itemize}
+
+\paragraph{Possibles formes d’ona d’excitació}
+
+\begin{itemize}
+    \item \textbf{Commutació en sis passos (trapezoidal)}: Excitació clàssica de motors BLDC, on cada fase està completament activada o desactivada durant un terç d’un cicle elèctric. És simple d’implementar amb l’esquema de tres semiponts, i és el que més probablement farem servir.
+    \item \textbf{Síntesi PWM sinusoidal}: Aprofitant que els pins de control de \textit{low-side} també poden funcionar com a PWM, es pot generar una tensió entre línies aproximadament sinusoidal, reduint així l’ondulació del parell motor però incrementant la complexitat i càrrega computacional.
+    \item \textbf{PWM vectorial espacial (SVPWM) \footnote{https://patents.google.com/patent/KR20160007840A/en}}: Fent ús de la tècnica SVPWM (Annex \ref{SVPWM}), seleccionant els vectors actius més propers entre els sis possibles estats del semi-pont, es pot aconseguir una sortida quasi sinusoidal. En cas de tenir només 3 PWM i 3 GPIO, no es pot implementar completament, però sí que es pot fer una emulació menys eficient.
+\end{itemize}
+
+\subsection*{Estratègies de detecció de BEMF}
+
+\subsubsection*{Detecció directa de BEMF a la fase flotant}
+Durant l’interval de \textit{freewheeling} (moment en què una de les fases queda flotant) de cada pas de commutació, la tensió a la fase inactiva reflecteix la BEMF del motor. Mostrejant aquesta tensió i localitzant-ne el creuament per zero respecte al portador PWM, és possible inferir la posició del rotor. Aquest mètode només requereix els tres GPIO existents per al mostreig i funciona bé a velocitats mitjanes i altes (com ja s'ha dit, a velocitats baixes la BEMF és molt petita i és difícil de mostrejar el pas per 0 amb precisió).
+
+\subsubsection*{Tècniques alternatives o complementàries}
+
+\begin{itemize}
+    \item \textbf{Injecció d’alta freqüència}: Superposar una petita tensió d’AF en una fase i analitzar la pertorbació resultant del corrent. Útil a velocitats molt baixes on la BEMF natural és feble i difícil de detectar.
+    \item \textbf{\textit{Observer-based Sensorless Estimation}}: Reconstruir el vector de BEMF a partir dels corrents de fase mesurats i els paràmetres coneguts del motor (p.\,ex., EKF, mode lliscant). Ampli rang de velocitats, millora la robustesa contra soroll.
+    \item \textbf{Integració de sensors Hall}: Instal·lar sensors Hall discrets (normalment tres) a l’estator per obtenir polsos digitals de posició del rotor. Útil i efectiu a essencialment tot el rang de velocitats i funciona, fins i tot, en entorns amb molt soroll. Donat que el microcontrolador escollit disposa de pins GPIO lliures més enllà dels sis dedicats als controladors de semipont, es podria incorporar una \textbf{matriu real de sensors Hall} sense requerir un redisseny important.
+\end{itemize}
+
+\subsection*{Objectius}
+\begin{itemize}
+    \item Implementar un controlador senzill i econòmic per a motors BLDC utilitzant una topologia de tres mig ponts amb control PWM a la part alta i commutació amb GPIO a la part baixa, reduint la complexitat del maquinari.
+
+    \item Permetre l’estimació de posició \textit{sensorless} mitjançant la detecció de la força contraelectromotriu (BEMF) a la fase flotant, aprofitant l’estat natural del sistema per obtenir la informació de rotor sense necessitat de sensors addicionals.
+
+    \item Assegurar la compatibilitat amb diferents formes d’ona d’excitació, com la commutació trapezoidal de sis passos, la generació de i l’aproximació SVPWM amb 3 PWM i 3 GPIO, buscant un compromís entre simplicitat i qualitat de control.
+\end{itemize}
+
+
+% --------------------------------------------------------
+\newpage
+
+\section{Dimensionament dels components}
+
+
+
+
+
+
+
+
+% --------------------------------------------------------
+\clearpage
+\section{Simulacions LTSpice}
+
+\subsection{Model del motor}
+Per tal de poder simular el motor i el seu control, es fa un model funcional del motor a LTSpice, que pren la forma de la figura \ref{schem1}:
+
+\begin{center}
+    \includegraphics[width=\linewidth]{images/modelmotor.png}
+    \captionof{figure}{Esquemàtic del model funcional del motor per a la simulació.}
+    \label{schem1}
+\end{center}
+
+Aquest model reprodueix el comportament del motor a partir de les equacions que descriuen les magnituds que intervenen en el seu funcionament. Per això, cal entendre bé com funciona realment. El motor BLDC funciona mitjançant l'excitació consecutiva de tres bobines per generar un camp magnètic giratori que reorienti el rotor. En termes de circuits, aquest aparell és equivalent a una inductància $L$, una resistència $R$ que modelitza les pèrdues del bobinat, i una força contraelectromotriu originada pel mateix gir del rotor. Per tant, la tensió total en una de les tres branques del motor és expressada com:
+
+\begin{equation}
+    V = L \frac{\diff{I}}{\diff{t}} + I \cdot R + K_v \cdot \omega
+\end{equation}
+
+Com fem servir LTSpice, podem implementar $L$ i $R$ directament com a components: la força contraelectromotriu, però, és un fenomen que relaciona el domini mecànic amb l'elèctric, i es calcula a partir de la velocitat angular trobada pel model del motor a cada instant, a l'apartat pertinent (centre inferior). Aquí veiem que els dominis elèctric i mecànic del motor estan relacionats, retroalimentant el seu comportament: una velocitat angular dona lloc a una força contraelectromotriu, i una intensitat circulant per una bobina dona lloc a un parell motor sobre el rotor. Amb això, sabem que el motor és també un aparell amb una mecànica molt concreta: el gir del rotor té una certa velocitat angular i inèrcia, a més del parell motor originat per la càrrega afegida a aquest rotor. Aquestes magnituds es relacionen amb la intensitat amb què s'alimenten les bobines mitjançant la següent equació:
+
+\begin{equation}
+    K_I \cdot I - T_{load} = J \frac{\diff{^2}\theta}{\diff{t^2}} + b \cdot \omega = J \frac{\diff{\omega}}{\diff t}+ b \cdot \omega
+\end{equation}
+
+Aquesta segona equació és la que veiem implementada a l'apartat de domini mecànic, rebent un parell motor del motor donat per les tensions BEMF, i retornant una posició i velocitat angular.
+
+Un cop implementat aquest model, tota aquesta etapa pot ser utilitzada tal com faríem amb el mateix motor: introduirem senyals d'excitació a les línies FASE\_x, donant lloc a un moviment giratori que veurem reflectit en una periodicitat de la variable \textit{theta}, o un valor aproximadament constant de \textit{wang}, que correspondran als valors d'angle i velocitat angular del motor, respectivament (a LTSpice, en unitats de tensió). Així podem realitzar un estudi exhaustiu del motor a nivell elèctric.
+
+
+
+
+\clearpage
+\subsection{Llaç obert}
+
+Podem fer una primera implementació de l'accionament del motor en llaç obert excitant-lo amb tres senyals de polsos desfasats 120$^\circ$ entre si per fer un primer estudi de com respon a diferents condicions.
+
+\begin{center}
+    \includegraphics[width=0.7\linewidth]{images/openloop_circuit.png}
+    \captionof{figure}{Etapa d'excitació del motor BLDC en llaç obert.}
+    \label{excitacio}
+\end{center}
+
+El circuit de control en llaç obert es veu a la figura \ref{excitacio}: observem una etapa de generació de senyals d'excitació, que implementa els polsos rectangulars amb els que activarem els MOSFETs. Aquí es transforma el senyal de control dels high-side en un PWM, per evitar sobrecàrregues de la bobina. La etapa de drivers de potència, de topologia equivalent a tres convertidors buck, permet regular els corrents de potència elevada amb els que s'excitarà el motor amb senyals de control. Evidentment, tenim un driver per cada bobina del motor. Els MOSFETs high-side i low-side s'excitaran en parelles de diferents drivers per tancar el circuit a través del motor. Cal que dos MOSFETs del mateix driver mai estiguin activats a la vegada, ja que donaria lloc a un corrent de shoot-through que faria malbé els dispositius.
+
+\begin{center}
+    \includegraphics[width=\linewidth]{images/io_driver.png}
+    \captionof{figure}{Senyals d'entrada alt i baix (HAI i LAI) del \textit{driver} A, i senyal de sortida (\textit{fase\_A}).}
+    \label{hai-lai}
+\end{center}
+
+Com es veu a la figura \ref{hai-lai}, els senyals d'entrada alt i baix estan desfasats 180$^\circ$ per poder aconseguir un senyal de sortida similar a un sinus. Observem que la tensió de sortida, $V_{fase\_A}$, es fa màxima quan es rep el senyal d'entrada alt (alimentant el motor), i zero quan es rep el senyal d'entrada baix (imposant una massa a l'inici de la branca per tancar el circuit al llarg del motor). Amb aquesta excitació esperem veure una circulació alternant del corrent al llarg de les bobines, corresponent a l'excitació cíclica que donarà lloc al gir del motor.
+
+\begin{center}
+    \includegraphics[width=\linewidth]{images/ints_bobinat.png}
+    \captionof{figure}{Intensitats de les tres fases del bobinat del motor.}
+    \label{intensitats}
+\end{center}
+
+Com es pot apreciar a la figura \ref{intensitats}, les intensitats de les bobines oscil·len entre nivells alts i baixos. Aquests senyals tenen una freqüència fonamental que serà la que farà que el motor giri, però els harmònics addicionals que fan que no sigui un sinus perfecte donaran lloc a petites oscil·lacions i inestabilitats que faran que la dinàmica del motor sigui subòptima. Recordem que, en el cas d'una excitació trifàsica perfecta, el camp magnètic generat per les bobines sempre és perpendicular al camp magnètic del rotor, de manera que es maximitza el parell motor en tots els instants. Llegint els valors de \textit{theta}, \textit{wang}, i \textit{Tmotor}, podem estudiar la dinàmica del nostre motor simulat:
+
+\begin{center}
+    \includegraphics[width=\linewidth]{images/vtheta1.png}
+    \captionof{figure}{Angle del motor en funció del temps.}
+    \label{angle}
+\end{center}
+
+A la figura \ref{angle} veiem l'angle del rotor respecte l'inicial. Aquest angle varia de forma lineal entre 2$\pi$ i 0 (unitats de Volts en la simulació), de manera que a primera vista podem dir que el motor està girant amb una velocitat constant.
+
+\begin{center}
+    \includegraphics[width=\linewidth]{images/wang1.png}
+    \captionof{figure}{Velocitat angular del motor en funció del temps.}
+    \label{wang}
+
+    \includegraphics[width=\linewidth]{images/tmotor1.png}
+    \captionof{figure}{Parell motor exercit pel motor en funció del temps.}
+    \label{torque}
+\end{center}
+
+Observant els gràfics de la velocitat angular i parell motor (Figs. \ref{wang} i \ref{torque}) exercit en funció del temps, veiem que no són valors constants. Aquestes oscil·lacions són degudes al fet que l'excitació de les bobines no segueix exactament el gir del rotor: el camp magnètic que percep el rotor no és sempre perpendicular al seu, de manera que el moment magnètic (i amb aquest, el parell motor induït) no és sempre el màxim, ni constant. Aquesta energia que no s'inverteix en parell motor es perd en forma de calor, de manera que aquest no és el sistema òptim per alimentar el motor. Tot i així, és el més senzill d'implementar i el que farem servir al llarg d'aquesta assignatura.
+
+
+\subsubsection{Dissipació i SOA}
+Per tal d'assegurar-nos que el nostre sistema serà estable i segur d'operar, cal comprovar que els circuits integrats operen dins de les seves capacitats. Per tal d'assegurar-nos que els MOSFET treballen dins la SOA, cal mirar la duració en temps dels pics de potència, els quals es donen durant la càrrega de la $C_{gate}$ (zona de Miller). Comparant el gràfic del SOA proveït per Infineon (Fig. \ref{soa_bitches}) amb els gràfics $I_{D}$($V_{DS}$) (Fig. \ref{fig:idvds}) i tenint en compte l'amplada dels pics de potència obtinguts (Fig. \ref{fig:pics_potencia}), podem veure que mai operem fora de la SOA. Així doncs, veiem que el nostre sistema pot operar en tot el rang de \textit{duty cycles} simulats (5\%-95\%). D'altra banda, els drivers no consumeixen ni 2W.
+%Fora d'aquest rang, els pics de consum durant la zona de Miller són massa pronunciats i els MOSFET podrien cremar-se.
+
+% aixo pq no ho poses? pq no es cert, ens quedem sempre megalluny del límit del SOA
+
+\begin{figure}[h!]
+    \centering
+    \begin{minipage}{.28\textwidth}
+        \centering
+        \vspace{1.5em}
+        \includegraphics[width=0.95\linewidth]{images/soa_bitches.png}
+        \captionof{figure}{Gràfic del SOA dels MOSFET. \href{https://www.infineon.com/assets/row/public/documents/non-assigned/49/irfhm830dpbf.pdf?fileId=5546d462533600a4015356232c461f45}{Origen: infineon.com}}
+        \label{soa_bitches}
+    \end{minipage}%
+    \hspace{1em}
+    \begin{minipage}{.68\textwidth}
+        \centering
+        \includegraphics[width=0.95\linewidth]{images/ids_vds_m1.png}
+        \captionof{figure}{Gràfic $I_{D}$($V_{DS}$) per al MOSFET \textit{low-side} M1.}
+        \label{fig:idvds}
+    \end{minipage}
+    \label{fig:enter-label}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.65\linewidth]{images/pics_potencia_m1_molts.png}
+    \caption{Mesura dels pics de potència durant la zona de Miller.}
+    \label{fig:pics_potencia}
+\end{figure}
+%Veiem que els pics de consum presenten les següents duracions (no %s'han llistat tots per evitar redundàncies):
+%    \begin{itemize}
+%        \item Duty 5\%: $t_{pic} = 10$ns
+%        \item Duty 20\%: $t_{pic} = 70$ns
+%        \item Duty 40\%: $t_{pic} = 72$ns
+%        \item Duty 60\%: $t_{pic} = 98$ns
+%        \item Duty 80\%: $t_{pic} = 150$ns
+%        \item Duty 95\%: $t_{pic} = 158$ns
+%    \end{itemize}
+
+
+\subsubsection{\textit{Drivers} i $C_{boot}$}
+Podem observar que el condensador de \textit{bootstrap} proporcionat és adient per aquesta implementació mirant les intensitats a través del díode de \textit{bootstrap} i durant la càrrega del condensador, i el senyal de sortida del \textit{driver}. Recordem que la capacitat \textit{bootstrap} s'ha de triar amb una magnitud suficient perquè pugui emmagatzemar prou energia, però no massa gran com per alentir el sistema.
+
+%\begin{equation}
+%    C_{boot} \ge \frac{Q_{miller}}{\Delta V_{max}}%{max allowable voltage drop}
+%\end{equation}
+
+\begin{center}
+    \includegraphics[width=\linewidth]{images/cboot_ints.png}
+    \captionof{figure}{Intensitats del díode i condensador de \textit{bootstrap} durant un seguit de commutacions.} \label{bootstrap}
+    
+
+    \includegraphics[width=\linewidth]{images/cboot_fase.png}
+    \captionof{figure}{Tensió de sortida del \textit{driver} A.}
+    \label{outdriver}
+\end{center}
+
+A les figures anteriors (Figs. \ref{bootstrap} i \ref{outdriver}) observem que en una commutació tenim prou temps per carregar el condensador de \textit{bootstrap}, i aquest proporciona l'energia adient per obtenir una sortida polsada de la forma desitjada, sense mostrar distorsions per filtratge.
+
+\subsubsection{Presència del senyal BEMF}
+Analitzant les tensions i els corrents la zona del domini elèctric del model funcional del motor, podem observar com, de manera periòdica, apareixen unes forces electromotrius (Fig. \ref{fig:pres_bemf}). Aquestes poden ser, positives, nul·les (negligibles) o negatives, i el pas per zero es correspon amb el canvi de fase flotant. La presència d'aquests senyals és molt útil per a inferir la posició del rotor respecte de l'estator. 
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.96\linewidth]{images/presence_bemf.png}
+    \caption{Corrents a les bobines i tensions degudes a les forces contraelectromotrius. Els corrents de les bobines es veuen afectats per la BEMF a cadascuna de les fases.}
+    \label{fig:pres_bemf}
+\end{figure}
+
+
+\subsection{Detecció de BEMF}
+
+\begin{center}
+    \includegraphics[width=\linewidth]{images/circuit_bemf.png}
+    \captionof{figure}{Circuit utilitzat per obtenir els valors de la BEMF dins el motor.}
+    \label{schem2demiswebos}
+\end{center}
+
+Recordem que el motor BLDC està format per tres bobines connectades a un extrem en un node comú, en forma d'estrella. En cada instant que el motor és alimentat, els MOSFET tanquen un circuit format per la font d'alimentació, dues de les bobines i les seves resistències paràsites: aquest circuit tindrà una certa tensió al node central de les bobines que donarà informació sobre l'estat de gir del rotor, corresponent a com de "carregades" estaran les bobines. En el cas que el motor giri en circuit obert, les branques actuen com una "dinamo" amb una tensió contraelectromotriu originada pel gir del rotor: sabent que el circuit del motor es tanca fent servir les branques en parelles, sempre en queda una de lliure que juga aquest paper. Per una branca $X$ en circuit obert:
+
+\begin{equation}
+    V_X - V_N = V_{BEMF\_X}
+\end{equation}
+
+Recordant l'expressió de la tensió contraelectromotriu:
+
+\begin{equation}
+    V_{BEMF\_X} = B_m N \omega \sin (\omega t + \phi)
+\end{equation}
+
+És fàcil veure que aquesta tensió depèn de l'angle que té el rotor amb la bobina en cada instant i, per tant, dona informació per trobar l'orientació del motor en temps real. A més, si les tres bobines del motor són iguals, es pot demostrar que el valor de tensió del node central d'aquesta estrella compleix:
+
+\begin{equation}
+    V_N = \frac{V_A+V_B+V_C}{3}
+\end{equation}
+
+D'aquesta manera, per obtenir el valor del node central només cal obtenir la mitjana de les tres tensions d'alimentació del motor: això es pot aconseguir fàcilment reproduint l'estrella del motor en un circuit similar i extern, conformat per tres resistències iguals, com es veu a l'esquemàtic de la figura \ref{schem2demiswebos}. El valor del node central queda reproduït a \textit{N\_virtual}, d'on es pot extreure amb facilitat. Com ja hem dit, la tensió d'aquest node central incrementarà quan les bobines siguin alimentades
+
+Per interpretar aquesta informació, comparem la tensió del node central amb la d'excitació de les bobines. Un altre factor a considerar és que aquest valor presenta un soroll inherent en la ràpida commutació del sistema de control: per eliminar-lo s'incorpora un filtre passa-baixos format per la resistència equivalent anterior al comparador i una capacitat $C_{bypass}$. Amb això, s'obté una entrada adequada pel comparador, i una sortida que indica quan el motor està passant per davant de la bobina $X$, fet que permet saber quan activar en el moment adequat la següent bobina i així implementar un control en llaç tancat per optimitzar el consum del motor. Les tensions al node virtual es poden veure a la figura \ref{fig:node_virt}.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\linewidth]{images/nodes_virtuals.png}
+    \caption{Valors de les tensions al node virtual i al divisor de tensió després del node virtual.}
+    \label{fig:node_virt}
+\end{figure}
+
+\clearpage
+\section{Disseny de hardware}
+
+\subsection{Esquemàtic}
+
+\subsubsection{Microcontrolador (TIVA)}
+
+\begin{multicols}{2}
+\captionof{table}{Assignació de recursos a la TIVA.}
+\begin{tabular}{|c|c|c|} \hline
+Pin & Funcionalitat & Senyal                              \\ \hline
+PA2 & GPIO          & LED de connexió         \\
+PB5 & M0PWM3        & PWM 1A                              \\
+PE4 & M0PWM4        & PWM 1B                              \\
+PE5 & M0PWM5        & PWM 2A                              \\
+PB4 & M0PWM2        & PWM 2B                              \\
+PA6 & M1PWM2        & PWM 3A                              \\
+PA7 & M1PWM3        & PWM 3B                              \\
+PC4 & GPIO          & Comp. de la fase 1 \\
+PC6 & GPIO          & Comp. de la fase 2 \\
+PF2 & GPIO          & Comp. de la fase 3 \\
+PD0 & SSI1Clk       & SPI clock                           \\
+PD1 & SSI1Fss       & SPI chip select                     \\
+PD2 & SSI1Rx        & SPI RX                              \\
+PD3 & SSI1Tx        & SPI TX                              \\ \hline
+\end{tabular}
+
+\includegraphics[width=8cm]{images/sch_uc.png}
+\captionof{figure}{Esquemàtic de les connexions al microcontrolador.}
+
+\end{multicols}
+
+La mateixa web de \textit{Texas Instruments} proporciona un model de la TIVA per Kicad, permetent realitzar les connexions de forma visual i després dissenyar un layout amb el footprint corresponent. Cal indicar que, a més dels pins assignats, s'han afegit capacitats de desacoblament a les entrades/sortides de 5V i 3.3V, i una resistència de pull-up al pin de $\overline{\text{TARGETRST}}$ perquè no ens cal incorporar cap element d'indicació de RESET a la nostra placa, la TIVA ja porta un botó de RESET incorporat. S'ha afegit tires de test-points, cadascun amb una referència a GND, pels conjunts de senyals MEAS (comparadors) i PWM. També es presenta una tira de pins SPI, que pot servir tant per test com per comunicar-se amb altres dispositius.
+
+
+\subsubsection{Alimentació}
+
+La font de tensió del sistema serà de 12V: aquesta tensió elevada és un requisit per assolir la potència suficient per accionar correctament el motor BLDC, però és massa elevada per alimentar l'etapa de lògica del sistema: per tant, cal incorporar una etapa d'adaptació de tensió per alimentar la TIVA i els drivers de commutació. S'ha escollit una reducció a 5V per fer la conversió menys abrupta, mitigant el soroll generat per l'LDO. La topologia implementada és la presentada a l'esquemàtic: s'han incorporat capacitats de desacoblament al connector amb la font d'alimentació, i a l'entrada i a la sortida de l'LDO.
+
+\begin{center}
+    \includegraphics[width=10cm]{images/sch_power.png}
+    \captionof{figure}{Esquemàtic de l'etapa d'alimentació.}
+\end{center}
+
+
+\subsubsection{Excitació del motor}
+
+Com ja s'ha esmentat, l'excitació del motor
+
+
+Per poder operar amb senyals de potència a un nivell de PWM, es farà servir un driver de commutació de MOSFETs (IR2301) amb topologia de convertidor buck.
+
+\begin{center}
+    \includegraphics[width=12cm]{images/sch_pont.png}
+    \captionof{figure}{Esquemàtic d'una de les tres etapes d'excitació del motor BLDC.}
+\end{center}
+
+S'ha incorporat un condensador de desacoblament a l'alimentació del driver i un altre a la del MOSFET de high-side. També s'ha afegit test-points a les sortides de commutació del driver i a fase corresponent del motor per poder comprovar el correcte funcionament del sistema.
+
+
+
+\subsubsection{Motor}
+
+\begin{center}
+    \includegraphics[width=10cm]{images/sch_motor.png}
+    \captionof{figure}{Esquemàtic de l'etapa de connexió amb el motor i reproducció de la tensió del node central.}
+\end{center}
+
+
+
+\subsubsection{Detecció de posició}
+
+\begin{center}
+    \includegraphics[width=12cm]{images/sch_comp.png}
+    \captionof{figure}{Esquema de }
+\end{center}
+
+\subsection{Layout}
+
+\begin{center}
+    \includegraphics[width=0.8\linewidth]{images/layout_front.png} \\
+    (a) \\
+    \includegraphics[width=0.8\linewidth]{images/layout_back.png} \\
+    (b)
+    \captionof{figure}{Captures de les capes front (a) i back (b) de la PCB dissenyada.}
+\end{center}
+
+La placa realitzada és de quatre capes: top, 12V, GND i bottom. Així aprofitem els plans d'alimentació per apantallar la placa, reduint el crosstalk i la impedància de retorn. Una altra mesura per incrementar l'apantallament entre seccions de la placa ha sigut la incorporació de microvies a llocs estratègics: en particular, als extrems de la placa i a la separació entre les seccions de fases del motor.
+
+Exceptuant alguns punts estratègics d'alimentació de 5V i 3.3V, l'àrea restant de les capes superficials s'ha baixat a GND, amb l'objectiu de donar una tensió definida a totes les regions de la placa per evitar acumulació de càrrega.
+
+A la capa superior es pot distingir el LDO i les etapes d'excitació de les fases del motor: s'ha procurat que aquestes últimes estiguin el més a prop possible entre si, fent plans de tensió comuna per reduir la impedància percebuda. Clarament, per conveniència, a la capa inferior també es col·locaran els punts de test. Pel que fa a la capa inferior, es pot observar que és on es troben els condensadors de bootstrap dels drivers i la lògica de detecció de BEMF. Els primers s'han col·locat just darrere dels drivers per disminuir-ne la distància, i la lògica de BEMF s'ha intentat distanciar de l'etapa de potència.
+
+\clearpage
+\section{Dimensionament dels components}
+
+\subsection{Model del motor BLDC}
+
+El motor DC sense escombretes (BLDC) es descriu mitjançant una equació elèctrica per a cada fase i una equació mecànica per a la dinàmica de rotació.
+
+\subsubsection{Equació Elèctrica de Fase}
+Per a una fase $k$ (e.g., $A, B, C$ en motors trifàsics):
+$$
+V_k = R I_k + L \frac{dI_k}{dt} + E_k
+$$
+En aquesta equació, $\mathbf{V_k}$ és la tensió aplicada a la fase, $\mathbf{I_k}$ és el corrent de fase que genera el camp magnètic de l'estator, $\mathbf{R}$ és la resistència de fase (responsable de les pèrdues óhmiques $P=RI^2$), $\mathbf{L}$ és la inductància de fase (que s'oposa a canvis ràpids de corrent) i $\mathbf{E_k}$ és la Força Contra-electromotriu (BEMF), que és la tensió induïda pel moviment dels imants del rotor i és proporcional a la velocitat angular $\omega_r$.
+
+\subsubsection{Equació Mecànica}
+El moviment del rotor es regeix per:
+$$
+T_e = J \frac{d\omega_r}{dt} + B \omega_r + T_L
+$$
+En aquesta equació, $\mathbf{T_e}$ és el Parell Electromagnètic desenvolupat per la interacció estator-rotor, $\mathbf{J}$ és el Moment d'Inèrcia del rotor i la càrrega (que s'oposa a l'acceleració), $\mathbf{\omega_r}$ és la Velocitat Angular del rotor ($\text{rad/s}$), $\mathbf{B}$ és el Coeficient de Fricció Viscosa (que representa les pèrdues mecàniques a velocitat) i $\mathbf{T_L}$ és el Parell de Càrrega extern.
+
+\subsubsection{Potència Convertida}
+L'acoblament entre els dos dominis es produeix mitjançant el Parell Electromagnètic ($T_e$) i la BEMF ($E_k$). La potència elèctrica total convertida a potència mecànica ($P_{\text{conv}}$) és el producte dels termes d'acoblament:
+$$
+P_{\text{conv}} = \sum E_k I_k = T_e \cdot \omega_r
+$$
+La BEMF ($E_k$) és la magnitud que \textbf{acobla la velocitat} al voltatge aplicat, ja que $E_k \propto \omega_r$. El Parell ($T_e$) és la magnitud que \textbf{acobla el corrent} al parell de sortida, ja que $T_e \propto I_k$. La potència d'entrada elèctrica ($\sum V_k I_k$) es distribueix en pèrdues per efecte Joule ($\sum R I_k^2$), energia emmagatzemada en la inductància i potència convertida a mecànica ($P_{\text{conv}}$).
+
+\subsubsection{Diferències amb el Motor DC d'Escombretes}
+
+%Les diferències més rellevants entre el motor BLDC i el motor DC d'escombretes són: la \textbf{Commutació} del BLDC és electrònica (mitjançant un inversor/driver controlat per sensors de posició), mentre que la del motor DC és mecànica (escombretes i col·lector). Pel que fa a la \textbf{BEMF i Corrent}, en el BLDC són formes d'ona seqüencials (típicament trapezoidals o sinusoïdals) i requereixen control de posició; en canvi, en el motor DC són valors mitjans continus, ja que la Commutació mecànica intrínseca "rectifica" la BEMF.
+
+\begin{itemize}
+    \item \textbf{Commutació:} El BLDC utilitza \textbf{Commutació electrònica} (mitjançant un inversor/driver controlat per sensors de posició), mentre que el motor DC utilitza \textbf{Commutació mecànica} (escombretes i col·lector).
+    \item \textbf{BEMF i Corrent:}
+    \begin{itemize}
+        \item BLDC: $E_k$ i $I_k$ són \textbf{formes d'ona seqüencials} (típicament trapezoidals o sinusoïdals). Requereix control de posició.
+        \item Motor DC (Escombretes): $E_a$ i $I_a$ són \textbf{valors mitjans continus}, ja que la commutació mecànica intrínseca ``rectifica'' la BEMF. No requereix sensors de posició externs.
+    \end{itemize}
+\end{itemize}
+
+\clearpage
+\subsection{Velocitat del motor i rang senyal PWM}
+
+%Per trobar la velocitat màxima, considerarem com a valor límit aquell que permet al processador detectar el rotor tuna interrupció de processador, 
+
+El retard màxim entre el pas del rotor i el canvi de fase del controlador limitarà el valor màxim del \textit{duty-cycle} pel qual el controlador pot retenir control del motor sense que es descontroli.
+
+Així doncs, el que tenim és el següent:
+
+\begin{itemize}
+    \item Segons les especificacions del fabricant del motor, la tensió mitjana aplicada al motor i la seva velocitat angular estan relacionades de forma lineal mitjançant el següent coeficient: $f_{mot}^{mec} = 920 \text{ RPM/V} = 15.33 \text{ Hz/V}$. Com que el motor té 14 imants, això es correspon amb 7 parelles de pols. Així doncs, $f_{mot}^{elec} = 7 \cdot f_{mot}^{mec} = \SI{107.31}{Hz/V}$
+    \item Sabem que la tensió mitjana que rebrà el motor depèn del \textit{duty-cycle} de la següent manera: $\overline{V} = D \cdot V_{max} = D \cdot \SI{12}{V}$ 
+    %\item El delay màxim del nostre sistema ve principalment limitat pel temps de pujada del comparador i el temps que triga microcontrolador en dur a terme un canvi d'estat, i estimem que en total sumen uns $\SI{4}{\micro s}$.
+    \item El delay màxim del nostre sistema ve fortament dominat pel retard introduït pel circuit de bypass. Agafant el temps que triga a transicionar del 0\% al 99.3\%: $T_{bypass} = 4.96 \tau_{bypass} = 4.96 R_{eq} C_{bypass} = 4.96 \cdot \SI{45}{k\ohm} \cdot \SI{4.7}{nF} = \SI{1.05}{ms}$. 
+\end{itemize}
+
+Amb aquesta informació podem calcular el valor de $D_{max}$:
+$$
+    f_{max} = \frac{1}{\SI{1.05}{ms}} = \SI{953.25}{Hz} = 15.3 \text{ [Hz/V] } \cdot V_{max} = 15.3 \cdot 12 D_{max} ~~ \rightarrow ~~ D_{max} = \frac{\SI{953.25}{Hz}}{15.3 \cdot 12} = \boxed{0.74}
+$$
+
+%$$
+%    f_{max} = \frac{1}{4~\mu \text{s}} = 250 \text{ kHz} = 15.3 \text{ [Hz/V] } \cdot V_{max} = 15.3 \text{ [Hz/V]} \cdot 12 D_{max} ~~ \rightarrow ~~ D_{max} = \frac{250 \cdot 10^{3}}{15.3 \cdot 12} >> 1
+%$$
+
+Així doncs, donada l'estimació actual, hauríem de ser capaços d'arribar al 100\% del \textit{duty-cycle} sense que el motor se salti passos i perdi moment de forces.
+
+Per tal de conèixer el valor màxim de la freqüència de commutació del PWM, cal considerar els temps de resposta tant del MOSFET com del \textit{driver} en consideració, ja que aquests seran els factors limitants. Així doncs, tenint en compte els temps de pujada/baixada i els retards de propagació:
+\begin{equation*}
+    T^{min}_{PWM} = T^{max}_{driver} + T^{max}_{MOSFET} ~~ 
+    \begin{cases}
+        T^{max}_{driver} = t_{rise}^{max} + t_{fall}^{max} + t_{d(on)}^{max} + t_{d(off)}^{max} = \SI{220}{\nano\s} + \SI{80}{\nano\s} + \SI{300}{\nano\s} + \SI{280}{\nano\s} \\
+        
+        T^{max}_{MOSFET} = t_{rise}^{max} + t_{fall}^{max} + t_{d(on)}^{max} + t_{d(off)}^{max} = \SI{69}{\nano\s} + \SI{60}{\nano\s} + \SI{7.3}{\nano\s} + \SI{47}{\nano\s} \\
+    \end{cases}
+\end{equation*}
+\begin{equation*}
+    T^{min}_{PWM} = T^{max}_{driver} + T^{max}_{MOSFET} = \SI{880}{\nano\s} + \SI{183.3}{\nano\s} = \SI{1063.3}{\nano\s} ~~ \to ~~ f_{PWM}^{max} = \frac{1}{T^{min}_{PWM}} = \boxed{\SI{943.4}{kHz}}
+\end{equation*}
+
+En canvi, per la freqüència mínima, el factor limitant principal és el propi motor, ja que ens interessa poder extreure el senyal del motor per la detecció de la BEMF, així que és interessant que la freqüència del PWM sigui prou gran com perquè el filtre format per la capacitat de \textit{bypass} i la resistència equivalent corresponent sigui capaç de separar els senyals PWM del senyal de BEMF. Per aquest motiu escollim una separació de mínim 1 dècada entre senyal PWM i senyal BEMF. Així doncs, sabent que $f_{motor}^{elec} = \SI{107.31}{Hz/V}$ i assumint el pitjor cas (el motor a màxima velocitat):
+
+\begin{equation*}
+    f_{PWM}^{min} = 10 f_{motor}^{elec}(\SI{12}{V}) = 10 \cdot \SI{107.31}{Hz/V} \cdot \SI{12}{V} = 10 \cdot \SI{1.287}{kHz} = \boxed{\SI{12.87}{kHz}}
+\end{equation*}
+
+Escollint $f_{PWM} = \SI{20}{kHz}$ es compleixen els requeriments.
+
+%(COSES DE TIMING), considerem que el microcontrolador trigarà uns T en processar el canvi d'estat.
+
+%Amb aquestes dades, podem trobar la velocitat màxima que pot assolir el motor per a que el microcontrolador pugui dur a terme un control de llaç tancat:
+
+%\begin{equation}
+%    v_{max} = \frac{1/12 \text{ revolució}}{T} = X \text{ rev/s} = X rpm
+%\end{equation}
+
+\subsection{Capacitats de bootstrap i temps de càrrega/descàrrega}
+Els següents paràmetres han estat utilitzats per al càlcul:
+
+\begin{itemize}
+    \item $D_{\text{max}} = 1$ (Cicle de treball màxim; s'ha provat un valor més realista de 0.6 i els valors no canvien significativament).
+    \item $Q_g = 65 \cdot 10^{-9} \text{ C}$ (Càrrega de porta del MOSFET).
+    \item $I_{hbs} = 50 \cdot 10^{-6} \text{ A}$ (Corrent de fuga estàtic del driver \textit{high-side}).
+    \item $I_{hb} = 100 \cdot 10^{-6} \text{ A}$ (Corrent de polarització dinàmic del driver d'alt-costat).
+    \item $f_{sw} = 20 \cdot 10^{3} \text{ Hz}$ (Freqüència de commutació).
+    \item $V_{dd} = 10 \text{ V}$ (Tensió d'alimentació de la lògica).
+    \item $V_{dh} = 1 \text{ V}$ (Caiguda de tensió del díode bootstrap).
+    \item $V_{hbl} = 4.7 \text{ V}$ (Tensió mínima de referència de \textit{high-side}).
+    \item $V_{boot} = 12 \text{ V}$ (Tensió de referència per a càlculs de temps).
+\end{itemize}
+
+\subsubsection{Càlcul del Condensador Bootstrap ($C_{boot}$)}
+
+La càrrega total que el condensador ha de subministrar en cada cicle es calcula com la suma de la càrrega de la porta ($Q_g$) i la càrrega deguda als corrents de pèrdua ($I_{hbs}$ i $I_{hb}$) durant el període de commutació ($T_{sw} = 1/f_{sw}$):
+
+$$
+Q_{\text{total}} = Q_g + I_{hbs} \cdot \frac{D_{\text{max}}}{f_{sw}} + \frac{I_{hb}}{f_{sw}} = (65 \cdot 10^{-9}) + \frac{(50 \cdot 10^{-6}) \cdot 1}{20 \cdot 10^{3}} + \frac{100 \cdot 10^{-6}}{20 \cdot 10^{3}} = \SI{72.5}{ nC}
+$$
+
+La caiguda de tensió màxima acceptable en el condensador per garantir el correcte funcionament del driver és:
+
+$$
+\Delta V_{HV} = V_{dd} - V_{dh} - V_{hbl} = \Delta V_{HV} = 10 \text{ V} - 1 \text{ V} - 4.7 \text{ V} = 4.3 \text{ V}
+$$
+
+Així doncs, amb la següent relació:
+
+$$
+C_{boot} = \frac{Q_{\text{total}}}{\Delta V_{HV}} = \frac{72.5 \cdot 10^{-9} \text{ C}}{4.3 \text{ V}} \approx 16.86 \cdot 10^{-9} \text{ F} = \boxed{16.86 \text{ nF}}
+$$
+
+Aquest valor és el mínim per a que es compleixin les especificacions demanades. Per complir amb els requisits de forma segura i triar un valor de capacitat nominal, es faran servir capacitats de bootstrap de $C_{boot} = \SI{0.1}{\micro F}$.
+
+\subsubsection{Temps de Càrrega i Descàrrega}
+
+%S'avalua la capacitat del condensador de bootstrap per carregar-se (quan el MOSFET inferior està activat) i per mantenir la càrrega (quan el MOSFET superior està activat).
+
+Fem estimacions del temps que triga el condensador de bootstrap en carregar-se (quan el MOSFET inferior està activat) i descarregar-se (quan el MOSFET superior està activat). Dels \textit{datasheets} del MOSFET i del díode, trobem els següents valors característics:
+\begin{itemize}
+    \item $I_{\text{max}} = 150 \cdot 10^{-3} \text{ A}$ (Corrent de càrrega màxima del díode).
+    \item $I_{Vbs} = [20, 60, 100] \cdot 10^{-6} \text{ A}$ (Corrents de pèrdua mínim, típic i màxim del díode).
+\end{itemize}
+
+\subsubsection{Temps de Càrrega ($t_{Up}$)}
+
+El temps de càrrega es calcula amb l'aproximació lineal $t = (C \cdot V) / I$:
+
+$$
+t_{Up} = \frac{V_{boot} \cdot C_{boot}}{I_{\text{diode}}} =  \frac{12 \text{ V} \cdot 16.86 \cdot 10^{-9} \text{ F}}{150 \cdot 10^{-3} \text{ A}} \approx \boxed{1.349 \cdot 10^{-6} \text{ s}}
+$$
+
+\subsubsection{Temps de Descàrrega ($t_{Down}$)}
+
+El temps de descàrrega depèn del corrent de pèrdua $I_{Vbs}$:
+
+$$
+t_{\text{Down}} = \frac{V_{boot} \cdot C_{boot}}{I_{Vbs}}
+$$
+
+Els resultats per als diferents corrents són:
+\begin{align*}
+    t_{\text{Down, min}} &= \frac{12 \text{ V} \cdot 16.86 \cdot 10^{-9} \text{ F}}{20 \cdot 10^{-6} \text{ A}} \approx \boxed{10.12 \cdot 10^{-3} \text{ s}} \\
+    t_{\text{Down, typ}} &= \frac{12 \text{ V} \cdot 16.86 \cdot 10^{-9} \text{ F}}{60 \cdot 10^{-6} \text{ A}} \approx \boxed{3.37 \cdot 10^{-3} \text{ s}} \\
+    t_{\text{Down, max}} &= \frac{12 \text{ V} \cdot 16.86 \cdot 10^{-9} \text{ F}}{100 \cdot 10^{-6} \text{ A}} \approx \boxed{2.02 \cdot 10^{-3} \text{ s}}
+\end{align*}
+
+
+
+
+
+
+%\subsection{Capacitats de bootstrap}
+
+%Segons la documentació, la capacitat de bootstrap es pot trobar mitjançant la següent expressió:
+
+%\begin{equation}
+%    C_{boot} \ge \frac{Q_{total}}{\Delta V_{HB}}
+%\end{equation}
+
+%On $Q_{total}$ és la suma d'una sèrie de càrregues acumulades a cada cicle que cal considerar:
+
+%\begin{equation}
+ %   Q_{total} = Q_g + I_{HBS} \cdot \frac{D_{max}}{f_{sw}} + \frac{I_{HB}}{f_{sw}}
+%\end{equation}
+
+%$Q_g$ és la càrrega que cal aculumar a la gate per obrir el transistor (dada característica dels MOSFETs), $I_{HBS}$ és el corrent de fuita boost-font del driver, $I_{HB}$ és el corrent quiescent de l'entrada boost, $D_{max}$ és el valor màxim de duty cycle (trobat a l'apartat anterior), i $f_{sw}$ és la freqüència del senyal de commutació. Al datasheet del driver trobem:
+
+%\begin{equation*}
+ %   Q_g = 65nC \qquad I_{HBS} = 33,3\mu A \qquad I_{HB} = 130 \mu A
+%\end{equation*}
+
+%Incorporant aquests valors en el càlcul:
+
+\subsection{Consum del driver}
+
+Negligint els corrents de fuita, el consum dels drivers de commutació vindrà de carregar les portes dels MOSFETs, i de la seva pròpia dissipació. Podem estimar aquest consum amb:
+
+\begin{equation*}
+    P_{gate} \approx \frac{2}{3} \Delta V_g \Delta I_g = \frac{2}{3} \cdot \Delta V_g \cdot Q_g \cdot f_{PWM}
+\end{equation*}
+
+On $\Delta V_g \approx \SI{2}{V}$ és la tensió necessària per fer commutar el transistor. El factor de $\frac{2}{3}$ ve de que cada driver manté un dels dos MOSFETs actius durant $4/6 = 2/3$ dels estats, de manera que podem considerar-los com un sol MOSFET que està actiu durant $2/3$ d'un cicle. Substituïnt amb els valors trobats:
+
+\begin{equation*}
+    P_{gate} \approx \frac{2}{3} \cdot 2V \cdot \SI{65}{nC} \cdot 20 \text{ kHz} \approx \boxed{\SI{1.73}{mW}}
+\end{equation*}
+
+Per una altra banda, al datasheet s'indica un consum del driver de \SI{0.7}{mA} per una alimentació de \SI{12}{V} i una freqüència de treball de \SI{20}{kHz}. Aquesta potència se suma a la de gate per trobar el consum total del driver:
+
+\begin{equation*}
+    P_{driver} = P_{gate} + \SI{12}{V} \cdot \SI{0.7}{mA} = \boxed{\SI{10.13}{ mW}}
+\end{equation*}
+
+\subsection{Consum dels MOSFETs}
+
+Havent considerat la càrrega de les gates com a consum dels drivers, als MOSFETs trobarem pèrdues per conducció i per commutació. Les pèrdues per conducció són fruit de la resistència equivalent $R_{ds}$, que dissiparà potència quan el transistor estigui obert:
+
+\begin{equation*}
+    P_{cond} = D \cdot I_{d}^2 \cdot R_{ds}
+\end{equation*}
+
+Cal considerar el duty cycle $D$ perquè cada MOSFET només està encès durant aquesta fracció del temps que dura un cicle. A les simulacions s'observa que, durant un cicle de conducció, el corrent que circula per les bobines arriba a valors d'aproximadament $\SI{20}{A}$: prenem un valor mig del duty cycle de $D = 0.14$ considerant la programació de llaç tancat, i al datasheet dels MOSFETs trobem un valor de $R_{ds(on)} \approx \SI{0.027}{\Omega} $. Amb aquests valors ens queda:
+
+\begin{equation*}
+    P_{cond} = 0.14 \cdot (\SI{20}{A})^2 \cdot \SI{0.027}{\Omega} \approx \boxed{\SI{1.5}{W}}
+\end{equation*}
+
+Paral·lelament, tindrem pèrdues per commutació, que es donaran en l'interval de temps en el que la tensió DS puja, i el corrent $I_d$ baixa, sent els dos diferents de zero. Sigui $V_{ds} = \SI{12}{V}$ la tensió porta-font dels MOSFETs en tall, podem trobar la potència consumida per commutació cada cicle amb: 
+
+\begin{equation*}
+    P_{sw} = \frac{1}{2} \cdot V_{ds} \cdot I_d \cdot \frac{t_{rise} + t_{fall}}{T}
+\end{equation*}
+
+On $t_{rise}$ i $t_{fall}$ són el temps que necessita el MOSFET per fer una commutació OFF-ON i ON-OFF respectivament, i del datasheet veiem que són $\SI{60}{ns}$ i $\SI{69}{ns}$. $T$ és la durada d'un període en el que té lloc una commutació OFF-ON i una altra ON-OFF: correspon, per tant, al període de $PWM$. Substituïnt:
+
+\begin{equation*}
+    P_{sw} = \frac{1}{2} \cdot \SI{12}{V} \cdot \SI{20}{V} \cdot(\SI{60}{ns} + \SI{69}{ns}) \cdot \SI{20}{kHz} \approx \boxed{\SI{0.312}{\W}}
+\end{equation*}
+
+Observem que les pèrdues per conducció dominen el consum dels MOSFETs. Comentem, també, que una intensitat de 20A per una tensió drain-source de 12V (condicions límit) i un període de treball de $T = 1/f_{pwm} \approx 50\mu s$ es comprèn dins de la SOA indicada al datasheet, de manera que els MOSFETs operaran a una regió de treball adequada.
+
+\subsection{Resistència de gate dels MOSFETs}
+
+La resistència de gate actua com un element de protecció del circuit davant de commutacions d'alta velocitat, donant lloc a un filtre passa-baixos en ser connectada en sèrie amb la gate d'un condensador (que en aquest cas juga el paper de condensador): serveix per evitar oscil·lacions al sistema driver-MOSFET i limitar el corrent $I_g$. Com parlem del filtre generat, podem estimar la capacitat de gate amb la càrrega de gate i la tensió de commutació:
+
+\begin{equation*}
+    C_g \approx \frac{Q_g}{V_g} = \frac{\SI{65}{nC}}{\SI{2}{V}} = \SI{32.5}{nF}
+\end{equation*}
+
+Amb això estimem la freqüència de tall que volem donar al filtre, que serà lleugerament superior a la de commutació dels MOSFETs ($f_{PWM}$), però propera per limitar harmònics ressonants: posem $f_c = 2f_{PWM}$.
+
+\begin{equation}
+    f_c = \frac{1}{2\pi C_g R_g} \to R_g = \frac{1}{2 \pi C_g f_c} \approx \boxed{\SI{122}{\Omega}}
+\end{equation}
+
+Amb aquesta resistència, tindrem una intensitat de sortida del driver de:
+
+\begin{equation*}
+    I_{g} = \frac{V_g}{R_g} = \frac{2V}{122 \Omega} \approx \SI{16}{ mA}
+\end{equation*}
+
+Aquest valor està dins del SOA per la nostra freqüència de treball (20 kHz).
+
+\subsection{Capacitats de desacoblament}
+
+Trobarem les capacitats de desacoblament dels drivers a partir del consum màxim que esperem. Tenim que la intensitat prporcionada màxima es donarà just a l'instant de commutació, quan la càrrega de gate del transistor s'acumuli en un temps $t_{rise}$ o $t_{fall}$ (agafarem el que maximitzi el valor de la intensitat per trobar el cas límit). En aquest cas:
+
+\begin{equation*}
+    I_{peak} = \frac{Q_g}{\Delta t_{min}} = \frac{Q_g}{t_{rise}} = \frac{\SI{65}{nC}}{\SI{1.35}{\micro s}} = \SI{48.15}{mA}
+\end{equation*}
+
+A partir d'aquí podem trobar una estimació per la capacitat de desacoblament necessària per compensar aquestes variacions, si volem una variació de la tensió del 5\% com a molt: $\Delta V = 0.05\cdot \SI{12}{V}=\SI{0.6}{V}$.
+
+\begin{equation*}
+    Z = \frac{\Delta V}{\Delta I} ~~ \to ~~  C_{dec}^{min} = \frac{1}{2\pi f_{PWM} Z} = \frac{\Delta I}{2\pi f_{PWM} \Delta V} = \frac{\SI{48.15}{mA}}{2\pi \cdot \SI{20}{kHz} \cdot \SI{0.6}{V}} \approx \boxed{\SI{638.6}{nF}}
+\end{equation*}
+
+Per seguretat, agafarem $C_{dec}^{drivers} = \SI{6}{\micro F}$.
+
+\clearpage
+\subsection{Components del BEMF}
+Per tal de detectar la BEMF, es dissenya un circuit que simula el node intern del motor: un node neutre virtual. Així doncs, es construeix la figura d'estrella, la qual requereix que totes les resistències ($R_{star}$) siguin iguals. El valor concret no és especialment rellevant, però escollim un valor prou gran com perquè el corrent que hi circuli sigui prou petit (que la potència l'absorbeixi el motor enlloc del circuit de detecció) però prou petit com per evitar problemes de metaestabilitat (evitem valors de M$\Omega$s). Així doncs, s'opten per resistències d'$1 \text{ k}\Omega$.
+
+Per tal de poder fer anar els comparadors correctament (mesurar els passos per 0), s'incorporen divisors de tensió a cadascun dels nodes de fase i al node neutre virtual per a escalar-los a un rang menor (tots els nodes escalats en la mateixa proporció). Per tal d'aconseguir que els nodes tinguin, com a màxim, $3.3$ V, es fan servir resistències amb una relació de màxim $\frac{R_{div}^{L}}{R_{div}^{H}} \leq \frac{1}{3}$. Per tal d'aconseguir aquesta relació (una més petita per si de cas), s'escullen els valors $R_{div}^{H} = 33 \text{k}\Omega$ i $R_{div}^{L} = 12 \text{ k}\Omega$. A més de respectar la relació buscada, són valors prou més grans que $R_{star}$ com per evitar que hi hagi fuites significatives que trenquin la simetria del node neutre virtual. Independentment del valor nominal de $R_{star}$, sí que cal assegurar-se que els valors són el més propers possible entre sí, de manera que és interessant fer servir resistències de baixa tolerància.
+
+Pel que fa a la capacitat de \textit{bypass}, el requeriment és que filtri les oscil·lacions del senyal PWM per tal que no interfereixin amb la mesura de la BEMF (que depèn de la freqüència de gir del motor). Així doncs, a més de filtrar les oscil·lacions del PWM ha de deixar passar les del motor: $f_{motor} << f_{filtre} << f_{PWM}$. Qualitativament, treballarem amb $f_{PWM} = 20\text{ kHz}$ i $f_{motor} = f_{motor}(12 \text{ V}) = 1.287\text{ kHz}$ ja que representen els pitjors possibles casos (cota superior mínima i cota inferior màxima)
+
+Per tal de calcular la freqüència de tall del filtre generat per la capacitat de \textit{bypass}, cal tenir en compte totes les resistències en acció durant cada fase. Així doncs, si agafem una fase qualsevol (i entenent que la bobina actua com un curt-circuit donat que la freqüència del rotor es baixa), la resistència equivalent serà la composició de les resistències de la bobina, les resistències en estrella, i les dels divisors de tensió de la fase escollida i del node neutre virtual.
+
+Així doncs, ens queda la següent resistència equivalent (agafant la fase A):
+
+$$
+    R_{eq} = ((R_m^A + (R_m^B ~||~ R_m^C)) ~||~ (R_{star} + (R_{star} ~||~ R_{star} ~||~ (R_{div}^H + R_{div}^L))) + R_{div}^H + R_{div}^L
+$$
+$$
+    R_{eq} = \left(\left(\SI{0.8}{\ohm} + (\SI{0.8}{\ohm} \parallel \SI{0.8}{\ohm})\right) \parallel \left(\SI{1}{\kilo\ohm} + \left(\SI{1}{\kilo\ohm} \parallel \SI{1}{\kilo\ohm} \parallel (\SI{33}{\kilo\ohm} + \SI{12}{\kilo\ohm})\right)\right)\right) + \SI{33}{\kilo\ohm} + \SI{12}{\kilo\ohm} \approx \boxed{\SI{45}{\kilo\ohm}}
+$$
+
+Agafant $C_{bypass} = \SI{4.7}{\nano\F}$:
+
+$$
+    f_{filt} = \frac{1}{2 \pi R_{eq} C_{bypass}} = f_{filt} = \frac{1}{2 \pi \cdot \SI{45}{\kilo\ohm} \cdot \SI{4.7}{\nano\F}} = \SI{953.25}{\Hz}
+$$
+
+Si comparem amb la freqüència elèctrica màxima assolible amb el \textit{duty-cycle} màxim, ens trobem que:
+$$
+    f_{motor}^{elec}(D=0.74) = \SI{955.12}{Hz} \approx f_{filt}
+$$
+Així doncs, podem concloure que els valors escollits són apropiats i coherents.
+
+\subsection{Verificació de l'anàlisi}
+
+Un cop realitzats els càlculs, podem tornar a dur a terme algunes simulacions per comprovar el correcte funcionament dels components dimensionats. No podem simular les capacitats de desacoblament perquè LTSpice treballa amb fonts de tensió ideals: podem estudiar, però, les capacitats de bootstrap i el filtre dissenyat per filtrar els senyals de detecció de la BEMF.
+
+\begin{center}
+    \includegraphics[width=\linewidth]{images/c_boot.png}
+    \captionof{figure}{Diferència de potencial entre les plaques del condensador de bootstrap durant l'excitació de la fase superior amb senyal $pwm$.}
+\end{center}
+
+Es pot veure com, per una commutació $pwm$ i un duty cycle de $D=0.2$, la tensió del condensador de bootstrap varia uns 100mV, que és una variació més que suficient per una alimentació de 12V (menys d'un 1\%). Per tant, considerem que els condensadors de bootstrap estan ben dimensionats.
+
+
+\begin{center}
+    \includegraphics[width=\linewidth]{images/bode_cbypass.png}
+    \captionof{figure}{Diagrama de Bode del filtre format per la resistència equivalent del circuit de node virtual i la capacitat de bypass.}
+\end{center}
+
+Pel que fa a la resposta en freqüència del filtre format als comparadors, a primera vista s'observa un comportament clarament de filtre passa-baixos amb un pol centrat al voltant de 1 kHz, que correspon justament al comportament desitjat: volem detectar el senyal de gir del motor, de l'ordre de 100Hz, i filtrar la freqüència de $pwm$, de l'ordre de 10 kHz. Amb una mica més d'atenció s'observa un comportament més complex que un filtre passa-baixos de primer ordre: això pot haver succeït perquè s'ha realitzat l'escombrat en freqüències amb el sistema sencer connectat, i aquest presenta diversos comportaments capacitius i inductius que van més enllà del disseny d'aquest filtre. Tot i així, la resposta del muntatge és justament la desitjada.
+
+
+\section{Conclusions}
+Donada l'arquitectura i disseny proposats, podem concloure que, tot i no ser un disseny òptim, presenta un bon balanç entre la complexitat del sistema (tant de \textit{hardware} com a nivell computacional) i la funcionalitat. Donat que no es tenen requeriments molt demandants (com podria ser la necessitat de regeneració energètica), el disseny proposat compleix especificacions. Tot i així, el disseny de la PCB es farà de tal manera que sigui possible implementar el control amb PWM per a totes les fases tant al \textit{high-side} com al \textit{low-side} per tal de fer el sistema més flexible i \textit{future-proof}.
+
+\clearpage
+\section{Annex}
+\subsection{SVPWM} \label{SVPWM}
+La modulació SVPWM (Space Vector Pulse Width Modulation) és una tècnica de modulació avançada per inversors trifàsics, que permet sintetitzar una tensió de sortida vectorial rotativa quasi sinusoidal amb una millor utilització de la tensió del bus DC (fins a un 15\% més que PWM sinusoidal convencional). Funciona seleccionant combinacions òptimes de vectors d’estat de l’inversor per aproximar el vector de referència, mitjançant el càlcul dels temps d’activació dels vectors actius i zero dins de cada període de commutació. \\
+
+Tot i que el SVPWM es dissenya habitualment per a inversors amb control total dels sis interruptors (control PWM tant dels 3 MOSFET high-side com dels 3 low-side), es pot implementar una versió simplificada utilitzant només tres canals PWM per als MOSFET de la part alta i tres GPIO per als MOSFET de la part baixa. En aquest esquema, els PWM generen la modulació sobre els MOSFET high-side, mentre que els GPIO activen o desactiven els low-side en funció del sector SVPWM i del cicle de treball corresponent.
+
+\subsubsection{Implementació amb només 3 PWM i 3 GPIO}
+La implementació es basa a calcular, per a cada sector del pla vectorial (6 sectors en total), els valors de cicle útil per a les tres fases, i activar els GPIO corresponents de manera que es permeti el pas de corrent quan el PWM està actiu. Durant els períodes corresponents al vector zero, es poden posar els tres GPIO en estat LOW per aconseguir un estat de flotació o desconnexió momentània. Tot i que no es disposa de control complementari ple ni d'injecció simètrica de vectors zero (000 i 111), aquest mètode és suficient per obtenir una modulació amb menor ondulació de parell i menor distorsió respecte a la commutació trapezoidal. \\
+
+S'han de sincronitzar els canvis d'estat dels GPIO amb els períodes actius dels PWM per evitar condicions de “shoot-through”. Això es pot fer amb temporitzadors i interrupcions sincronitzades amb la base de temps dels PWM, o amb DMA (si el microcontrolador ho permet). A més, s’ha de garantir un temps mort (dead time) suficient, especialment si els \textit{drivers} no l’implementen de forma interna. \\
+
+Aquesta aproximació a SVPWM és especialment útil en sistemes amb recursos limitats o microcontroladors amb només tres canals PWM disponibles, i permet una millora notable del rendiment dinàmic, del soroll i de l’eficiència global del motor, tot mantenint una arquitectura de control relativament senzilla.
+
+\subsection{\textit{Observer-based Sensorless Estimation}} \label{observer}
+
+Els observadors estimen la posició i velocitat del rotor a partir de mesures de tensió i dos corrents de fase, utilitzant un model matemàtic del motor. Són útils especialment en condicions on la detecció directa de la BEMF no és fiable (principalment règims de baixes velocitats).
+
+\subsubsection*{Principals tècniques}
+
+\begin{itemize}
+    \item \textbf{Sliding Mode Observer (SMO):} Estima la BEMF mitjançant control en mode lliscant \footnote{https://onlinedocs.microchip.com/oxy/GUID-69278EBA-9F00-4CEE-8103-2998236856BD-en-US-2/GUID-35A8184A-104E-44B9-BABA-6C4F978ADBF1.html}. Robust a soroll i variacions paramètriques.
+    \item \textbf{Extended Kalman Filter (EKF):} Filtre adaptatiu que proporciona estimacions òptimes en presència d’incertesa, però suposa una major càrrega computacional.
+    \item \textbf{Model Reference Adaptive System (MRAS):} Compara un model de referència amb un model adaptatiu per ajustar la posició estimada, amb menor complexitat que l’EKF.
+\end{itemize}
+
+\end{document}
