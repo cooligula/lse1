@@ -40,19 +40,68 @@ void ComparatorController::setup(void (*interruptHandler)(void))
     MAP_IntEnable(INT_GPIOF); // 46
 }
 
+void ComparatorController::disableAllInterrupts()
+{
+    MAP_GPIOIntDisable(COMP1_GPIO_BASE, COMP_PORTC_PINS); // Disables 1 and 2
+    MAP_GPIOIntDisable(COMP3_GPIO_BASE, COMP_PORTF_PINS); // Disables 3
+}
+
+void ComparatorController::configComparatorInt(ComparatorID id, bool enable, uint32_t edgeType)
+{
+    uint32_t gpioBase;
+    uint32_t gpioPin;
+
+    // Map ID to the specific hardware definitions
+    switch(id)
+    {
+        case COMP_1:
+            gpioBase = COMP1_GPIO_BASE; // GPIO_PORTC_BASE
+            gpioPin  = COMP1_GPIO_PIN;  // GPIO_PIN_4
+            break;
+        case COMP_2:
+            gpioBase = COMP2_GPIO_BASE; // GPIO_PORTC_BASE
+            gpioPin  = COMP2_GPIO_PIN;  // GPIO_PIN_6
+            break;
+        case COMP_3:
+            gpioBase = COMP3_GPIO_BASE; // GPIO_PORTF_BASE
+            gpioPin  = COMP3_GPIO_PIN;  // GPIO_PIN_2
+            break;
+        default:
+            return; // Invalid ID
+    }
+
+    // Configure the edge type
+    // We only set the type if we are enabling, or we can set it regardless.
+    // Setting it regardless is safer for the next time it is enabled.
+    MAP_GPIOIntTypeSet(gpioBase, gpioPin, edgeType);
+
+    // 3. Enable or Disable the specific pin interrupt
+    if (enable)
+    {
+        MAP_GPIOIntEnable(gpioBase, gpioPin);
+    }
+    else
+    {
+        MAP_GPIOIntDisable(gpioBase, gpioPin);
+    }
+}
+
+
 /**
  * @brief Sets the interrupt trigger type for all comparator pins.
  */
+ /*
 void ComparatorController::setInterruptType(uint32_t ui32IntType)
 {
     // Set the interrupt type for both ports
     MAP_GPIOIntTypeSet(COMP1_GPIO_BASE, COMP_PORTC_PINS, ui32IntType);
     MAP_GPIOIntTypeSet(COMP3_GPIO_BASE, COMP_PORTF_PINS, ui32IntType);
 }
-
+*/
 /**
  * @brief Enables or disables the interrupts on all comparator GPIO pins.
  */
+ /*
 void ComparatorController::enableInterrupts(bool enable)
 {
     if (enable)
@@ -68,3 +117,4 @@ void ComparatorController::enableInterrupts(bool enable)
         MAP_GPIOIntDisable(COMP3_GPIO_BASE, COMP_PORTF_PINS);
     }
 }
+*/

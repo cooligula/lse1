@@ -5,7 +5,7 @@
    <string>defaultSolution</string>
    <void method="set">
     <object idref="SolutionManager$PersistState0"/>
-    <string>/home/adria/s3drive_crypt_webdav_frts/University/13e/lse1/lse1/sw/dvt/AnalysisSolutionsTemp/AnalysisSolution1762966382014/null</string>
+    <string>/home/adria/ti/ccs1281/ccs/ccs_base/dvt_4.1.0.202307061549/CodeGen/solutions/CodeGenCoverage</string>
    </void>
   </void>
  </object>
@@ -14,10 +14,10 @@
  <void id="ArrayList0" method="get">
   <object idref="SolutionManager$PersistState0"/>
   <void method="add">
-   <string>/home/adria/ti/ccs1281/ccs/ccs_base/dvt_4.1.0.202307061549/CodeGen/solutions/CodeGenCoverage</string>
+   <string>/home/adria/s3drive_crypt_webdav_frts/University/13e/lse1/lse1/sw/dvt/AnalysisSolutionsTemp/AnalysisSolution1763563593321/null</string>
   </void>
   <void method="add">
-   <string>/home/adria/s3drive_crypt_webdav_frts/University/13e/lse1/lse1/sw/dvt/AnalysisSolutionsTemp/AnalysisSolution1762966382014/null</string>
+   <string>/home/adria/ti/ccs1281/ccs/ccs_base/dvt_4.1.0.202307061549/CodeGen/solutions/CodeGenCoverage</string>
   </void>
  </void>
 </void>

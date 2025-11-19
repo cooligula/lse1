@@ -24,6 +24,12 @@
 #define INT_GPIOC 18
 #define INT_GPIOF 46
 
+enum ComparatorID {
+    COMP_1 = 0,
+    COMP_2 = 1,
+    COMP_3 = 2
+};
+
 /**
  * @brief A class to abstract reading and setting up the hardware comparators.
  *
@@ -40,19 +46,32 @@ public:
     void setup(void (*interruptHandler)(void));
 
     /**
+     * @brief Configures a specific comparator interrupt.
+     * @param id The comparator to configure (COMP_1, COMP_2, or COMP_3).
+     * @param enable true to enable this specific interrupt, false to disable it.
+     * @param edgeType The trigger type (e.g., GPIO_RISING_EDGE, GPIO_FALLING_EDGE).
+     */
+    void configComparatorInt(ComparatorID id, bool enable, uint32_t edgeType);
+
+    /**
+     * @brief Disables interrupts for all comparators.
+     */
+    void disableAllInterrupts();
+    
+    /**
      * @brief Sets the interrupt trigger type for all comparator pins.
      * @param ui32IntType The type of interrupt trigger:
      * - GPIO_RISING_EDGE
      * - GPIO_FALLING_EDGE
      * - GPIO_BOTH_EDGES
      */
-    void setInterruptType(uint32_t ui32IntType);
+    //void setInterruptType(uint32_t ui32IntType);
 
     /**
      * @brief Enables or disables the interrupts on all comparator GPIO pins.
      * @param enable true to enable interrupts, false to disable.
      */
-    void enableInterrupts(bool enable);
+    //void enableInterrupts(bool enable);
 
     /**
      * @brief Reads the state of Comparator 1 (A)

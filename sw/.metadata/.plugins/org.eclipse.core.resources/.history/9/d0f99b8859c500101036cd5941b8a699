@@ -43,7 +43,6 @@ uint8_t RiseFall = 0;
 /**
  * @brief updateClosedLoopState
  */
-/*
 void updateClosedLoopState() {//(bool A, bool B, bool C) {
 
     mosfets.Ph1A(A && !B);
@@ -54,7 +53,79 @@ void updateClosedLoopState() {//(bool A, bool B, bool C) {
     mosfets.Ph2B(!B && C);
     mosfets.Ph3B(!C && A);
 }
-*/
+
+extern void GPIOInt(void) {
+    // Disable interrupts
+    comps.disableAllInterrupts();
+
+    /*
+    // Clear interrupt flags
+    uint32_t portCStatus = MAP_GPIOIntStatus(GPIO_PORTC_BASE, true);
+    uint32_t portFStatus = MAP_GPIOIntStatus(GPIO_PORTF_BASE, true);
+
+    // Read comparators
+    bool A = (portCStatus & COMP1_GPIO_PIN) != 0; // Comp1
+    bool B = (portCStatus & COMP2_GPIO_PIN) != 0; // Comp2
+    bool C = (portFStatus & COMP3_GPIO_PIN) != 0; // Comp3
+
+    volatile bool chumba = (portFStatus & COMP3_GPIO_PIN) != 0; // Comp3
+    */
+
+    switch (state) {
+        case S1:
+            // Enable interrupt from comp 1
+            state = S2;
+            comps.configComparatorInt(COMP_1, true, GPIO_RISING_EDGE); 
+            break;
+
+        case S2:
+            // Enable interrupt from comp 2
+            state = S3;
+            comps.configComparatorInt(COMP_2, true, GPIO_RISING_EDGE);
+            break;
+
+        case S3:
+            // Enable interrupt from comp 3
+            state = S4;
+            comps.configComparatorInt(COMP_3, true, GPIO_RISING_EDGE);
+            break;
+
+        case S4:
+            // Enable interrupt from comp 1 (but now on the other edge)
+            state = S5;
+            comps.configComparatorInt(COMP_1, true, GPIO_FALLING_EDGE);
+            break;
+
+        case S5:
+            // Enable interrupt from comp 2 (but now on the other edge)
+            state = S6;
+            comps.configComparatorInt(COMP_2, true, GPIO_FALLING_EDGE);
+            break;
+
+        case S6:
+            // Enable interrupt from comp 3 (but now on the other edge)
+            state = S1;
+            comps.configComparatorInt(COMP_3, true, GPIO_FALLING_EDGE);
+            break;
+    }
+
+    comps.clearInterrupts();
+    updateState(state);
+
+    /*
+    RiseFall ^= 1;
+
+    if (RiseFall)
+        comps.setInterruptType(GPIO_RISING_EDGE);
+    else
+        comps.setInterruptType(GPIO_FALLING_EDGE);
+
+    updateClosedLoopState();
+
+    // Reenable interrupts
+    comps.enableInterrupts(1);
+    */
+}
 
 /**
  * @brief updateState
@@ -127,85 +198,6 @@ void updateState(int state){
             mosfets.Ph3B(false);
             break;
     }
-}
-
-extern void GPIOInt(void) {
-    // Disable interrupts
-    comps.disableAllInterrupts();
-
-    /*
-    // Clear interrupt flags
-    uint32_t portCStatus = MAP_GPIOIntStatus(GPIO_PORTC_BASE, true);
-    uint32_t portFStatus = MAP_GPIOIntStatus(GPIO_PORTF_BASE, true);
-
-    // Read comparators
-    bool A = (portCStatus & COMP1_GPIO_PIN) != 0; // Comp1
-    bool B = (portCStatus & COMP2_GPIO_PIN) != 0; // Comp2
-    bool C = (portFStatus & COMP3_GPIO_PIN) != 0; // Comp3
-
-    volatile bool chumba = (portFStatus & COMP3_GPIO_PIN) != 0; // Comp3
-    */
-
-    switch (state) {
-        case S1:
-            // Enable interrupt from comp 1
-            state = S2;
-            comps.configComparatorInt(COMP_1, true, GPIO_RISING_EDGE); 
-            break;
-
-        case S2:
-            // Enable interrupt from comp 2
-            state = S3;
-            comps.configComparatorInt(COMP_2, true, GPIO_RISING_EDGE);
-            break;
-
-        case S3:
-            // Enable interrupt from comp 3
-            state = S4;
-            comps.configComparatorInt(COMP_3, true, GPIO_RISING_EDGE);
-            break;
-
-        case S4:
-            // Enable interrupt from comp 1 (but now on the other edge)
-            state = S5;
-            comps.configComparatorInt(COMP_1, true, GPIO_FALLING_EDGE);
-            break;
-
-        case S5:
-            // Enable interrupt from comp 2 (but now on the other edge)
-            state = S6;
-            comps.configComparatorInt(COMP_2, true, GPIO_FALLING_EDGE);
-            break;
-
-        case S6:
-            // Enable interrupt from comp 3 (but now on the other edge)
-            state = S1;
-            comps.configComparatorInt(COMP_3, true, GPIO_FALLING_EDGE);
-            break;
-
-        case STOP:
-            // Enable interrupt from comp 3 (but now on the other edge)
-            state = S1;
-            comps.configComparatorInt(COMP_3, true, GPIO_FALLING_EDGE);
-            break;
-    }
-
-    comps.clearInterrupts();
-    updateState(state);
-
-    /*
-    RiseFall ^= 1;
-
-    if (RiseFall)
-        comps.setInterruptType(GPIO_RISING_EDGE);
-    else
-        comps.setInterruptType(GPIO_FALLING_EDGE);
-
-    updateClosedLoopState();
-
-    // Reenable interrupts
-    comps.enableInterrupts(1);
-    */
 }
 
 
