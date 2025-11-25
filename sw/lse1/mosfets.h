@@ -125,6 +125,25 @@ public:
     }
 
     /**
+     * @brief Update duty cycle value
+     * @param duty_cycle The width of the desired pulse (in seconds).
+     */
+    void updateDuty(float ui32Width) {
+
+        // Pulse Width for all three outputs
+        MAP_PWMPulseWidthSet(PWM0_BASE, PWM_OUT_3, ui32Width); // 1A (PB5)
+        MAP_PWMPulseWidthSet(PWM0_BASE, PWM_OUT_5, ui32Width); // 2A (PE5)
+        MAP_PWMPulseWidthSet(PWM1_BASE, PWM_OUT_2, ui32Width); // 3A (PA6)
+
+        // Set pulse widths for low-side if they are PWMs
+        #ifdef USE_PWM_LOW_SIDE
+        MAP_PWMPulseWidthSet(LOW_1B_PWM_BASE, LOW_1B_PWM_OUT_BIT, ui32Width); // 1B (PE4)
+        MAP_PWMPulseWidthSet(LOW_2B_PWM_BASE, LOW_2B_PWM_OUT_BIT, ui32Width); // 2B (PB4)
+        MAP_PWMPulseWidthSet(LOW_3B_PWM_BASE, LOW_3B_PWM_OUT_BIT, ui32Width); // 3B (PA7)
+        #endif
+    }
+
+    /**
      * @brief Turn all 6 MOSFETs off.
      */
     void allOff() {

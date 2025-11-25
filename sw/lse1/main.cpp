@@ -40,6 +40,11 @@ int state = STOP;
 
 uint8_t RiseFall = 0;
 
+const int N = 10;
+
+float freqfase[N+1];
+float dutys[N+1];
+
 /**
  * @brief updateClosedLoopState
  */
@@ -190,7 +195,10 @@ extern void GPIOInt(void) {
             break;
     }
 
+    // Clear interrupt flags
     comps.clearInterrupts();
+
+    // Update closed-loop state
     updateState(state);
 
     /*
@@ -215,6 +223,7 @@ extern void GPIOInt(void) {
 int
 main(void)
 {
+
     // Set the clocking to run directly from the external crystal/oscillator.
     MAP_SysCtlClockSet(SYSCTL_SYSDIV_1 | SYSCTL_USE_OSC | SYSCTL_OSC_MAIN |
                        SYSCTL_XTAL_16MHZ);
@@ -230,25 +239,44 @@ main(void)
     // Disable interrupts, setup and reenable interrupts
     MAP_IntMasterDisable();
     comps.setup(GPIOInt);
-    MAP_IntMasterEnable();
 
     updateState(state); // This will now call mosfets.allOff()
 
     float phase_period = 4e-3;
+    int cyclesPerStep = 24;
 
-    while(1)
-    {
-
-        // state += 1;
-        // state %= 6; // Cycle from 0 to 5 (s1 -> s6)
-        
-        // updateState(state); // This now uses the new, clean mosfet controller
-        // updateClosedLoopState();
-        // MAP_SysCtlDelay((MAP_SysCtlClockGet() * phase_period) / 3);
-
-        // if (phase_period > 1.2e-3)
-        //     phase_period -= 1e-6;
-        // else
-        //     phase_period = 4e-3;
+    // Find the open-loop ramp trajectory
+    for (int i=0; i<=N; i++) {
+        freqfase[i] = 4e-3 - 2.6e-3 * i/N;
+        dutys[i] = (0.18 - 0.04 * i/N) / pwm_freq;
     }
+
+
+    // Rampa open loop
+    for (int i = 0; i<=N; i++) {
+
+        // Update duty
+        mosfets.updateDuty(dutys[i]);
+
+        // Wait a few phase cycles for stability
+        for (int j = 0; j <= cyclesPerStep; j++){
+            // Advance states
+            state += 1;
+            state %= 6;
+            updateState(state);
+            
+            // Wait the corresponding phase period
+            MAP_SysCtlDelay((MAP_SysCtlClockGet() * freqfase[i]) / 3);
+        }
+
+    }
+
+    // Enable comparator interruptions, entering CL control
+    MAP_IntMasterEnable();
+
+    // Run indefinitely
+    while(1){
+
+    }
+    
 }
