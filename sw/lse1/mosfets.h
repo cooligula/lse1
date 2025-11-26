@@ -49,7 +49,7 @@
  * @brief Control the 6 MOSFETs for the BLDC driver.
  *
  * This class abstracts the high-side (PWM) and low-side (GPIO or PWM)
- * control into simple Ph1A(bool), Ph1B(bool), etc. methods.
+ * control into simple 1A(bool), 1B(bool), etc. methods.
  */
 class MosfetController
 {
@@ -65,7 +65,7 @@ public:
      * @brief Control Phase 1 High-Side MOSFET (1A)
      * @param enable true to enable PWM output, false to disable.
      */
-    void Ph1A(bool enable) {
+    void 1A(bool enable) {
         MAP_PWMOutputState(HIGH_1A_PWM_BASE, HIGH_1A_PWM_OUT_BIT, enable);
     }
 
@@ -73,7 +73,7 @@ public:
      * @brief Control Phase 2 High-Side MOSFET (2A)
      * @param enable true to enable PWM output, false to disable.
      */
-    void Ph2A(bool enable) {
+    void 2A(bool enable) {
         MAP_PWMOutputState(HIGH_2A_PWM_BASE, HIGH_2A_PWM_OUT_BIT, enable);
     }
 
@@ -81,7 +81,7 @@ public:
      * @brief Control Phase 3 High-Side MOSFET (3A)
      * @param enable true to enable PWM output, false to disable.
      */
-    void Ph3A(bool enable) {
+    void 3A(bool enable) {
         MAP_PWMOutputState(HIGH_3A_PWM_BASE, HIGH_3A_PWM_OUT_BIT, enable);
     }
 
@@ -89,7 +89,7 @@ public:
      * @brief Control Phase 1 Low-Side MOSFET (1B)
      * @param enable true to turn on (GPIO high or PWM enabled), false to turn off.
      */
-    void Ph1B(bool enable) {
+    void 1B(bool enable) {
     #ifdef USE_PWM_LOW_SIDE
         MAP_PWMOutputState(LOW_1B_PWM_BASE, LOW_1B_PWM_OUT_BIT, enable);
     #else
@@ -102,7 +102,7 @@ public:
      * @brief Control Phase 2 Low-Side MOSFET (2B)
      * @param enable true to turn on (GPIO high or PWM enabled), false to turn off.
      */
-    void Ph2B(bool enable) {
+    void 2B(bool enable) {
     #ifdef USE_PWM_LOW_SIDE
         MAP_PWMOutputState(LOW_2B_PWM_BASE, LOW_2B_PWM_OUT_BIT, enable);
     #else
@@ -115,7 +115,7 @@ public:
      * @brief Control Phase 3 Low-Side MOSFET (3B)
      * @param enable true to turn on (GPIO high or PWM enabled), false to turn off.
      */
-    void Ph3B(bool enable) {
+    void 3B(bool enable) {
     #ifdef USE_PWM_LOW_SIDE
         MAP_PWMOutputState(LOW_3B_PWM_BASE, LOW_3B_PWM_OUT_BIT, enable);
     #else
@@ -147,12 +147,12 @@ public:
      * @brief Turn all 6 MOSFETs off.
      */
     void allOff() {
-        Ph1A(false);
-        Ph2A(false);
-        Ph3A(false);
-        Ph1B(false);
-        Ph2B(false);
-        Ph3B(false);
+        1A(false);
+        2A(false);
+        3A(false);
+        1B(false);
+        2B(false);
+        3B(false);
     }
 };
 

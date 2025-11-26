@@ -51,13 +51,13 @@ float dutys[N+1];
 /*
 void updateClosedLoopState() {//(bool A, bool B, bool C) {
 
-    mosfets.Ph1A(A && !B);
-    mosfets.Ph2A(B && !C);
-    mosfets.Ph3A(C && !A);
+    mosfets.1A(A && !B);
+    mosfets.2A(B && !C);
+    mosfets.3A(C && !A);
     
-    mosfets.Ph1B(!A && B);
-    mosfets.Ph2B(!B && C);
-    mosfets.Ph3B(!C && A);
+    mosfets.1B(!A && B);
+    mosfets.2B(!B && C);
+    mosfets.3B(!C && A);
 }
 */
 
@@ -73,63 +73,63 @@ void updateState(int state){
             break;
             
         case S1:
-            mosfets.Ph1A(true);
-            mosfets.Ph2A(false);
-            mosfets.Ph3A(false);
+            mosfets.1A(true);
+            mosfets.2A(false);
+            mosfets.3A(false);
             
-            mosfets.Ph1B(false);
-            mosfets.Ph2B(true);
-            mosfets.Ph3B(false);
+            mosfets.1B(false);
+            mosfets.2B(true);
+            mosfets.3B(false);
             break;
             
         case S2:
-            mosfets.Ph1A(true);
-            mosfets.Ph2A(false);
-            mosfets.Ph3A(false);
+            mosfets.1A(true);
+            mosfets.2A(false);
+            mosfets.3A(false);
             
-            mosfets.Ph1B(false);
-            mosfets.Ph2B(false);
-            mosfets.Ph3B(true);
+            mosfets.1B(false);
+            mosfets.2B(false);
+            mosfets.3B(true);
             break;
             
         case S3:
-            mosfets.Ph1A(false);
-            mosfets.Ph2A(true);
-            mosfets.Ph3A(false);
+            mosfets.1A(false);
+            mosfets.2A(true);
+            mosfets.3A(false);
             
-            mosfets.Ph1B(false);
-            mosfets.Ph2B(false);
-            mosfets.Ph3B(true);
+            mosfets.1B(false);
+            mosfets.2B(false);
+            mosfets.3B(true);
             break;
             
         case S4:
-            mosfets.Ph1A(false);
-            mosfets.Ph2A(true);
-            mosfets.Ph3A(false);
+            mosfets.1A(false);
+            mosfets.2A(true);
+            mosfets.3A(false);
             
-            mosfets.Ph1B(true);
-            mosfets.Ph2B(false);
-            mosfets.Ph3B(false);
+            mosfets.1B(true);
+            mosfets.2B(false);
+            mosfets.3B(false);
             break;
             
         case S5:
-            mosfets.Ph1A(false);
-            mosfets.Ph2A(false);
-            mosfets.Ph3A(true);
+            mosfets.1A(false);
+            mosfets.2A(false);
+            mosfets.3A(true);
             
-            mosfets.Ph1B(true);
-            mosfets.Ph2B(false);
-            mosfets.Ph3B(false);
+            mosfets.1B(true);
+            mosfets.2B(false);
+            mosfets.3B(false);
             break;
             
         case S6:
-            mosfets.Ph1A(false);
-            mosfets.Ph2A(false);
-            mosfets.Ph3A(true);
+            mosfets.1A(false);
+            mosfets.2A(false);
+            mosfets.3A(true);
             
-            mosfets.Ph1B(false);
-            mosfets.Ph2B(true);
-            mosfets.Ph3B(false);
+            mosfets.1B(false);
+            mosfets.2B(true);
+            mosfets.3B(false);
             break;
     }
 }
