@@ -1,0 +1,55 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+SHELL = cmd.exe
+
+# Add inputs and outputs from these tool invocations to the build variables 
+CPP_SRCS += \
+../comparators.cpp \
+../main.cpp \
+../mosfets.cpp 
+
+CMD_SRCS += \
+../pwm_invert_ccs.cmd 
+
+C_SRCS += \
+../startup_ccs.c 
+
+C_DEPS += \
+./startup_ccs.d 
+
+OBJS += \
+./comparators.obj \
+./main.obj \
+./mosfets.obj \
+./startup_ccs.obj 
+
+CPP_DEPS += \
+./comparators.d \
+./main.d \
+./mosfets.d 
+
+OBJS__QUOTED += \
+"comparators.obj" \
+"main.obj" \
+"mosfets.obj" \
+"startup_ccs.obj" 
+
+C_DEPS__QUOTED += \
+"startup_ccs.d" 
+
+CPP_DEPS__QUOTED += \
+"comparators.d" \
+"main.d" \
+"mosfets.d" 
+
+CPP_SRCS__QUOTED += \
+"../comparators.cpp" \
+"../main.cpp" \
+"../mosfets.cpp" 
+
+C_SRCS__QUOTED += \
+"../startup_ccs.c" 
+
+

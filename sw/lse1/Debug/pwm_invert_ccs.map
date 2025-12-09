@@ -1,34 +1,31 @@
 ******************************************************************************
                   TI ARM Linker PC v20.2.7                     
 ******************************************************************************
->> Linked Wed Nov 19 18:44:15 2025
+>> Linked Tue Dec  9 18:51:55 2025
 
 OUTPUT FILE NAME:   <lse1.out>
-ENTRY POINT SYMBOL: "_c_int00_noargs"  address: 0000125d
+ENTRY POINT SYMBOL: "_c_int00_noargs"  address: 000006c1
 
 
 MEMORY CONFIGURATION
 
          name            origin    length      used     unused   attr    fill
 ----------------------  --------  ---------  --------  --------  ----  --------
-  FLASH                 00000000   00040000  0000154a  0003eab6  R  X
-  SRAM                  20000000   00008000  000004cb  00007b35  RW X
+  FLASH                 00000000   00040000  00000738  0003f8c8  R  X
+  SRAM                  20000000   00008000  00000201  00007dff  RW X
 
 
 SEGMENT ALLOCATION MAP
 
 run origin  load origin   length   init length attrs members
 ----------  ----------- ---------- ----------- ----- -------
-00000000    00000000    00001550   00001550    r-x
+00000000    00000000    0000073c   0000073c    r-x
   00000000    00000000    0000026c   0000026c    r-- .intvecs
-  0000026c    0000026c    000010f2   000010f2    r-x .text
-  00001360    00001360    000001ac   000001ac    r-- .const
-  00001510    00001510    00000040   00000040    r-- .cinit
-20000000    20000000    000004d1   00000000    rw-
-  20000000    20000000    0000026c   00000000    rw- .vtable
-  20000270    20000270    00000200   00000000    rw- .stack
-  20000470    20000470    0000005a   00000000    rw- .bss
-  200004cc    200004cc    00000005   00000000    rw- .data
+  0000026c    0000026c    000004b8   000004b8    r-x .text
+  00000728    00000728    00000014   00000014    r-- .cinit
+20000000    20000000    00000201   00000000    rw-
+  20000000    20000000    00000200   00000000    rw- .stack
+  20000200    20000200    00000001   00000000    rw- .bss
 
 
 SECTION ALLOCATION MAP
@@ -39,75 +36,34 @@ section   page    origin      length       input sections
 .intvecs   0    00000000    0000026c     
                   00000000    0000026c     startup_ccs.obj (.intvecs)
 
-.text      0    0000026c    000010f2     
+.text      0    0000026c    000004b8     
                   0000026c    00000208     mosfets.obj (.text:_ZN16MosfetController5setupEjf)
-                  00000474    000001e4     main.obj (.text:main)
-                  00000658    000001c0     main.obj (.text:_Z11updateStatei)
-                  00000818    000001b6     rtsv7M4_T_le_v4SPD16_eabi.lib : fd_add_t2.asm.obj (.text)
-                  000009ce    00000002     startup_ccs.obj (.text:FaultISR)
-                  000009d0    0000016c     driverlib.lib : gpio.obj (.text:GPIOPadConfigSet)
-                  00000b3c    00000136     rtsv7M4_T_le_v4SPD16_eabi.lib : fd_div_t2.asm.obj (.text)
-                  00000c72    000000fc                                   : fd_mul_t2.asm.obj (.text)
-                  00000d6e    00000002     startup_ccs.obj (.text:IntDefaultHandler)
-                  00000d70    000000b8     comparators.obj (.text:_ZN20ComparatorController5setupEPFvvE)
-                  00000e28    0000009c     rtsv7M4_T_le_v4SPD16_eabi.lib : memcpy_t2.asm.obj (.text)
-                  00000ec4    00000090     main.obj (.text:_Z7GPIOIntv)
-                  00000f54    0000006e     rtsv7M4_T_le_v4SPD16_eabi.lib : fd_tos_t2.asm.obj (.text)
-                  00000fc2    00000002     startup_ccs.obj (.text:NmiSR)
-                  00000fc4    00000068     driverlib.lib : interrupt.obj (.text:IntEnable)
-                  0000102c    00000068     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_lzss.c.obj (.text:decompress:lzss:__TI_decompress_lzss)
-                  00001094    00000058     driverlib.lib : gpio.obj (.text:GPIOIntTypeSet)
-                  000010ec    00000048     comparators.obj (.text:_ZN20ComparatorController19configComparatorIntE12ComparatorIDbj)
-                  00001134    00000044     driverlib.lib : gpio.obj (.text:_GPIOIntNumberGet)
-                  00001178    00000044     rtsv7M4_T_le_v4SPD16_eabi.lib : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit:__TI_auto_init_nobinit_nopinit)
-                  000011bc    00000038     driverlib.lib : sysctl.obj (.text:SysCtlPeripheralReady)
-                  000011f4    00000034                   : interrupt.obj (.text:IntRegister)
-                  00001228    00000034                   : sysctl.obj (.text:SysCtlPeripheralEnable)
-                  0000125c    00000034     rtsv7M4_T_le_v4SPD16_eabi.lib : boot_cortex_m.c.obj (.text:_c_int00_noargs:_c_int00_noargs)
-                  00001290    0000002c     driverlib.lib : gpio.obj (.text:GPIODirModeSet)
-                  000012bc    0000001c     comparators.obj (.text:_ZN20ComparatorController20disableAllInterruptsEv)
-                  000012d8    0000001c     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_zero_init.c.obj (.text:decompress:ZI:__TI_zero_init_nomemset:__TI_zero_init_nomemset)
-                  000012f4    00000018     driverlib.lib : gpio.obj (.text:GPIOIntRegister)
-                  0000130c    00000016                   : gpio.obj (.text:GPIOPinTypeGPIOInput)
-                  00001322    0000000e                   : gpio.obj (.text:GPIOIntDisable)
-                  00001330    0000000e     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_none.c.obj (.text:decompress:none:__TI_decompress_none)
-                  0000133e    0000000c     driverlib.lib : gpio.obj (.text:GPIOIntEnable)
-                  0000134a    00000006                   : gpio.obj (.text:GPIOIntClear)
-                  00001350    00000006     startup_ccs.obj (.text:ResetISR)
-                  00001356    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : pre_init.c.obj (.text:_system_pre_init)
-                  0000135a    00000004                                   : exit.c.obj (.text:abort:abort)
+                  00000474    00000170     phase_test.obj (.text:main)
+                  000005e4    00000098     phase_test.obj (.text:_Z9testPhaseii)
+                  0000067c    00000044     rtsv7M4_T_le_v4SPD16_eabi.lib : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit:__TI_auto_init_nobinit_nopinit)
+                  000006c0    00000034                                   : boot_cortex_m.c.obj (.text:_c_int00_noargs:_c_int00_noargs)
+                  000006f4    0000001c                                   : copy_zero_init.c.obj (.text:decompress:ZI:__TI_zero_init_nomemset:__TI_zero_init_nomemset)
+                  00000710    00000006     startup_ccs.obj (.text:ResetISR)
+                  00000716    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : pre_init.c.obj (.text:_system_pre_init)
+                  0000071a    00000004                                   : exit.c.obj (.text:abort:abort)
+                  0000071e    00000002     startup_ccs.obj (.text:FaultISR)
+                  00000720    00000002     startup_ccs.obj (.text:IntDefaultHandler)
+                  00000722    00000002     startup_ccs.obj (.text:NmiSR)
 
-.const     0    00001360    000001ac     
-                  00001360    000000d8     driverlib.lib : gpio.obj (.const:g_ppui32GPIOIntMapSnowflake)
-                  00001438    000000c0                   : gpio.obj (.const:g_ppui32GPIOIntMapBlizzard)
-                  000014f8    00000014                   : interrupt.obj (.const:g_pui32EnRegs)
-
-.cinit     0    00001510    00000040     
-                  00001510    0000000c     (__TI_handler_table)
-                  0000151c    00000004     --HOLE-- [fill = 0]
-                  00001520    00000008     (.cinit..bss.load) [load image, compression = zero_init]
-                  00001528    00000008     (.cinit..data.load) [load image, compression = lzss]
-                  00001530    00000008     (.cinit..vtable.load) [load image, compression = zero_init]
-                  00001538    00000018     (__TI_cinit_table)
+.cinit     0    00000728    00000014     
+                  00000728    00000008     (.cinit..bss.load) [load image, compression = zero_init]
+                  00000730    00000004     (__TI_handler_table)
+                  00000734    00000008     (__TI_cinit_table)
 
 .init_array 
 *          0    00000000    00000000     UNINITIALIZED
 
-.vtable    0    20000000    0000026c     UNINITIALIZED
-                  20000000    0000026c     driverlib.lib : interrupt.obj (.vtable)
+.bss       0    20000200    00000001     UNINITIALIZED
+                  20000200    00000001     (.common:mosfets)
 
-.bss       0    20000470    0000005a     UNINITIALIZED
-                  20000470    0000002c     (.common:dutys)
-                  2000049c    0000002c     (.common:freqfase)
-                  200004c8    00000001     (.common:comps)
-                  200004c9    00000001     (.common:mosfets)
-
-.data      0    200004cc    00000005     UNINITIALIZED
-                  200004cc    00000005     main.obj (.data)
-
-.stack     0    20000270    00000200     UNINITIALIZED
-                  20000270    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : boot_cortex_m.c.obj (.stack)
-                  20000274    000001fc     --HOLE--
+.stack     0    20000000    00000200     UNINITIALIZED
+                  20000000    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : boot_cortex_m.c.obj (.stack)
+                  20000004    000001fc     --HOLE--
 
 __llvm_prf_cnts 
 *          0    20000000    00000000     UNINITIALIZED
@@ -116,198 +72,113 @@ __llvm_prf_cnts
 
 MODULE SUMMARY
 
-       Module                       code   ro data   rw data
-       ------                       ----   -------   -------
+       Module                 code   ro data   rw data
+       ------                 ----   -------   -------
     .\
-       main.obj                     1076   0         95     
-       startup_ccs.obj              12     620       0      
-       mosfets.obj                  520    0         0      
-       comparators.obj              284    0         0      
-    +--+----------------------------+------+---------+---------+
-       Total:                       1892   620       95     
-                                                            
-    C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib
-       gpio.obj                     642    408       0      
-       interrupt.obj                156    20        620    
-       sysctl.obj                   108    0         0      
-    +--+----------------------------+------+---------+---------+
-       Total:                       906    428       620    
-                                                            
+       startup_ccs.obj        12     620       0      
+       phase_test.obj         520    0         1      
+       mosfets.obj            520    0         0      
+    +--+----------------------+------+---------+---------+
+       Total:                 1052   620       1      
+                                                      
     C:\ti\ccs1280\ccs\tools\compiler\ti-cgt-arm_20.2.7.LTS\lib\rtsv7M4_T_le_v4SPD16_eabi.lib
-       fd_add_t2.asm.obj            438    0         0      
-       fd_div_t2.asm.obj            310    0         0      
-       fd_mul_t2.asm.obj            252    0         0      
-       memcpy_t2.asm.obj            156    0         0      
-       fd_tos_t2.asm.obj            110    0         0      
-       copy_decompress_lzss.c.obj   104    0         0      
-       autoinit.c.obj               68     0         0      
-       boot_cortex_m.c.obj          52     0         0      
-       copy_zero_init.c.obj         28     0         0      
-       copy_decompress_none.c.obj   14     0         0      
-       exit.c.obj                   4      0         0      
-       pre_init.c.obj               4      0         0      
-    +--+----------------------------+------+---------+---------+
-       Total:                       1540   0         0      
-                                                            
-       Stack:                       0      0         512    
-       Linker Generated:            0      60        0      
-    +--+----------------------------+------+---------+---------+
-       Grand Total:                 4338   1108      1227   
+       autoinit.c.obj         68     0         0      
+       boot_cortex_m.c.obj    52     0         0      
+       copy_zero_init.c.obj   28     0         0      
+       exit.c.obj             4      0         0      
+       pre_init.c.obj         4      0         0      
+    +--+----------------------+------+---------+---------+
+       Total:                 156    0         0      
+                                                      
+       Stack:                 0      0         512    
+       Linker Generated:      0      20        0      
+    +--+----------------------+------+---------+---------+
+       Grand Total:           1208   640       513    
 
 
 LINKER GENERATED COPY TABLES
 
-__TI_cinit_table @ 00001538 records: 3, size/record: 8, table size: 24
-	.bss: load addr=00001520, load size=00000008 bytes, run addr=20000470, run size=0000005a bytes, compression=zero_init
-	.data: load addr=00001528, load size=00000008 bytes, run addr=200004cc, run size=00000005 bytes, compression=lzss
-	.vtable: load addr=00001530, load size=00000008 bytes, run addr=20000000, run size=0000026c bytes, compression=zero_init
+__TI_cinit_table @ 00000734 records: 1, size/record: 8, table size: 8
+	.bss: load addr=00000728, load size=00000008 bytes, run addr=20000200, run size=00000001 bytes, compression=zero_init
 
 
 LINKER GENERATED HANDLER TABLE
 
-__TI_handler_table @ 00001510 records: 3, size/record: 4, table size: 12
+__TI_handler_table @ 00000730 records: 1, size/record: 4, table size: 4
 	index: 0, handler: __TI_zero_init
-	index: 1, handler: __TI_decompress_lzss
-	index: 2, handler: __TI_decompress_none
 
 
 GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
 
-address   name                                                           
--------   ----                                                           
-0000135b  C$$EXIT                                                        
-00001291  GPIODirModeSet                                                 
-0000134b  GPIOIntClear                                                   
-00001323  GPIOIntDisable                                                 
-0000133f  GPIOIntEnable                                                  
-000012f5  GPIOIntRegister                                                
-00001095  GPIOIntTypeSet                                                 
-000009d1  GPIOPadConfigSet                                               
-0000130d  GPIOPinTypeGPIOInput                                           
-00000fc5  IntEnable                                                      
-000011f5  IntRegister                                                    
-00001351  ResetISR                                                       
-200004d0  RiseFall                                                       
-00001229  SysCtlPeripheralEnable                                         
-000011bd  SysCtlPeripheralReady                                          
-00000659  _Z11updateStatei                                               
-00000ec5  _Z7GPIOIntv                                                    
-0000026d  _ZN16MosfetController5setupEjf                                 
-000010ed  _ZN20ComparatorController19configComparatorIntE12ComparatorIDbj
-000012bd  _ZN20ComparatorController20disableAllInterruptsEv              
-00000d71  _ZN20ComparatorController5setupEPFvvE                          
-20000470  __STACK_END                                                    
-00000200  __STACK_SIZE                                                   
-20000470  __STACK_TOP                                                    
-00001538  __TI_CINIT_Base                                                
-00001550  __TI_CINIT_Limit                                               
-00001510  __TI_Handler_Table_Base                                        
-0000151c  __TI_Handler_Table_Limit                                       
-00001179  __TI_auto_init_nobinit_nopinit                                 
-0000102d  __TI_decompress_lzss                                           
-00001331  __TI_decompress_none                                           
-ffffffff  __TI_pprof_out_hndl                                            
-ffffffff  __TI_prof_data_size                                            
-ffffffff  __TI_prof_data_start                                           
-00000000  __TI_static_base__                                             
-000012d9  __TI_zero_init_nomemset                                        
-00000f55  __aeabi_d2f                                                    
-00000823  __aeabi_dadd                                                   
-00000b3d  __aeabi_ddiv                                                   
-00000c73  __aeabi_dmul                                                   
-00000819  __aeabi_dsub                                                   
-00000e29  __aeabi_memcpy                                                 
-00000e29  __aeabi_memcpy4                                                
-00000e29  __aeabi_memcpy8                                                
-ffffffff  __binit__                                                      
-ffffffff  __c_args__                                                     
-UNDEFED   __mpu_init                                                     
-20000270  __stack                                                        
-20000000  __start___llvm_prf_cnts                                        
-20000000  __stop___llvm_prf_cnts                                         
-0000125d  _c_int00_noargs                                                
-UNDEFED   _system_post_cinit                                             
-00001357  _system_pre_init                                               
-0000135b  abort                                                          
-ffffffff  binit                                                          
-200004c8  comps                                                          
-20000470  dutys                                                          
-2000049c  freqfase                                                       
-20000000  g_pfnRAMVectors                                                
-00000000  g_pfnVectors                                                   
-00000475  main                                                           
-00000e29  memcpy                                                         
-200004c9  mosfets                                                        
-200004cc  state                                                          
+address   name                          
+-------   ----                          
+0000071b  C$$EXIT                       
+00000711  ResetISR                      
+000005e5  _Z9testPhaseii                
+0000026d  _ZN16MosfetController5setupEjf
+20000200  __STACK_END                   
+00000200  __STACK_SIZE                  
+20000200  __STACK_TOP                   
+00000734  __TI_CINIT_Base               
+0000073c  __TI_CINIT_Limit              
+00000730  __TI_Handler_Table_Base       
+00000734  __TI_Handler_Table_Limit      
+0000067d  __TI_auto_init_nobinit_nopinit
+ffffffff  __TI_pprof_out_hndl           
+ffffffff  __TI_prof_data_size           
+ffffffff  __TI_prof_data_start          
+00000000  __TI_static_base__            
+000006f5  __TI_zero_init_nomemset       
+ffffffff  __binit__                     
+ffffffff  __c_args__                    
+UNDEFED   __mpu_init                    
+20000000  __stack                       
+20000000  __start___llvm_prf_cnts       
+20000000  __stop___llvm_prf_cnts        
+000006c1  _c_int00_noargs               
+UNDEFED   _system_post_cinit            
+00000717  _system_pre_init              
+0000071b  abort                         
+ffffffff  binit                         
+00000000  g_pfnVectors                  
+00000475  main                          
+20000200  mosfets                       
 
 
 GLOBAL SYMBOLS: SORTED BY Symbol Address 
 
-address   name                                                           
--------   ----                                                           
-00000000  __TI_static_base__                                             
-00000000  g_pfnVectors                                                   
-00000200  __STACK_SIZE                                                   
-0000026d  _ZN16MosfetController5setupEjf                                 
-00000475  main                                                           
-00000659  _Z11updateStatei                                               
-00000819  __aeabi_dsub                                                   
-00000823  __aeabi_dadd                                                   
-000009d1  GPIOPadConfigSet                                               
-00000b3d  __aeabi_ddiv                                                   
-00000c73  __aeabi_dmul                                                   
-00000d71  _ZN20ComparatorController5setupEPFvvE                          
-00000e29  __aeabi_memcpy                                                 
-00000e29  __aeabi_memcpy4                                                
-00000e29  __aeabi_memcpy8                                                
-00000e29  memcpy                                                         
-00000ec5  _Z7GPIOIntv                                                    
-00000f55  __aeabi_d2f                                                    
-00000fc5  IntEnable                                                      
-0000102d  __TI_decompress_lzss                                           
-00001095  GPIOIntTypeSet                                                 
-000010ed  _ZN20ComparatorController19configComparatorIntE12ComparatorIDbj
-00001179  __TI_auto_init_nobinit_nopinit                                 
-000011bd  SysCtlPeripheralReady                                          
-000011f5  IntRegister                                                    
-00001229  SysCtlPeripheralEnable                                         
-0000125d  _c_int00_noargs                                                
-00001291  GPIODirModeSet                                                 
-000012bd  _ZN20ComparatorController20disableAllInterruptsEv              
-000012d9  __TI_zero_init_nomemset                                        
-000012f5  GPIOIntRegister                                                
-0000130d  GPIOPinTypeGPIOInput                                           
-00001323  GPIOIntDisable                                                 
-00001331  __TI_decompress_none                                           
-0000133f  GPIOIntEnable                                                  
-0000134b  GPIOIntClear                                                   
-00001351  ResetISR                                                       
-00001357  _system_pre_init                                               
-0000135b  C$$EXIT                                                        
-0000135b  abort                                                          
-00001510  __TI_Handler_Table_Base                                        
-0000151c  __TI_Handler_Table_Limit                                       
-00001538  __TI_CINIT_Base                                                
-00001550  __TI_CINIT_Limit                                               
-20000000  __start___llvm_prf_cnts                                        
-20000000  __stop___llvm_prf_cnts                                         
-20000000  g_pfnRAMVectors                                                
-20000270  __stack                                                        
-20000470  __STACK_END                                                    
-20000470  __STACK_TOP                                                    
-20000470  dutys                                                          
-2000049c  freqfase                                                       
-200004c8  comps                                                          
-200004c9  mosfets                                                        
-200004cc  state                                                          
-200004d0  RiseFall                                                       
-ffffffff  __TI_pprof_out_hndl                                            
-ffffffff  __TI_prof_data_size                                            
-ffffffff  __TI_prof_data_start                                           
-ffffffff  __binit__                                                      
-ffffffff  __c_args__                                                     
-ffffffff  binit                                                          
-UNDEFED   __mpu_init                                                     
-UNDEFED   _system_post_cinit                                             
+address   name                          
+-------   ----                          
+00000000  __TI_static_base__            
+00000000  g_pfnVectors                  
+00000200  __STACK_SIZE                  
+0000026d  _ZN16MosfetController5setupEjf
+00000475  main                          
+000005e5  _Z9testPhaseii                
+0000067d  __TI_auto_init_nobinit_nopinit
+000006c1  _c_int00_noargs               
+000006f5  __TI_zero_init_nomemset       
+00000711  ResetISR                      
+00000717  _system_pre_init              
+0000071b  C$$EXIT                       
+0000071b  abort                         
+00000730  __TI_Handler_Table_Base       
+00000734  __TI_CINIT_Base               
+00000734  __TI_Handler_Table_Limit      
+0000073c  __TI_CINIT_Limit              
+20000000  __stack                       
+20000000  __start___llvm_prf_cnts       
+20000000  __stop___llvm_prf_cnts        
+20000200  __STACK_END                   
+20000200  __STACK_TOP                   
+20000200  mosfets                       
+ffffffff  __TI_pprof_out_hndl           
+ffffffff  __TI_prof_data_size           
+ffffffff  __TI_prof_data_start          
+ffffffff  __binit__                     
+ffffffff  __c_args__                    
+ffffffff  binit                         
+UNDEFED   __mpu_init                    
+UNDEFED   _system_post_cinit            
 
-[64 symbols]
+[31 symbols]

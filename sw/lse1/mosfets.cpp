@@ -33,9 +33,9 @@ void MosfetController::setup(uint32_t pwm_freq, float duty_cycle)
 
     // Enable Low GPIOs
     #ifndef USE_PWM_LOW_SIDE
-    MAP_GPIOPinTypeGPIOOutput(LOW_1B_GPIO_BASE, LOW_1B_GPIO_PIN); // 1B (Low-side)
-    MAP_GPIOPinTypeGPIOOutput(LOW_2B_GPIO_BASE, LOW_2B_GPIO_PIN); // 2B (Low-side)
-    MAP_GPIOPinTypeGPIOOutput(LOW_3B_GPIO_BASE, LOW_3B_GPIO_PIN); // 3B (Low-side)
+    MAP_GPIOPinTypeGPIOOutput(LOW_Ph1B_GPIO_BASE, LOW_Ph1B_GPIO_PIN); // 1B (Low-side)
+    MAP_GPIOPinTypeGPIOOutput(LOW_Ph2B_GPIO_BASE, LOW_Ph2B_GPIO_PIN); // 2B (Low-side)
+    MAP_GPIOPinTypeGPIOOutput(LOW_Ph3B_GPIO_BASE, LOW_Ph3B_GPIO_PIN); // 3B (Low-side)
     #else
     // 1B (Low-side) - PE4 (M0PWM4)
     MAP_GPIOPinConfigure(GPIO_PE4_M0PWM4);
@@ -75,9 +75,9 @@ void MosfetController::setup(uint32_t pwm_freq, float duty_cycle)
 
     // Set pulse widths for low-side if they are PWMs
     #ifdef USE_PWM_LOW_SIDE
-    MAP_PWMPulseWidthSet(LOW_1B_PWM_BASE, LOW_1B_PWM_OUT_BIT, ui32Width); // 1B (PE4)
-    MAP_PWMPulseWidthSet(LOW_2B_PWM_BASE, LOW_2B_PWM_OUT_BIT, ui32Width); // 2B (PB4)
-    MAP_PWMPulseWidthSet(LOW_3B_PWM_BASE, LOW_3B_PWM_OUT_BIT, ui32Width); // 3B (PA7)
+    MAP_PWMPulseWidthSet(LOW_Ph1B_PWM_BASE, LOW_Ph1B_PWM_OUT_BIT, ui32Width); // 1B (PE4)
+    MAP_PWMPulseWidthSet(LOW_Ph2B_PWM_BASE, LOW_Ph2B_PWM_OUT_BIT, ui32Width); // 2B (PB4)
+    MAP_PWMPulseWidthSet(LOW_Ph3B_PWM_BASE, LOW_Ph3B_PWM_OUT_BIT, ui32Width); // 3B (PA7)
     #endif
 
     // Enable PWM generators

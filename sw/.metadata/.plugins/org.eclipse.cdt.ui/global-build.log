@@ -3897,3 +3897,1601 @@ gmake[1]: 'lse1.out' is up to date.
 gmake[1]: 'lse1.out' is up to date.
 
 **** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../mosfets.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="mosfets.d_raw"  "../mosfets.cpp"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'mosfets.obj' failed
+"..\mosfets.h", line 68: warning #2866-D: a user-provided literal suffix must begin with "_"
+"..\mosfets.h", line 68: error #41: expected an identifier
+"..\mosfets.h", line 76: error #41: expected an identifier
+"..\mosfets.h", line 84: error #41: expected an identifier
+"..\mosfets.h", line 92: warning #2866-D: a user-provided literal suffix must begin with "_"
+"..\mosfets.h", line 92: error #41: expected an identifier
+"..\mosfets.h", line 105: error #41: expected an identifier
+"..\mosfets.h", line 118: error #41: expected an identifier
+"..\mosfets.h", line 150: error #2846: user-defined literal operator not found
+"..\mosfets.h", line 151: error #2846: user-defined literal operator not found
+"..\mosfets.h", line 152: error #2846: user-defined literal operator not found
+"..\mosfets.h", line 153: error #2846: user-defined literal operator not found
+"..\mosfets.h", line 154: error #2846: user-defined literal operator not found
+"..\mosfets.h", line 155: error #2846: user-defined literal operator not found
+"../mosfets.cpp", line 87: warning #1-D: last line of file ends without a newline
+12 errors detected in the compilation of "../mosfets.cpp".
+gmake: *** [mosfets.obj] Error 1
+Building file: "../phase_test.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="phase_test.d_raw"  "../phase_test.cpp"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'phase_test.obj' failed
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'main.obj' failed
+"..\mosfets.h", line 68: warning #2866-D: a user-provided literal suffix must begin with "_"
+"..\mosfets.h", line 68: error #41: expected an identifier
+"..\mosfets.h", line 76: error #41: expected an identifier
+"..\mosfets.h", line 84: error #41: expected an identifier
+"..\mosfets.h", line 92: warning #2866-D: a user-provided literal suffix must begin with "_"
+"..\mosfets.h", line 92: error #41: expected an identifier
+"..\mosfets.h", line 105: error #41: expected an identifier
+"..\mosfets.h", line 118: error #41: expected an identifier
+"..\mosfets.h", line 150: error #2846: user-defined literal operator not found
+"..\mosfets.h", line 151: error #2846: user-defined literal operator not found
+"..\mosfets.h", line 152: error #2846: user-defined literal operator not found
+"..\mosfets.h", line 153: error #2846: user-defined literal operator not found
+"..\mosfets.h", line 154: error #2846: user-defined literal operator not found
+"..\mosfets.h", line 155: error #2846: user-defined literal operator not found
+"..\comparators.h", line 119: warning #1-D: last line of file ends without a newline
+"../phase_test.cpp", line 72: warning #176-D: expression has no effect
+"../phase_test.cpp", line 72: error #66: expected a ";"
+"../phase_test.cpp", line 73: warning #176-D: expression has no effect
+"../phase_test.cpp", line 73: error #66: expected a ";"
+"../phase_test.cpp", line 74: warning #176-D: expression has no effect
+"../phase_test.cpp", line 74: error #66: expected a ";"
+"../phase_test.cpp", line 76: warning #176-D: expression has no effect
+"../phase_test.cpp", line 76: error #66: expected a ";"
+"../phase_test.cpp", line 77: warning #176-D: expression has no effect
+"../phase_test.cpp", line 77: error #66: expected a ";"
+"../phase_test.cpp", line 78: warning #176-D: expression has no effect
+"../phase_test.cpp", line 78: error #66: expected a ";"
+"../phase_test.cpp", line 82: warning #176-D: expression has no effect
+"../phase_test.cpp", line 82: error #66: expected a ";"
+"../phase_test.cpp", line 83: warning #176-D: expression has no effect
+"../phase_test.cpp", line 83: error #66: expected a ";"
+"../phase_test.cpp", line 84: warning #176-D: expression has no effect
+"../phase_test.cpp", line 84: error #66: expected a ";"
+"../phase_test.cpp", line 86: warning #176-D: expression has no effect
+"../phase_test.cpp", line 86: error #66: expected a ";"
+"../phase_test.cpp", line 87: warning #176-D: expression has no effect
+"../phase_test.cpp", line 87: error #66: expected a ";"
+"../phase_test.cpp", line 88: warning #176-D: expression has no effect
+"../phase_test.cpp", line 88: error #66: expected a ";"
+"../phase_test.cpp", line 92: warning #176-D: expression has no effect
+"../phase_test.cpp", line 92: error #66: expected a ";"
+"../phase_test.cpp", line 93: warning #176-D: expression has no effect
+"../phase_test.cpp", line 93: error #66: expected a ";"
+"../phase_test.cpp", line 94: warning #176-D: expression has no effect
+"../phase_test.cpp", line 94: error #66: expected a ";"
+"../phase_test.cpp", line 96: warning #176-D: expression has no effect
+"../phase_test.cpp", line 96: error #66: expected a ";"
+"../phase_test.cpp", line 97: warning #176-D: expression has no effect
+"../phase_test.cpp", line 97: error #66: expected a ";"
+"../phase_test.cpp", line 98: warning #176-D: expression has no effect
+"../phase_test.cpp", line 98: error #66: expected a ";"
+"../phase_test.cpp", line 102: warning #176-D: expression has no effect
+"../phase_test.cpp", line 102: error #66: expected a ";"
+"../phase_test.cpp", line 103: warning #176-D: expression has no effect
+"../phase_test.cpp", line 103: error #66: expected a ";"
+"../phase_test.cpp", line 104: warning #176-D: expression has no effect
+"../phase_test.cpp", line 104: error #66: expected a ";"
+"../phase_test.cpp", line 106: warning #176-D: expression has no effect
+"../phase_test.cpp", line 106: error #66: expected a ";"
+"../phase_test.cpp", line 107: warning #176-D: expression has no effect
+"../phase_test.cpp", line 107: error #66: expected a ";"
+"../phase_test.cpp", line 108: warning #176-D: expression has no effect
+"../phase_test.cpp", line 108: error #66: expected a ";"
+"../phase_test.cpp", line 112: warning #176-D: expression has no effect
+"../phase_test.cpp", line 112: error #66: expected a ";"
+"../phase_test.cpp", line 113: warning #176-D: expression has no effect
+"../phase_test.cpp", line 113: error #66: expected a ";"
+"../phase_test.cpp", line 114: warning #176-D: expression has no effect
+"../phase_test.cpp", line 114: error #66: expected a ";"
+"../phase_test.cpp", line 116: warning #176-D: expression has no effect
+"../phase_test.cpp", line 116: error #66: expected a ";"
+"../phase_test.cpp", line 117: warning #176-D: expression has no effect
+"../phase_test.cpp", line 117: error #66: expected a ";"
+"../phase_test.cpp", line 118: warning #176-D: expression has no effect
+"../phase_test.cpp", line 118: error #66: expected a ";"
+"../phase_test.cpp", line 122: warning #176-D: expression has no effect
+"../phase_test.cpp", line 122: error #66: expected a ";"
+"../phase_test.cpp", line 123: warning #176-D: expression has no effect
+"../phase_test.cpp", line 123: error #66: expected a ";"
+"../phase_test.cpp", line 124: warning #176-D: expression has no effect
+"../phase_test.cpp", line 124: error #66: expected a ";"
+"../phase_test.cpp", line 126: warning #176-D: expression has no effect
+"../phase_test.cpp", line 126: error #66: expected a ";"
+"../phase_test.cpp", line 127: warning #176-D: expression has no effect
+"../phase_test.cpp", line 127: error #66: expected a ";"
+"../phase_test.cpp", line 128: warning #176-D: expression has no effect
+"../phase_test.cpp", line 128: error #66: expected a ";"
+"../phase_test.cpp", line 138: warning #176-D: expression has no effect
+"../phase_test.cpp", line 138: error #66: expected a ";"
+"../phase_test.cpp", line 139: warning #176-D: expression has no effect
+"../phase_test.cpp", line 139: error #66: expected a ";"
+"../phase_test.cpp", line 143: warning #176-D: expression has no effect
+"../phase_test.cpp", line 143: error #66: expected a ";"
+"../phase_test.cpp", line 144: warning #176-D: expression has no effect
+"../phase_test.cpp", line 144: error #66: expected a ";"
+"../phase_test.cpp", line 148: warning #176-D: expression has no effect
+"../phase_test.cpp", line 148: error #66: expected a ";"
+"../phase_test.cpp", line 149: warning #176-D: expression has no effect
+"../phase_test.cpp", line 149: error #66: expected a ";"
+"../phase_test.cpp", line 151: error #66: expected a ";"
+"../phase_test.cpp", line 178: error #20: identifier "GPIOInt" is undefined
+"../phase_test.cpp", line 183: error #66: expected a ";"
+"../phase_test.cpp", line 184: error #20: identifier "phase_on" is undefined
+"../phase_test.cpp", line 190: error #20: identifier "phase_test" is undefined
+59 errors detected in the compilation of "../phase_test.cpp".
+gmake: *** [phase_test.obj] Error 1
+"..\mosfets.h", line 68: warning #2866-D: a user-provided literal suffix must begin with "_"
+"..\mosfets.h", line 68: error #41: expected an identifier
+"..\mosfets.h", line 76: error #41: expected an identifier
+"..\mosfets.h", line 84: error #41: expected an identifier
+"..\mosfets.h", line 92: warning #2866-D: a user-provided literal suffix must begin with "_"
+"..\mosfets.h", line 92: error #41: expected an identifier
+"..\mosfets.h", line 105: error #41: expected an identifier
+"..\mosfets.h", line 118: error #41: expected an identifier
+"..\mosfets.h", line 150: error #2846: user-defined literal operator not found
+"..\mosfets.h", line 151: error #2846: user-defined literal operator not found
+"..\mosfets.h", line 152: error #2846: user-defined literal operator not found
+"..\mosfets.h", line 153: error #2846: user-defined literal operator not found
+"..\mosfets.h", line 154: error #2846: user-defined literal operator not found
+"..\mosfets.h", line 155: error #2846: user-defined literal operator not found
+"..\comparators.h", line 119: warning #1-D: last line of file ends without a newline
+"../main.cpp", line 39: warning #78-D: this declaration has no storage class or type specifier
+"../main.cpp", line 79: warning #176-D: expression has no effect
+"../main.cpp", line 79: error #66: expected a ";"
+"../main.cpp", line 80: warning #176-D: expression has no effect
+"../main.cpp", line 80: error #66: expected a ";"
+"../main.cpp", line 81: warning #176-D: expression has no effect
+"../main.cpp", line 81: error #66: expected a ";"
+"../main.cpp", line 83: warning #176-D: expression has no effect
+"../main.cpp", line 83: error #66: expected a ";"
+"../main.cpp", line 84: warning #176-D: expression has no effect
+"../main.cpp", line 84: error #66: expected a ";"
+"../main.cpp", line 85: warning #176-D: expression has no effect
+"../main.cpp", line 85: error #66: expected a ";"
+"../main.cpp", line 89: warning #176-D: expression has no effect
+"../main.cpp", line 89: error #66: expected a ";"
+"../main.cpp", line 90: warning #176-D: expression has no effect
+"../main.cpp", line 90: error #66: expected a ";"
+"../main.cpp", line 91: warning #176-D: expression has no effect
+"../main.cpp", line 91: error #66: expected a ";"
+"../main.cpp", line 93: warning #176-D: expression has no effect
+"../main.cpp", line 93: error #66: expected a ";"
+"../main.cpp", line 94: warning #176-D: expression has no effect
+"../main.cpp", line 94: error #66: expected a ";"
+"../main.cpp", line 95: warning #176-D: expression has no effect
+"../main.cpp", line 95: error #66: expected a ";"
+"../main.cpp", line 99: warning #176-D: expression has no effect
+"../main.cpp", line 99: error #66: expected a ";"
+"../main.cpp", line 100: warning #176-D: expression has no effect
+"../main.cpp", line 100: error #66: expected a ";"
+"../main.cpp", line 101: warning #176-D: expression has no effect
+"../main.cpp", line 101: error #66: expected a ";"
+"../main.cpp", line 103: warning #176-D: expression has no effect
+"../main.cpp", line 103: error #66: expected a ";"
+"../main.cpp", line 104: warning #176-D: expression has no effect
+"../main.cpp", line 104: error #66: expected a ";"
+"../main.cpp", line 105: warning #176-D: expression has no effect
+"../main.cpp", line 105: error #66: expected a ";"
+"../main.cpp", line 109: warning #176-D: expression has no effect
+"../main.cpp", line 109: error #66: expected a ";"
+"../main.cpp", line 110: warning #176-D: expression has no effect
+"../main.cpp", line 110: error #66: expected a ";"
+"../main.cpp", line 111: warning #176-D: expression has no effect
+"../main.cpp", line 111: error #66: expected a ";"
+"../main.cpp", line 113: warning #176-D: expression has no effect
+"../main.cpp", line 113: error #66: expected a ";"
+"../main.cpp", line 114: warning #176-D: expression has no effect
+"../main.cpp", line 114: error #66: expected a ";"
+"../main.cpp", line 115: warning #176-D: expression has no effect
+"../main.cpp", line 115: error #66: expected a ";"
+"../main.cpp", line 119: warning #176-D: expression has no effect
+"../main.cpp", line 119: error #66: expected a ";"
+"../main.cpp", line 120: warning #176-D: expression has no effect
+"../main.cpp", line 120: error #66: expected a ";"
+"../main.cpp", line 121: warning #176-D: expression has no effect
+"../main.cpp", line 121: error #66: expected a ";"
+"../main.cpp", line 123: warning #176-D: expression has no effect
+"../main.cpp", line 123: error #66: expected a ";"
+"../main.cpp", line 124: warning #176-D: expression has no effect
+"../main.cpp", line 124: error #66: expected a ";"
+"../main.cpp", line 125: warning #176-D: expression has no effect
+"../main.cpp", line 125: error #66: expected a ";"
+"../main.cpp", line 129: warning #176-D: expression has no effect
+"../main.cpp", line 129: error #66: expected a ";"
+"../main.cpp", line 130: warning #176-D: expression has no effect
+"../main.cpp", line 130: error #66: expected a ";"
+"../main.cpp", line 131: warning #176-D: expression has no effect
+"../main.cpp", line 131: error #66: expected a ";"
+"../main.cpp", line 133: warning #176-D: expression has no effect
+"../main.cpp", line 133: error #66: expected a ";"
+"../main.cpp", line 134: warning #176-D: expression has no effect
+"../main.cpp", line 134: error #66: expected a ";"
+"../main.cpp", line 135: warning #176-D: expression has no effect
+"../main.cpp", line 135: error #66: expected a ";"
+"../main.cpp", line 248: warning #179-D: variable "phase_period" was declared but never referenced
+48 errors detected in the compilation of "../main.cpp".
+gmake: *** [main.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'main.obj' failed
+"..\mosfets.h", line 68: warning #2866-D: a user-provided literal suffix must begin with "_"
+"..\mosfets.h", line 68: error #41: expected an identifier
+"..\mosfets.h", line 76: error #41: expected an identifier
+"..\mosfets.h", line 84: error #41: expected an identifier
+"..\mosfets.h", line 92: warning #2866-D: a user-provided literal suffix must begin with "_"
+"..\mosfets.h", line 92: error #41: expected an identifier
+"..\mosfets.h", line 105: error #41: expected an identifier
+"..\mosfets.h", line 118: error #41: expected an identifier
+"..\mosfets.h", line 150: error #2846: user-defined literal operator not found
+"..\mosfets.h", line 151: error #2846: user-defined literal operator not found
+"..\mosfets.h", line 152: error #2846: user-defined literal operator not found
+"..\mosfets.h", line 153: error #2846: user-defined literal operator not found
+"..\mosfets.h", line 154: error #2846: user-defined literal operator not found
+"..\mosfets.h", line 155: error #2846: user-defined literal operator not found
+"..\comparators.h", line 119: warning #1-D: last line of file ends without a newline
+"../main.cpp", line 39: warning #78-D: this declaration has no storage class or type specifier
+"../main.cpp", line 79: warning #176-D: expression has no effect
+"../main.cpp", line 79: error #66: expected a ";"
+"../main.cpp", line 80: warning #176-D: expression has no effect
+"../main.cpp", line 80: error #66: expected a ";"
+"../main.cpp", line 81: warning #176-D: expression has no effect
+"../main.cpp", line 81: error #66: expected a ";"
+"../main.cpp", line 83: warning #176-D: expression has no effect
+"../main.cpp", line 83: error #66: expected a ";"
+"../main.cpp", line 84: warning #176-D: expression has no effect
+"../main.cpp", line 84: error #66: expected a ";"
+"../main.cpp", line 85: warning #176-D: expression has no effect
+"../main.cpp", line 85: error #66: expected a ";"
+"../main.cpp", line 89: warning #176-D: expression has no effect
+"../main.cpp", line 89: error #66: expected a ";"
+"../main.cpp", line 90: warning #176-D: expression has no effect
+"../main.cpp", line 90: error #66: expected a ";"
+"../main.cpp", line 91: warning #176-D: expression has no effect
+"../main.cpp", line 91: error #66: expected a ";"
+"../main.cpp", line 93: warning #176-D: expression has no effect
+"../main.cpp", line 93: error #66: expected a ";"
+"../main.cpp", line 94: warning #176-D: expression has no effect
+"../main.cpp", line 94: error #66: expected a ";"
+"../main.cpp", line 95: warning #176-D: expression has no effect
+"../main.cpp", line 95: error #66: expected a ";"
+"../main.cpp", line 99: warning #176-D: expression has no effect
+"../main.cpp", line 99: error #66: expected a ";"
+"../main.cpp", line 100: warning #176-D: expression has no effect
+"../main.cpp", line 100: error #66: expected a ";"
+"../main.cpp", line 101: warning #176-D: expression has no effect
+"../main.cpp", line 101: error #66: expected a ";"
+"../main.cpp", line 103: warning #176-D: expression has no effect
+"../main.cpp", line 103: error #66: expected a ";"
+"../main.cpp", line 104: warning #176-D: expression has no effect
+"../main.cpp", line 104: error #66: expected a ";"
+"../main.cpp", line 105: warning #176-D: expression has no effect
+"../main.cpp", line 105: error #66: expected a ";"
+"../main.cpp", line 109: warning #176-D: expression has no effect
+"../main.cpp", line 109: error #66: expected a ";"
+"../main.cpp", line 110: warning #176-D: expression has no effect
+"../main.cpp", line 110: error #66: expected a ";"
+"../main.cpp", line 111: warning #176-D: expression has no effect
+"../main.cpp", line 111: error #66: expected a ";"
+"../main.cpp", line 113: warning #176-D: expression has no effect
+"../main.cpp", line 113: error #66: expected a ";"
+"../main.cpp", line 114: warning #176-D: expression has no effect
+"../main.cpp", line 114: error #66: expected a ";"
+"../main.cpp", line 115: warning #176-D: expression has no effect
+"../main.cpp", line 115: error #66: expected a ";"
+"../main.cpp", line 119: warning #176-D: expression has no effect
+"../main.cpp", line 119: error #66: expected a ";"
+"../main.cpp", line 120: warning #176-D: expression has no effect
+"../main.cpp", line 120: error #66: expected a ";"
+"../main.cpp", line 121: warning #176-D: expression has no effect
+"../main.cpp", line 121: error #66: expected a ";"
+"../main.cpp", line 123: warning #176-D: expression has no effect
+"../main.cpp", line 123: error #66: expected a ";"
+"../main.cpp", line 124: warning #176-D: expression has no effect
+"../main.cpp", line 124: error #66: expected a ";"
+"../main.cpp", line 125: warning #176-D: expression has no effect
+"../main.cpp", line 125: error #66: expected a ";"
+"../main.cpp", line 129: warning #176-D: expression has no effect
+"../main.cpp", line 129: error #66: expected a ";"
+"../main.cpp", line 130: warning #176-D: expression has no effect
+"../main.cpp", line 130: error #66: expected a ";"
+"../main.cpp", line 131: warning #176-D: expression has no effect
+"../main.cpp", line 131: error #66: expected a ";"
+"../main.cpp", line 133: warning #176-D: expression has no effect
+"../main.cpp", line 133: error #66: expected a ";"
+"../main.cpp", line 134: warning #176-D: expression has no effect
+"../main.cpp", line 134: error #66: expected a ";"
+"../main.cpp", line 135: warning #176-D: expression has no effect
+"../main.cpp", line 135: error #66: expected a ";"
+"../main.cpp", line 248: warning #179-D: variable "phase_period" was declared but never referenced
+48 errors detected in the compilation of "../main.cpp".
+gmake: *** [main.obj] Error 1
+Building file: "../mosfets.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="mosfets.d_raw"  "../mosfets.cpp"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'mosfets.obj' failed
+"..\mosfets.h", line 68: warning #2866-D: a user-provided literal suffix must begin with "_"
+"..\mosfets.h", line 68: error #41: expected an identifier
+"..\mosfets.h", line 76: error #41: expected an identifier
+"..\mosfets.h", line 84: error #41: expected an identifier
+"..\mosfets.h", line 92: warning #2866-D: a user-provided literal suffix must begin with "_"
+"..\mosfets.h", line 92: error #41: expected an identifier
+"..\mosfets.h", line 105: error #41: expected an identifier
+"..\mosfets.h", line 118: error #41: expected an identifier
+"..\mosfets.h", line 150: error #2846: user-defined literal operator not found
+"..\mosfets.h", line 151: error #2846: user-defined literal operator not found
+"..\mosfets.h", line 152: error #2846: user-defined literal operator not found
+"..\mosfets.h", line 153: error #2846: user-defined literal operator not found
+"..\mosfets.h", line 154: error #2846: user-defined literal operator not found
+"..\mosfets.h", line 155: error #2846: user-defined literal operator not found
+"../mosfets.cpp", line 87: warning #1-D: last line of file ends without a newline
+12 errors detected in the compilation of "../mosfets.cpp".
+gmake: *** [mosfets.obj] Error 1
+Building file: "../phase_test.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="phase_test.d_raw"  "../phase_test.cpp"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'phase_test.obj' failed
+"..\mosfets.h", line 68: warning #2866-D: a user-provided literal suffix must begin with "_"
+"..\mosfets.h", line 68: error #41: expected an identifier
+"..\mosfets.h", line 76: error #41: expected an identifier
+"..\mosfets.h", line 84: error #41: expected an identifier
+"..\mosfets.h", line 92: warning #2866-D: a user-provided literal suffix must begin with "_"
+"..\mosfets.h", line 92: error #41: expected an identifier
+"..\mosfets.h", line 105: error #41: expected an identifier
+"..\mosfets.h", line 118: error #41: expected an identifier
+"..\mosfets.h", line 150: error #2846: user-defined literal operator not found
+"..\mosfets.h", line 151: error #2846: user-defined literal operator not found
+"..\mosfets.h", line 152: error #2846: user-defined literal operator not found
+"..\mosfets.h", line 153: error #2846: user-defined literal operator not found
+"..\mosfets.h", line 154: error #2846: user-defined literal operator not found
+"..\mosfets.h", line 155: error #2846: user-defined literal operator not found
+"..\comparators.h", line 119: warning #1-D: last line of file ends without a newline
+"../phase_test.cpp", line 72: warning #176-D: expression has no effect
+"../phase_test.cpp", line 72: error #66: expected a ";"
+"../phase_test.cpp", line 73: warning #176-D: expression has no effect
+"../phase_test.cpp", line 73: error #66: expected a ";"
+"../phase_test.cpp", line 74: warning #176-D: expression has no effect
+"../phase_test.cpp", line 74: error #66: expected a ";"
+"../phase_test.cpp", line 76: warning #176-D: expression has no effect
+"../phase_test.cpp", line 76: error #66: expected a ";"
+"../phase_test.cpp", line 77: warning #176-D: expression has no effect
+"../phase_test.cpp", line 77: error #66: expected a ";"
+"../phase_test.cpp", line 78: warning #176-D: expression has no effect
+"../phase_test.cpp", line 78: error #66: expected a ";"
+"../phase_test.cpp", line 82: warning #176-D: expression has no effect
+"../phase_test.cpp", line 82: error #66: expected a ";"
+"../phase_test.cpp", line 83: warning #176-D: expression has no effect
+"../phase_test.cpp", line 83: error #66: expected a ";"
+"../phase_test.cpp", line 84: warning #176-D: expression has no effect
+"../phase_test.cpp", line 84: error #66: expected a ";"
+"../phase_test.cpp", line 86: warning #176-D: expression has no effect
+"../phase_test.cpp", line 86: error #66: expected a ";"
+"../phase_test.cpp", line 87: warning #176-D: expression has no effect
+"../phase_test.cpp", line 87: error #66: expected a ";"
+"../phase_test.cpp", line 88: warning #176-D: expression has no effect
+"../phase_test.cpp", line 88: error #66: expected a ";"
+"../phase_test.cpp", line 92: warning #176-D: expression has no effect
+"../phase_test.cpp", line 92: error #66: expected a ";"
+"../phase_test.cpp", line 93: warning #176-D: expression has no effect
+"../phase_test.cpp", line 93: error #66: expected a ";"
+"../phase_test.cpp", line 94: warning #176-D: expression has no effect
+"../phase_test.cpp", line 94: error #66: expected a ";"
+"../phase_test.cpp", line 96: warning #176-D: expression has no effect
+"../phase_test.cpp", line 96: error #66: expected a ";"
+"../phase_test.cpp", line 97: warning #176-D: expression has no effect
+"../phase_test.cpp", line 97: error #66: expected a ";"
+"../phase_test.cpp", line 98: warning #176-D: expression has no effect
+"../phase_test.cpp", line 98: error #66: expected a ";"
+"../phase_test.cpp", line 102: warning #176-D: expression has no effect
+"../phase_test.cpp", line 102: error #66: expected a ";"
+"../phase_test.cpp", line 103: warning #176-D: expression has no effect
+"../phase_test.cpp", line 103: error #66: expected a ";"
+"../phase_test.cpp", line 104: warning #176-D: expression has no effect
+"../phase_test.cpp", line 104: error #66: expected a ";"
+"../phase_test.cpp", line 106: warning #176-D: expression has no effect
+"../phase_test.cpp", line 106: error #66: expected a ";"
+"../phase_test.cpp", line 107: warning #176-D: expression has no effect
+"../phase_test.cpp", line 107: error #66: expected a ";"
+"../phase_test.cpp", line 108: warning #176-D: expression has no effect
+"../phase_test.cpp", line 108: error #66: expected a ";"
+"../phase_test.cpp", line 112: warning #176-D: expression has no effect
+"../phase_test.cpp", line 112: error #66: expected a ";"
+"../phase_test.cpp", line 113: warning #176-D: expression has no effect
+"../phase_test.cpp", line 113: error #66: expected a ";"
+"../phase_test.cpp", line 114: warning #176-D: expression has no effect
+"../phase_test.cpp", line 114: error #66: expected a ";"
+"../phase_test.cpp", line 116: warning #176-D: expression has no effect
+"../phase_test.cpp", line 116: error #66: expected a ";"
+"../phase_test.cpp", line 117: warning #176-D: expression has no effect
+"../phase_test.cpp", line 117: error #66: expected a ";"
+"../phase_test.cpp", line 118: warning #176-D: expression has no effect
+"../phase_test.cpp", line 118: error #66: expected a ";"
+"../phase_test.cpp", line 122: warning #176-D: expression has no effect
+"../phase_test.cpp", line 122: error #66: expected a ";"
+"../phase_test.cpp", line 123: warning #176-D: expression has no effect
+"../phase_test.cpp", line 123: error #66: expected a ";"
+"../phase_test.cpp", line 124: warning #176-D: expression has no effect
+"../phase_test.cpp", line 124: error #66: expected a ";"
+"../phase_test.cpp", line 126: warning #176-D: expression has no effect
+"../phase_test.cpp", line 126: error #66: expected a ";"
+"../phase_test.cpp", line 127: warning #176-D: expression has no effect
+"../phase_test.cpp", line 127: error #66: expected a ";"
+"../phase_test.cpp", line 128: warning #176-D: expression has no effect
+"../phase_test.cpp", line 128: error #66: expected a ";"
+"../phase_test.cpp", line 138: warning #176-D: expression has no effect
+"../phase_test.cpp", line 138: error #66: expected a ";"
+"../phase_test.cpp", line 139: warning #176-D: expression has no effect
+"../phase_test.cpp", line 139: error #66: expected a ";"
+"../phase_test.cpp", line 143: warning #176-D: expression has no effect
+"../phase_test.cpp", line 143: error #66: expected a ";"
+"../phase_test.cpp", line 144: warning #176-D: expression has no effect
+"../phase_test.cpp", line 144: error #66: expected a ";"
+"../phase_test.cpp", line 148: warning #176-D: expression has no effect
+"../phase_test.cpp", line 148: error #66: expected a ";"
+"../phase_test.cpp", line 149: warning #176-D: expression has no effect
+"../phase_test.cpp", line 149: error #66: expected a ";"
+"../phase_test.cpp", line 151: error #66: expected a ";"
+"../phase_test.cpp", line 178: error #20: identifier "GPIOInt" is undefined
+"../phase_test.cpp", line 183: error #66: expected a ";"
+"../phase_test.cpp", line 190: error #20: identifier "phase_test" is undefined
+58 errors detected in the compilation of "../phase_test.cpp".
+gmake: *** [phase_test.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../mosfets.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="mosfets.d_raw"  "../mosfets.cpp"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'mosfets.obj' failed
+"..\mosfets.h", line 68: warning #2866-D: a user-provided literal suffix must begin with "_"
+"..\mosfets.h", line 68: error #41: expected an identifier
+"..\mosfets.h", line 76: error #41: expected an identifier
+"..\mosfets.h", line 84: error #41: expected an identifier
+"..\mosfets.h", line 92: warning #2866-D: a user-provided literal suffix must begin with "_"
+"..\mosfets.h", line 92: error #41: expected an identifier
+"..\mosfets.h", line 105: error #41: expected an identifier
+"..\mosfets.h", line 118: error #41: expected an identifier
+"..\mosfets.h", line 150: error #2846: user-defined literal operator not found
+"..\mosfets.h", line 151: error #2846: user-defined literal operator not found
+"..\mosfets.h", line 152: error #2846: user-defined literal operator not found
+"..\mosfets.h", line 153: error #2846: user-defined literal operator not found
+"..\mosfets.h", line 154: error #2846: user-defined literal operator not found
+"..\mosfets.h", line 155: error #2846: user-defined literal operator not found
+"../mosfets.cpp", line 87: warning #1-D: last line of file ends without a newline
+12 errors detected in the compilation of "../mosfets.cpp".
+gmake: *** [mosfets.obj] Error 1
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'main.obj' failed
+"..\mosfets.h", line 68: warning #2866-D: a user-provided literal suffix must begin with "_"
+"..\mosfets.h", line 68: error #41: expected an identifier
+"..\mosfets.h", line 76: error #41: expected an identifier
+"..\mosfets.h", line 84: error #41: expected an identifier
+"..\mosfets.h", line 92: warning #2866-D: a user-provided literal suffix must begin with "_"
+"..\mosfets.h", line 92: error #41: expected an identifier
+"..\mosfets.h", line 105: error #41: expected an identifier
+"..\mosfets.h", line 118: error #41: expected an identifier
+"..\mosfets.h", line 150: error #2846: user-defined literal operator not found
+"..\mosfets.h", line 151: error #2846: user-defined literal operator not found
+"..\mosfets.h", line 152: error #2846: user-defined literal operator not found
+"..\mosfets.h", line 153: error #2846: user-defined literal operator not found
+"..\mosfets.h", line 154: error #2846: user-defined literal operator not found
+"..\mosfets.h", line 155: error #2846: user-defined literal operator not found
+"..\comparators.h", line 119: warning #1-D: last line of file ends without a newline
+"../main.cpp", line 39: warning #78-D: this declaration has no storage class or type specifier
+"../main.cpp", line 79: warning #176-D: expression has no effect
+"../main.cpp", line 79: error #66: expected a ";"
+"../main.cpp", line 80: warning #176-D: expression has no effect
+"../main.cpp", line 80: error #66: expected a ";"
+"../main.cpp", line 81: warning #176-D: expression has no effect
+"../main.cpp", line 81: error #66: expected a ";"
+"../main.cpp", line 83: warning #176-D: expression has no effect
+"../main.cpp", line 83: error #66: expected a ";"
+"../main.cpp", line 84: warning #176-D: expression has no effect
+"../main.cpp", line 84: error #66: expected a ";"
+"../main.cpp", line 85: warning #176-D: expression has no effect
+"../main.cpp", line 85: error #66: expected a ";"
+"../main.cpp", line 89: warning #176-D: expression has no effect
+"../main.cpp", line 89: error #66: expected a ";"
+"../main.cpp", line 90: warning #176-D: expression has no effect
+"../main.cpp", line 90: error #66: expected a ";"
+"../main.cpp", line 91: warning #176-D: expression has no effect
+"../main.cpp", line 91: error #66: expected a ";"
+"../main.cpp", line 93: warning #176-D: expression has no effect
+"../main.cpp", line 93: error #66: expected a ";"
+"../main.cpp", line 94: warning #176-D: expression has no effect
+"../main.cpp", line 94: error #66: expected a ";"
+"../main.cpp", line 95: warning #176-D: expression has no effect
+"../main.cpp", line 95: error #66: expected a ";"
+"../main.cpp", line 99: warning #176-D: expression has no effect
+"../main.cpp", line 99: error #66: expected a ";"
+"../main.cpp", line 100: warning #176-D: expression has no effect
+"../main.cpp", line 100: error #66: expected a ";"
+"../main.cpp", line 101: warning #176-D: expression has no effect
+"../main.cpp", line 101: error #66: expected a ";"
+"../main.cpp", line 103: warning #176-D: expression has no effect
+"../main.cpp", line 103: error #66: expected a ";"
+"../main.cpp", line 104: warning #176-D: expression has no effect
+"../main.cpp", line 104: error #66: expected a ";"
+"../main.cpp", line 105: warning #176-D: expression has no effect
+"../main.cpp", line 105: error #66: expected a ";"
+"../main.cpp", line 109: warning #176-D: expression has no effect
+"../main.cpp", line 109: error #66: expected a ";"
+"../main.cpp", line 110: warning #176-D: expression has no effect
+"../main.cpp", line 110: error #66: expected a ";"
+"../main.cpp", line 111: warning #176-D: expression has no effect
+"../main.cpp", line 111: error #66: expected a ";"
+"../main.cpp", line 113: warning #176-D: expression has no effect
+"../main.cpp", line 113: error #66: expected a ";"
+"../main.cpp", line 114: warning #176-D: expression has no effect
+"../main.cpp", line 114: error #66: expected a ";"
+"../main.cpp", line 115: warning #176-D: expression has no effect
+"../main.cpp", line 115: error #66: expected a ";"
+"../main.cpp", line 119: warning #176-D: expression has no effect
+"../main.cpp", line 119: error #66: expected a ";"
+"../main.cpp", line 120: warning #176-D: expression has no effect
+"../main.cpp", line 120: error #66: expected a ";"
+"../main.cpp", line 121: warning #176-D: expression has no effect
+"../main.cpp", line 121: error #66: expected a ";"
+"../main.cpp", line 123: warning #176-D: expression has no effect
+"../main.cpp", line 123: error #66: expected a ";"
+"../main.cpp", line 124: warning #176-D: expression has no effect
+"../main.cpp", line 124: error #66: expected a ";"
+"../main.cpp", line 125: warning #176-D: expression has no effect
+"../main.cpp", line 125: error #66: expected a ";"
+"../main.cpp", line 129: warning #176-D: expression has no effect
+"../main.cpp", line 129: error #66: expected a ";"
+"../main.cpp", line 130: warning #176-D: expression has no effect
+"../main.cpp", line 130: error #66: expected a ";"
+"../main.cpp", line 131: warning #176-D: expression has no effect
+"../main.cpp", line 131: error #66: expected a ";"
+"../main.cpp", line 133: warning #176-D: expression has no effect
+"../main.cpp", line 133: error #66: expected a ";"
+"../main.cpp", line 134: warning #176-D: expression has no effect
+"../main.cpp", line 134: error #66: expected a ";"
+"../main.cpp", line 135: warning #176-D: expression has no effect
+"../main.cpp", line 135: error #66: expected a ";"
+"../main.cpp", line 248: warning #179-D: variable "phase_period" was declared but never referenced
+48 errors detected in the compilation of "../main.cpp".
+gmake: *** [main.obj] Error 1
+Building file: "../phase_test.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="phase_test.d_raw"  "../phase_test.cpp"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'phase_test.obj' failed
+"..\mosfets.h", line 68: warning #2866-D: a user-provided literal suffix must begin with "_"
+"..\mosfets.h", line 68: error #41: expected an identifier
+"..\mosfets.h", line 76: error #41: expected an identifier
+"..\mosfets.h", line 84: error #41: expected an identifier
+"..\mosfets.h", line 92: warning #2866-D: a user-provided literal suffix must begin with "_"
+"..\mosfets.h", line 92: error #41: expected an identifier
+"..\mosfets.h", line 105: error #41: expected an identifier
+"..\mosfets.h", line 118: error #41: expected an identifier
+"..\mosfets.h", line 150: error #2846: user-defined literal operator not found
+"..\mosfets.h", line 151: error #2846: user-defined literal operator not found
+"..\mosfets.h", line 152: error #2846: user-defined literal operator not found
+"..\mosfets.h", line 153: error #2846: user-defined literal operator not found
+"..\mosfets.h", line 154: error #2846: user-defined literal operator not found
+"..\mosfets.h", line 155: error #2846: user-defined literal operator not found
+"..\comparators.h", line 119: warning #1-D: last line of file ends without a newline
+"../phase_test.cpp", line 72: warning #176-D: expression has no effect
+"../phase_test.cpp", line 72: error #66: expected a ";"
+"../phase_test.cpp", line 73: warning #176-D: expression has no effect
+"../phase_test.cpp", line 73: error #66: expected a ";"
+"../phase_test.cpp", line 74: warning #176-D: expression has no effect
+"../phase_test.cpp", line 74: error #66: expected a ";"
+"../phase_test.cpp", line 76: warning #176-D: expression has no effect
+"../phase_test.cpp", line 76: error #66: expected a ";"
+"../phase_test.cpp", line 77: warning #176-D: expression has no effect
+"../phase_test.cpp", line 77: error #66: expected a ";"
+"../phase_test.cpp", line 78: warning #176-D: expression has no effect
+"../phase_test.cpp", line 78: error #66: expected a ";"
+"../phase_test.cpp", line 82: warning #176-D: expression has no effect
+"../phase_test.cpp", line 82: error #66: expected a ";"
+"../phase_test.cpp", line 83: warning #176-D: expression has no effect
+"../phase_test.cpp", line 83: error #66: expected a ";"
+"../phase_test.cpp", line 84: warning #176-D: expression has no effect
+"../phase_test.cpp", line 84: error #66: expected a ";"
+"../phase_test.cpp", line 86: warning #176-D: expression has no effect
+"../phase_test.cpp", line 86: error #66: expected a ";"
+"../phase_test.cpp", line 87: warning #176-D: expression has no effect
+"../phase_test.cpp", line 87: error #66: expected a ";"
+"../phase_test.cpp", line 88: warning #176-D: expression has no effect
+"../phase_test.cpp", line 88: error #66: expected a ";"
+"../phase_test.cpp", line 92: warning #176-D: expression has no effect
+"../phase_test.cpp", line 92: error #66: expected a ";"
+"../phase_test.cpp", line 93: warning #176-D: expression has no effect
+"../phase_test.cpp", line 93: error #66: expected a ";"
+"../phase_test.cpp", line 94: warning #176-D: expression has no effect
+"../phase_test.cpp", line 94: error #66: expected a ";"
+"../phase_test.cpp", line 96: warning #176-D: expression has no effect
+"../phase_test.cpp", line 96: error #66: expected a ";"
+"../phase_test.cpp", line 97: warning #176-D: expression has no effect
+"../phase_test.cpp", line 97: error #66: expected a ";"
+"../phase_test.cpp", line 98: warning #176-D: expression has no effect
+"../phase_test.cpp", line 98: error #66: expected a ";"
+"../phase_test.cpp", line 102: warning #176-D: expression has no effect
+"../phase_test.cpp", line 102: error #66: expected a ";"
+"../phase_test.cpp", line 103: warning #176-D: expression has no effect
+"../phase_test.cpp", line 103: error #66: expected a ";"
+"../phase_test.cpp", line 104: warning #176-D: expression has no effect
+"../phase_test.cpp", line 104: error #66: expected a ";"
+"../phase_test.cpp", line 106: warning #176-D: expression has no effect
+"../phase_test.cpp", line 106: error #66: expected a ";"
+"../phase_test.cpp", line 107: warning #176-D: expression has no effect
+"../phase_test.cpp", line 107: error #66: expected a ";"
+"../phase_test.cpp", line 108: warning #176-D: expression has no effect
+"../phase_test.cpp", line 108: error #66: expected a ";"
+"../phase_test.cpp", line 112: warning #176-D: expression has no effect
+"../phase_test.cpp", line 112: error #66: expected a ";"
+"../phase_test.cpp", line 113: warning #176-D: expression has no effect
+"../phase_test.cpp", line 113: error #66: expected a ";"
+"../phase_test.cpp", line 114: warning #176-D: expression has no effect
+"../phase_test.cpp", line 114: error #66: expected a ";"
+"../phase_test.cpp", line 116: warning #176-D: expression has no effect
+"../phase_test.cpp", line 116: error #66: expected a ";"
+"../phase_test.cpp", line 117: warning #176-D: expression has no effect
+"../phase_test.cpp", line 117: error #66: expected a ";"
+"../phase_test.cpp", line 118: warning #176-D: expression has no effect
+"../phase_test.cpp", line 118: error #66: expected a ";"
+"../phase_test.cpp", line 122: warning #176-D: expression has no effect
+"../phase_test.cpp", line 122: error #66: expected a ";"
+"../phase_test.cpp", line 123: warning #176-D: expression has no effect
+"../phase_test.cpp", line 123: error #66: expected a ";"
+"../phase_test.cpp", line 124: warning #176-D: expression has no effect
+"../phase_test.cpp", line 124: error #66: expected a ";"
+"../phase_test.cpp", line 126: warning #176-D: expression has no effect
+"../phase_test.cpp", line 126: error #66: expected a ";"
+"../phase_test.cpp", line 127: warning #176-D: expression has no effect
+"../phase_test.cpp", line 127: error #66: expected a ";"
+"../phase_test.cpp", line 128: warning #176-D: expression has no effect
+"../phase_test.cpp", line 128: error #66: expected a ";"
+"../phase_test.cpp", line 138: warning #176-D: expression has no effect
+"../phase_test.cpp", line 138: error #66: expected a ";"
+"../phase_test.cpp", line 139: warning #176-D: expression has no effect
+"../phase_test.cpp", line 139: error #66: expected a ";"
+"../phase_test.cpp", line 143: warning #176-D: expression has no effect
+"../phase_test.cpp", line 143: error #66: expected a ";"
+"../phase_test.cpp", line 144: warning #176-D: expression has no effect
+"../phase_test.cpp", line 144: error #66: expected a ";"
+"../phase_test.cpp", line 148: warning #176-D: expression has no effect
+"../phase_test.cpp", line 148: error #66: expected a ";"
+"../phase_test.cpp", line 149: warning #176-D: expression has no effect
+"../phase_test.cpp", line 149: error #66: expected a ";"
+"../phase_test.cpp", line 151: error #66: expected a ";"
+"../phase_test.cpp", line 183: error #66: expected a ";"
+"../phase_test.cpp", line 190: error #20: identifier "phase_test" is undefined
+57 errors detected in the compilation of "../phase_test.cpp".
+gmake: *** [phase_test.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'main.obj' failed
+"..\mosfets.h", line 68: warning #2866-D: a user-provided literal suffix must begin with "_"
+"..\mosfets.h", line 68: error #41: expected an identifier
+"..\mosfets.h", line 76: error #41: expected an identifier
+"..\mosfets.h", line 84: error #41: expected an identifier
+"..\mosfets.h", line 92: warning #2866-D: a user-provided literal suffix must begin with "_"
+"..\mosfets.h", line 92: error #41: expected an identifier
+"..\mosfets.h", line 105: error #41: expected an identifier
+"..\mosfets.h", line 118: error #41: expected an identifier
+"..\mosfets.h", line 150: error #2846: user-defined literal operator not found
+"..\mosfets.h", line 151: error #2846: user-defined literal operator not found
+"..\mosfets.h", line 152: error #2846: user-defined literal operator not found
+"..\mosfets.h", line 153: error #2846: user-defined literal operator not found
+"..\mosfets.h", line 154: error #2846: user-defined literal operator not found
+"..\mosfets.h", line 155: error #2846: user-defined literal operator not found
+"..\comparators.h", line 119: warning #1-D: last line of file ends without a newline
+"../main.cpp", line 39: warning #78-D: this declaration has no storage class or type specifier
+"../main.cpp", line 79: warning #176-D: expression has no effect
+"../main.cpp", line 79: error #66: expected a ";"
+"../main.cpp", line 80: warning #176-D: expression has no effect
+"../main.cpp", line 80: error #66: expected a ";"
+"../main.cpp", line 81: warning #176-D: expression has no effect
+"../main.cpp", line 81: error #66: expected a ";"
+"../main.cpp", line 83: warning #176-D: expression has no effect
+"../main.cpp", line 83: error #66: expected a ";"
+"../main.cpp", line 84: warning #176-D: expression has no effect
+"../main.cpp", line 84: error #66: expected a ";"
+"../main.cpp", line 85: warning #176-D: expression has no effect
+"../main.cpp", line 85: error #66: expected a ";"
+"../main.cpp", line 89: warning #176-D: expression has no effect
+"../main.cpp", line 89: error #66: expected a ";"
+"../main.cpp", line 90: warning #176-D: expression has no effect
+"../main.cpp", line 90: error #66: expected a ";"
+"../main.cpp", line 91: warning #176-D: expression has no effect
+"../main.cpp", line 91: error #66: expected a ";"
+"../main.cpp", line 93: warning #176-D: expression has no effect
+"../main.cpp", line 93: error #66: expected a ";"
+"../main.cpp", line 94: warning #176-D: expression has no effect
+"../main.cpp", line 94: error #66: expected a ";"
+"../main.cpp", line 95: warning #176-D: expression has no effect
+"../main.cpp", line 95: error #66: expected a ";"
+"../main.cpp", line 99: warning #176-D: expression has no effect
+"../main.cpp", line 99: error #66: expected a ";"
+"../main.cpp", line 100: warning #176-D: expression has no effect
+"../main.cpp", line 100: error #66: expected a ";"
+"../main.cpp", line 101: warning #176-D: expression has no effect
+"../main.cpp", line 101: error #66: expected a ";"
+"../main.cpp", line 103: warning #176-D: expression has no effect
+"../main.cpp", line 103: error #66: expected a ";"
+"../main.cpp", line 104: warning #176-D: expression has no effect
+"../main.cpp", line 104: error #66: expected a ";"
+"../main.cpp", line 105: warning #176-D: expression has no effect
+"../main.cpp", line 105: error #66: expected a ";"
+"../main.cpp", line 109: warning #176-D: expression has no effect
+"../main.cpp", line 109: error #66: expected a ";"
+"../main.cpp", line 110: warning #176-D: expression has no effect
+"../main.cpp", line 110: error #66: expected a ";"
+"../main.cpp", line 111: warning #176-D: expression has no effect
+"../main.cpp", line 111: error #66: expected a ";"
+"../main.cpp", line 113: warning #176-D: expression has no effect
+"../main.cpp", line 113: error #66: expected a ";"
+"../main.cpp", line 114: warning #176-D: expression has no effect
+"../main.cpp", line 114: error #66: expected a ";"
+"../main.cpp", line 115: warning #176-D: expression has no effect
+"../main.cpp", line 115: error #66: expected a ";"
+"../main.cpp", line 119: warning #176-D: expression has no effect
+"../main.cpp", line 119: error #66: expected a ";"
+"../main.cpp", line 120: warning #176-D: expression has no effect
+"../main.cpp", line 120: error #66: expected a ";"
+"../main.cpp", line 121: warning #176-D: expression has no effect
+"../main.cpp", line 121: error #66: expected a ";"
+"../main.cpp", line 123: warning #176-D: expression has no effect
+"../main.cpp", line 123: error #66: expected a ";"
+"../main.cpp", line 124: warning #176-D: expression has no effect
+"../main.cpp", line 124: error #66: expected a ";"
+"../main.cpp", line 125: warning #176-D: expression has no effect
+"../main.cpp", line 125: error #66: expected a ";"
+"../main.cpp", line 129: warning #176-D: expression has no effect
+"../main.cpp", line 129: error #66: expected a ";"
+"../main.cpp", line 130: warning #176-D: expression has no effect
+"../main.cpp", line 130: error #66: expected a ";"
+"../main.cpp", line 131: warning #176-D: expression has no effect
+"../main.cpp", line 131: error #66: expected a ";"
+"../main.cpp", line 133: warning #176-D: expression has no effect
+"../main.cpp", line 133: error #66: expected a ";"
+"../main.cpp", line 134: warning #176-D: expression has no effect
+"../main.cpp", line 134: error #66: expected a ";"
+"../main.cpp", line 135: warning #176-D: expression has no effect
+"../main.cpp", line 135: error #66: expected a ";"
+"../main.cpp", line 248: warning #179-D: variable "phase_period" was declared but never referenced
+48 errors detected in the compilation of "../main.cpp".
+gmake: *** [main.obj] Error 1
+Building file: "../mosfets.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="mosfets.d_raw"  "../mosfets.cpp"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'mosfets.obj' failed
+"..\mosfets.h", line 68: warning #2866-D: a user-provided literal suffix must begin with "_"
+"..\mosfets.h", line 68: error #41: expected an identifier
+"..\mosfets.h", line 76: error #41: expected an identifier
+"..\mosfets.h", line 84: error #41: expected an identifier
+"..\mosfets.h", line 92: warning #2866-D: a user-provided literal suffix must begin with "_"
+"..\mosfets.h", line 92: error #41: expected an identifier
+"..\mosfets.h", line 105: error #41: expected an identifier
+"..\mosfets.h", line 118: error #41: expected an identifier
+"..\mosfets.h", line 150: error #2846: user-defined literal operator not found
+"..\mosfets.h", line 151: error #2846: user-defined literal operator not found
+"..\mosfets.h", line 152: error #2846: user-defined literal operator not found
+"..\mosfets.h", line 153: error #2846: user-defined literal operator not found
+"..\mosfets.h", line 154: error #2846: user-defined literal operator not found
+"..\mosfets.h", line 155: error #2846: user-defined literal operator not found
+"../mosfets.cpp", line 87: warning #1-D: last line of file ends without a newline
+12 errors detected in the compilation of "../mosfets.cpp".
+gmake: *** [mosfets.obj] Error 1
+Building file: "../phase_test.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="phase_test.d_raw"  "../phase_test.cpp"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'phase_test.obj' failed
+"..\mosfets.h", line 68: warning #2866-D: a user-provided literal suffix must begin with "_"
+"..\mosfets.h", line 68: error #41: expected an identifier
+"..\mosfets.h", line 76: error #41: expected an identifier
+"..\mosfets.h", line 84: error #41: expected an identifier
+"..\mosfets.h", line 92: warning #2866-D: a user-provided literal suffix must begin with "_"
+"..\mosfets.h", line 92: error #41: expected an identifier
+"..\mosfets.h", line 105: error #41: expected an identifier
+"..\mosfets.h", line 118: error #41: expected an identifier
+"..\mosfets.h", line 150: error #2846: user-defined literal operator not found
+"..\mosfets.h", line 151: error #2846: user-defined literal operator not found
+"..\mosfets.h", line 152: error #2846: user-defined literal operator not found
+"..\mosfets.h", line 153: error #2846: user-defined literal operator not found
+"..\mosfets.h", line 154: error #2846: user-defined literal operator not found
+"..\mosfets.h", line 155: error #2846: user-defined literal operator not found
+"..\comparators.h", line 119: warning #1-D: last line of file ends without a newline
+"../phase_test.cpp", line 72: warning #176-D: expression has no effect
+"../phase_test.cpp", line 72: error #66: expected a ";"
+"../phase_test.cpp", line 73: warning #176-D: expression has no effect
+"../phase_test.cpp", line 73: error #66: expected a ";"
+"../phase_test.cpp", line 74: warning #176-D: expression has no effect
+"../phase_test.cpp", line 74: error #66: expected a ";"
+"../phase_test.cpp", line 76: warning #176-D: expression has no effect
+"../phase_test.cpp", line 76: error #66: expected a ";"
+"../phase_test.cpp", line 77: warning #176-D: expression has no effect
+"../phase_test.cpp", line 77: error #66: expected a ";"
+"../phase_test.cpp", line 78: warning #176-D: expression has no effect
+"../phase_test.cpp", line 78: error #66: expected a ";"
+"../phase_test.cpp", line 82: warning #176-D: expression has no effect
+"../phase_test.cpp", line 82: error #66: expected a ";"
+"../phase_test.cpp", line 83: warning #176-D: expression has no effect
+"../phase_test.cpp", line 83: error #66: expected a ";"
+"../phase_test.cpp", line 84: warning #176-D: expression has no effect
+"../phase_test.cpp", line 84: error #66: expected a ";"
+"../phase_test.cpp", line 86: warning #176-D: expression has no effect
+"../phase_test.cpp", line 86: error #66: expected a ";"
+"../phase_test.cpp", line 87: warning #176-D: expression has no effect
+"../phase_test.cpp", line 87: error #66: expected a ";"
+"../phase_test.cpp", line 88: warning #176-D: expression has no effect
+"../phase_test.cpp", line 88: error #66: expected a ";"
+"../phase_test.cpp", line 92: warning #176-D: expression has no effect
+"../phase_test.cpp", line 92: error #66: expected a ";"
+"../phase_test.cpp", line 93: warning #176-D: expression has no effect
+"../phase_test.cpp", line 93: error #66: expected a ";"
+"../phase_test.cpp", line 94: warning #176-D: expression has no effect
+"../phase_test.cpp", line 94: error #66: expected a ";"
+"../phase_test.cpp", line 96: warning #176-D: expression has no effect
+"../phase_test.cpp", line 96: error #66: expected a ";"
+"../phase_test.cpp", line 97: warning #176-D: expression has no effect
+"../phase_test.cpp", line 97: error #66: expected a ";"
+"../phase_test.cpp", line 98: warning #176-D: expression has no effect
+"../phase_test.cpp", line 98: error #66: expected a ";"
+"../phase_test.cpp", line 102: warning #176-D: expression has no effect
+"../phase_test.cpp", line 102: error #66: expected a ";"
+"../phase_test.cpp", line 103: warning #176-D: expression has no effect
+"../phase_test.cpp", line 103: error #66: expected a ";"
+"../phase_test.cpp", line 104: warning #176-D: expression has no effect
+"../phase_test.cpp", line 104: error #66: expected a ";"
+"../phase_test.cpp", line 106: warning #176-D: expression has no effect
+"../phase_test.cpp", line 106: error #66: expected a ";"
+"../phase_test.cpp", line 107: warning #176-D: expression has no effect
+"../phase_test.cpp", line 107: error #66: expected a ";"
+"../phase_test.cpp", line 108: warning #176-D: expression has no effect
+"../phase_test.cpp", line 108: error #66: expected a ";"
+"../phase_test.cpp", line 112: warning #176-D: expression has no effect
+"../phase_test.cpp", line 112: error #66: expected a ";"
+"../phase_test.cpp", line 113: warning #176-D: expression has no effect
+"../phase_test.cpp", line 113: error #66: expected a ";"
+"../phase_test.cpp", line 114: warning #176-D: expression has no effect
+"../phase_test.cpp", line 114: error #66: expected a ";"
+"../phase_test.cpp", line 116: warning #176-D: expression has no effect
+"../phase_test.cpp", line 116: error #66: expected a ";"
+"../phase_test.cpp", line 117: warning #176-D: expression has no effect
+"../phase_test.cpp", line 117: error #66: expected a ";"
+"../phase_test.cpp", line 118: warning #176-D: expression has no effect
+"../phase_test.cpp", line 118: error #66: expected a ";"
+"../phase_test.cpp", line 122: warning #176-D: expression has no effect
+"../phase_test.cpp", line 122: error #66: expected a ";"
+"../phase_test.cpp", line 123: warning #176-D: expression has no effect
+"../phase_test.cpp", line 123: error #66: expected a ";"
+"../phase_test.cpp", line 124: warning #176-D: expression has no effect
+"../phase_test.cpp", line 124: error #66: expected a ";"
+"../phase_test.cpp", line 126: warning #176-D: expression has no effect
+"../phase_test.cpp", line 126: error #66: expected a ";"
+"../phase_test.cpp", line 127: warning #176-D: expression has no effect
+"../phase_test.cpp", line 127: error #66: expected a ";"
+"../phase_test.cpp", line 128: warning #176-D: expression has no effect
+"../phase_test.cpp", line 128: error #66: expected a ";"
+"../phase_test.cpp", line 138: warning #176-D: expression has no effect
+"../phase_test.cpp", line 138: error #66: expected a ";"
+"../phase_test.cpp", line 139: warning #176-D: expression has no effect
+"../phase_test.cpp", line 139: error #66: expected a ";"
+"../phase_test.cpp", line 143: warning #176-D: expression has no effect
+"../phase_test.cpp", line 143: error #66: expected a ";"
+"../phase_test.cpp", line 144: warning #176-D: expression has no effect
+"../phase_test.cpp", line 144: error #66: expected a ";"
+"../phase_test.cpp", line 148: warning #176-D: expression has no effect
+"../phase_test.cpp", line 148: error #66: expected a ";"
+"../phase_test.cpp", line 149: warning #176-D: expression has no effect
+"../phase_test.cpp", line 149: error #66: expected a ";"
+"../phase_test.cpp", line 151: error #66: expected a ";"
+"../phase_test.cpp", line 183: error #66: expected a ";"
+"../phase_test.cpp", line 190: error #20: identifier "phase_test" is undefined
+57 errors detected in the compilation of "../phase_test.cpp".
+gmake: *** [phase_test.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../mosfets.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="mosfets.d_raw"  "../mosfets.cpp"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'mosfets.obj' failed
+"../mosfets.cpp", line 36: error #20: identifier "LOW_1B_GPIO_BASE" is undefined
+"../mosfets.cpp", line 36: error #20: identifier "LOW_1B_GPIO_PIN" is undefined
+"../mosfets.cpp", line 37: error #20: identifier "LOW_2B_GPIO_BASE" is undefined
+"../mosfets.cpp", line 37: error #20: identifier "LOW_2B_GPIO_PIN" is undefined
+"../mosfets.cpp", line 38: error #20: identifier "LOW_3B_GPIO_BASE" is undefined
+"../mosfets.cpp", line 38: error #20: identifier "LOW_3B_GPIO_PIN" is undefined
+"../mosfets.cpp", line 87: warning #1-D: last line of file ends without a newline
+6 errors detected in the compilation of "../mosfets.cpp".
+gmake: *** [mosfets.obj] Error 1
+Building file: "../phase_test.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="phase_test.d_raw"  "../phase_test.cpp"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'phase_test.obj' failed
+"..\comparators.h", line 119: warning #1-D: last line of file ends without a newline
+"../phase_test.cpp", line 151: error #66: expected a ";"
+"../phase_test.cpp", line 183: error #66: expected a ";"
+"../phase_test.cpp", line 190: error #20: identifier "phase_test" is undefined
+3 errors detected in the compilation of "../phase_test.cpp".
+gmake: *** [phase_test.obj] Error 1
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+"..\comparators.h", line 119: warning #1-D: last line of file ends without a newline
+"../main.cpp", line 39: warning #78-D: this declaration has no storage class or type specifier
+"../main.cpp", line 248: warning #179-D: variable "phase_period" was declared but never referenced
+Finished building: "../main.cpp"
+ 
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../phase_test.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="phase_test.d_raw"  "../phase_test.cpp"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'phase_test.obj' failed
+"..\comparators.h", line 119: warning #1-D: last line of file ends without a newline
+"../phase_test.cpp", line 151: error #66: expected a ";"
+"../phase_test.cpp", line 183: error #66: expected a ";"
+"../phase_test.cpp", line 190: error #20: identifier "phase_test" is undefined
+3 errors detected in the compilation of "../phase_test.cpp".
+gmake: *** [phase_test.obj] Error 1
+Building file: "../mosfets.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="mosfets.d_raw"  "../mosfets.cpp"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'mosfets.obj' failed
+"..\comparators.h", line 119: warning #1-D: last line of file ends without a newline
+"../mosfets.cpp", line 48: error #20: identifier "LOW_1B_GPIO_BASE" is undefined
+"../mosfets.cpp", line 48: error #20: identifier "LOW_1B_GPIO_PIN" is undefined
+"../mosfets.cpp", line 49: error #20: identifier "LOW_2B_GPIO_BASE" is undefined
+"../mosfets.cpp", line 49: error #20: identifier "LOW_2B_GPIO_PIN" is undefined
+"../mosfets.cpp", line 50: error #20: identifier "LOW_3B_GPIO_BASE" is undefined
+"../mosfets.cpp", line 50: error #20: identifier "LOW_3B_GPIO_PIN" is undefined
+6 errors detected in the compilation of "../mosfets.cpp".
+gmake: *** [mosfets.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../mosfets.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="mosfets.d_raw"  "../mosfets.cpp"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'mosfets.obj' failed
+"..\mosfets.h", line 96: error #20: identifier "LOW_Ph1B_GPIO_PIN" is undefined
+"..\mosfets.h", line 97: error #20: identifier "LOW_Ph1B_GPIO_BASE" is undefined
+"..\mosfets.h", line 109: error #20: identifier "LOW_Ph2B_GPIO_PIN" is undefined
+"..\mosfets.h", line 110: error #20: identifier "LOW_Ph2B_GPIO_BASE" is undefined
+"..\mosfets.h", line 122: error #20: identifier "LOW_Ph3B_GPIO_PIN" is undefined
+"..\mosfets.h", line 123: error #20: identifier "LOW_Ph3B_GPIO_BASE" is undefined
+6 errors detected in the compilation of "../mosfets.cpp".
+gmake: *** [mosfets.obj] Error 1
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'main.obj' failed
+"..\mosfets.h", line 96: error #20: identifier "LOW_Ph1B_GPIO_PIN" is undefined
+"..\mosfets.h", line 97: error #20: identifier "LOW_Ph1B_GPIO_BASE" is undefined
+"..\mosfets.h", line 109: error #20: identifier "LOW_Ph2B_GPIO_PIN" is undefined
+"..\mosfets.h", line 110: error #20: identifier "LOW_Ph2B_GPIO_BASE" is undefined
+"..\mosfets.h", line 122: error #20: identifier "LOW_Ph3B_GPIO_PIN" is undefined
+"..\mosfets.h", line 123: error #20: identifier "LOW_Ph3B_GPIO_BASE" is undefined
+"..\comparators.h", line 119: warning #1-D: last line of file ends without a newline
+"../main.cpp", line 39: warning #78-D: this declaration has no storage class or type specifier
+"../main.cpp", line 248: warning #179-D: variable "phase_period" was declared but never referenced
+6 errors detected in the compilation of "../main.cpp".
+gmake: *** [main.obj] Error 1
+Building file: "../phase_test.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="phase_test.d_raw"  "../phase_test.cpp"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'phase_test.obj' failed
+"..\mosfets.h", line 96: error #20: identifier "LOW_Ph1B_GPIO_PIN" is undefined
+"..\mosfets.h", line 97: error #20: identifier "LOW_Ph1B_GPIO_BASE" is undefined
+"..\mosfets.h", line 109: error #20: identifier "LOW_Ph2B_GPIO_PIN" is undefined
+"..\mosfets.h", line 110: error #20: identifier "LOW_Ph2B_GPIO_BASE" is undefined
+"..\mosfets.h", line 122: error #20: identifier "LOW_Ph3B_GPIO_PIN" is undefined
+"..\mosfets.h", line 123: error #20: identifier "LOW_Ph3B_GPIO_BASE" is undefined
+"..\comparators.h", line 119: warning #1-D: last line of file ends without a newline
+"../phase_test.cpp", line 151: error #66: expected a ";"
+"../phase_test.cpp", line 183: error #66: expected a ";"
+"../phase_test.cpp", line 190: error #20: identifier "phase_test" is undefined
+9 errors detected in the compilation of "../phase_test.cpp".
+gmake: *** [phase_test.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'main.obj' failed
+"..\mosfets.h", line 96: error #20: identifier "LOW_Ph1B_GPIO_PIN" is undefined
+"..\mosfets.h", line 97: error #20: identifier "LOW_Ph1B_GPIO_BASE" is undefined
+"..\mosfets.h", line 109: error #20: identifier "LOW_Ph2B_GPIO_PIN" is undefined
+"..\mosfets.h", line 110: error #20: identifier "LOW_Ph2B_GPIO_BASE" is undefined
+"..\mosfets.h", line 122: error #20: identifier "LOW_Ph3B_GPIO_PIN" is undefined
+"..\mosfets.h", line 123: error #20: identifier "LOW_Ph3B_GPIO_BASE" is undefined
+"..\comparators.h", line 119: warning #1-D: last line of file ends without a newline
+"../main.cpp", line 39: warning #78-D: this declaration has no storage class or type specifier
+"../main.cpp", line 248: warning #179-D: variable "phase_period" was declared but never referenced
+6 errors detected in the compilation of "../main.cpp".
+gmake: *** [main.obj] Error 1
+Building file: "../mosfets.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="mosfets.d_raw"  "../mosfets.cpp"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'mosfets.obj' failed
+"..\mosfets.h", line 96: error #20: identifier "LOW_Ph1B_GPIO_PIN" is undefined
+"..\mosfets.h", line 97: error #20: identifier "LOW_Ph1B_GPIO_BASE" is undefined
+"..\mosfets.h", line 109: error #20: identifier "LOW_Ph2B_GPIO_PIN" is undefined
+"..\mosfets.h", line 110: error #20: identifier "LOW_Ph2B_GPIO_BASE" is undefined
+"..\mosfets.h", line 122: error #20: identifier "LOW_Ph3B_GPIO_PIN" is undefined
+"..\mosfets.h", line 123: error #20: identifier "LOW_Ph3B_GPIO_BASE" is undefined
+6 errors detected in the compilation of "../mosfets.cpp".
+gmake: *** [mosfets.obj] Error 1
+Building file: "../phase_test.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="phase_test.d_raw"  "../phase_test.cpp"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'phase_test.obj' failed
+"..\mosfets.h", line 96: error #20: identifier "LOW_Ph1B_GPIO_PIN" is undefined
+"..\mosfets.h", line 97: error #20: identifier "LOW_Ph1B_GPIO_BASE" is undefined
+"..\mosfets.h", line 109: error #20: identifier "LOW_Ph2B_GPIO_PIN" is undefined
+"..\mosfets.h", line 110: error #20: identifier "LOW_Ph2B_GPIO_BASE" is undefined
+"..\mosfets.h", line 122: error #20: identifier "LOW_Ph3B_GPIO_PIN" is undefined
+"..\mosfets.h", line 123: error #20: identifier "LOW_Ph3B_GPIO_BASE" is undefined
+"..\comparators.h", line 119: warning #1-D: last line of file ends without a newline
+"../phase_test.cpp", line 151: error #66: expected a ";"
+"../phase_test.cpp", line 183: error #66: expected a ";"
+"../phase_test.cpp", line 190: error #20: identifier "phase_test" is undefined
+9 errors detected in the compilation of "../phase_test.cpp".
+gmake: *** [phase_test.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../phase_test.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="phase_test.d_raw"  "../phase_test.cpp"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'phase_test.obj' failed
+"..\comparators.h", line 119: warning #1-D: last line of file ends without a newline
+"../phase_test.cpp", line 151: error #66: expected a ";"
+"../phase_test.cpp", line 183: error #66: expected a ";"
+"../phase_test.cpp", line 190: error #20: identifier "phase_test" is undefined
+3 errors detected in the compilation of "../phase_test.cpp".
+gmake: *** [phase_test.obj] Error 1
+Building file: "../mosfets.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="mosfets.d_raw"  "../mosfets.cpp"
+Finished building: "../mosfets.cpp"
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+"..\comparators.h", line 119: warning #1-D: last line of file ends without a newline
+"../main.cpp", line 39: warning #78-D: this declaration has no storage class or type specifier
+"../main.cpp", line 248: warning #179-D: variable "phase_period" was declared but never referenced
+Finished building: "../main.cpp"
+ 
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../phase_test.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="phase_test.d_raw"  "../phase_test.cpp"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'phase_test.obj' failed
+"..\comparators.h", line 119: warning #1-D: last line of file ends without a newline
+"../phase_test.cpp", line 151: error #66: expected a ";"
+"../phase_test.cpp", line 183: error #66: expected a ";"
+"../phase_test.cpp", line 190: error #20: identifier "phase_test" is undefined
+3 errors detected in the compilation of "../phase_test.cpp".
+gmake: *** [phase_test.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../phase_test.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="phase_test.d_raw"  "../phase_test.cpp"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'phase_test.obj' failed
+"..\comparators.h", line 119: warning #1-D: last line of file ends without a newline
+"../phase_test.cpp", line 151: error #66: expected a ";"
+1 error detected in the compilation of "../phase_test.cpp".
+gmake: *** [phase_test.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../phase_test.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="phase_test.d_raw"  "../phase_test.cpp"
+"..\comparators.h", line 119: warning #1-D: last line of file ends without a newline
+Finished building: "../phase_test.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+error #10056: symbol "updateState(int)" redefined: first defined in "./main.obj"; redefined in "./phase_test.obj"
+error #10056: symbol "RiseFall" redefined: first defined in "./main.obj"; redefined in "./phase_test.obj"
+error #10056: symbol "state" redefined: first defined in "./main.obj"; redefined in "./phase_test.obj"
+error #10056: symbol "main" redefined: first defined in "./main.obj"; redefined in "./phase_test.obj"
+error #10010: errors encountered during linking; "lse1.out" not built
+ 
+>> Compilation failure
+makefile:140: recipe for target 'lse1.out' failed
+gmake[1]: *** [lse1.out] Error 1
+makefile:136: recipe for target 'all' failed
+gmake: *** [all] Error 2
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../phase_test.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="phase_test.d_raw"  "../phase_test.cpp"
+"..\comparators.h", line 119: warning #1-D: last line of file ends without a newline
+Finished building: "../phase_test.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+error #10056: symbol "updateState(int)" redefined: first defined in "./main.obj"; redefined in "./phase_test.obj"
+error #10056: symbol "RiseFall" redefined: first defined in "./main.obj"; redefined in "./phase_test.obj"
+error #10056: symbol "state" redefined: first defined in "./main.obj"; redefined in "./phase_test.obj"
+error #10056: symbol "main" redefined: first defined in "./main.obj"; redefined in "./phase_test.obj"
+error #10010: errors encountered during linking; "lse1.out" not built
+ 
+>> Compilation failure
+makefile:140: recipe for target 'lse1.out' failed
+gmake[1]: *** [lse1.out] Error 1
+makefile:136: recipe for target 'all' failed
+gmake: *** [all] Error 2
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../phase_test.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="phase_test.d_raw"  "../phase_test.cpp"
+"..\comparators.h", line 119: warning #1-D: last line of file ends without a newline
+Finished building: "../phase_test.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+error #10056: symbol "updateState(int)" redefined: first defined in "./main.obj"; redefined in "./phase_test.obj"
+error #10056: symbol "state" redefined: first defined in "./main.obj"; redefined in "./phase_test.obj"
+error #10056: symbol "main" redefined: first defined in "./main.obj"; redefined in "./phase_test.obj"
+error #10010: errors encountered during linking; "lse1.out" not built
+ 
+>> Compilation failure
+makefile:140: recipe for target 'lse1.out' failed
+gmake[1]: *** [lse1.out] Error 1
+makefile:136: recipe for target 'all' failed
+gmake: *** [all] Error 2
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../phase_test.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="phase_test.d_raw"  "../phase_test.cpp"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'phase_test.obj' failed
+"..\comparators.h", line 119: warning #1-D: last line of file ends without a newline
+"..\main.cpp", line 39: warning #78-D: this declaration has no storage class or type specifier
+"..\main.cpp", line 248: warning #179-D: variable "phase_period" was declared but never referenced
+"../phase_test.cpp", line 36: error #249: variable "mosfets" has already been defined
+"../phase_test.cpp", line 37: error #249: variable "comps" has already been defined
+"../phase_test.cpp", line 40: error #249: variable "state" has already been defined
+"../phase_test.cpp", line 92: error #249: function "main" has already been defined
+4 errors detected in the compilation of "../phase_test.cpp".
+gmake: *** [phase_test.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../phase_test.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="phase_test.d_raw"  "../phase_test.cpp"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'phase_test.obj' failed
+"..\comparators.h", line 119: warning #1-D: last line of file ends without a newline
+"..\main.cpp", line 39: warning #78-D: this declaration has no storage class or type specifier
+"..\main.cpp", line 248: warning #179-D: variable "phase_period" was declared but never referenced
+"../phase_test.cpp", line 36: error #249: variable "mosfets" has already been defined
+"../phase_test.cpp", line 37: error #249: variable "comps" has already been defined
+"../phase_test.cpp", line 40: error #249: variable "state" has already been defined
+3 errors detected in the compilation of "../phase_test.cpp".
+gmake: *** [phase_test.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../phase_test.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="phase_test.d_raw"  "../phase_test.cpp"
+"..\comparators.h", line 119: warning #1-D: last line of file ends without a newline
+"..\main.cpp", line 39: warning #78-D: this declaration has no storage class or type specifier
+"..\main.cpp", line 248: warning #179-D: variable "phase_period" was declared but never referenced
+Finished building: "../phase_test.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+error #10056: symbol "updateState(int)" redefined: first defined in "./main.obj"; redefined in "./phase_test.obj"
+error #10056: symbol "RiseFall" redefined: first defined in "./main.obj"; redefined in "./phase_test.obj"
+error #10056: symbol "state" redefined: first defined in "./main.obj"; redefined in "./phase_test.obj"
+error #10056: symbol "GPIOInt()" redefined: first defined in "./main.obj"; redefined in "./phase_test.obj"
+error #10056: symbol "main" redefined: first defined in "./main.obj"; redefined in "./phase_test.obj"
+error #10056: symbol "dutyMax" redefined: first defined in "./main.obj"; redefined in "./phase_test.obj"
+error #10010: errors encountered during linking; "lse1.out" not built
+ 
+>> Compilation failure
+makefile:140: recipe for target 'lse1.out' failed
+gmake[1]: *** [lse1.out] Error 1
+makefile:136: recipe for target 'all' failed
+gmake: *** [all] Error 2
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../phase_test.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="phase_test.d_raw"  "../phase_test.cpp"
+"..\comparators.h", line 119: warning #1-D: last line of file ends without a newline
+Finished building: "../phase_test.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+error #10056: symbol "state" redefined: first defined in "./main.obj"; redefined in "./phase_test.obj"
+error #10010: errors encountered during linking; "lse1.out" not built
+ 
+>> Compilation failure
+makefile:140: recipe for target 'lse1.out' failed
+gmake[1]: *** [lse1.out] Error 1
+makefile:136: recipe for target 'all' failed
+gmake: *** [all] Error 2
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../phase_test.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="phase_test.d_raw"  "../phase_test.cpp"
+"..\comparators.h", line 119: warning #1-D: last line of file ends without a newline
+Finished building: "../phase_test.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+"..\comparators.h", line 119: warning #1-D: last line of file ends without a newline
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+"..\comparators.h", line 119: warning #1-D: last line of file ends without a newline
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../phase_test.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="phase_test.d_raw"  "../phase_test.cpp"
+"..\comparators.h", line 119: warning #1-D: last line of file ends without a newline
+Finished building: "../phase_test.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../phase_test.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="phase_test.d_raw"  "../phase_test.cpp"
+"..\comparators.h", line 119: warning #1-D: last line of file ends without a newline
+Finished building: "../phase_test.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../phase_test.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="phase_test.d_raw"  "../phase_test.cpp"
+"..\comparators.h", line 119: warning #1-D: last line of file ends without a newline
+Finished building: "../phase_test.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../phase_test.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="phase_test.d_raw"  "../phase_test.cpp"
+"..\comparators.h", line 119: warning #1-D: last line of file ends without a newline
+Finished building: "../phase_test.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****

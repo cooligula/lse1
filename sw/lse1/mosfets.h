@@ -20,36 +20,36 @@
 
 #ifdef USE_PWM_LOW_SIDE
 // CONFIGURATION FOR PWM LOW-SIDE
-#define LOW_1B_PWM_BASE      PWM0_BASE
-#define LOW_1B_PWM_OUT_BIT   PWM_OUT_4_BIT // PE4 (M0PWM4)
-#define LOW_2B_PWM_BASE      PWM0_BASE
-#define LOW_2B_PWM_OUT_BIT   PWM_OUT_2_BIT // PB4 (M0PWM2)
-#define LOW_3B_PWM_BASE      PWM1_BASE
-#define LOW_3B_PWM_OUT_BIT   PWM_OUT_3_BIT // PA7 (M1PWM3)
+#define LOW_Ph1B_PWM_BASE      PWM0_BASE
+#define LOW_Ph1B_PWM_OUT_BIT   PWM_OUT_4_BIT // PE4 (M0PWM4)
+#define LOW_Ph2B_PWM_BASE      PWM0_BASE
+#define LOW_Ph2B_PWM_OUT_BIT   PWM_OUT_2_BIT // PB4 (M0PWM2)
+#define LOW_Ph3B_PWM_BASE      PWM1_BASE
+#define LOW_Ph3B_PWM_OUT_BIT   PWM_OUT_3_BIT // PA7 (M1PWM3)
 
 #else
 // CONFIGURATION FOR GPIO LOW-SIDE
-#define LOW_1B_GPIO_BASE     GPIO_PORTE_BASE
-#define LOW_1B_GPIO_PIN      GPIO_PIN_4
-#define LOW_2B_GPIO_BASE     GPIO_PORTB_BASE
-#define LOW_2B_GPIO_PIN      GPIO_PIN_4
-#define LOW_3B_GPIO_BASE     GPIO_PORTA_BASE
-#define LOW_3B_GPIO_PIN      GPIO_PIN_7
+#define LOW_Ph1B_GPIO_BASE     GPIO_PORTE_BASE
+#define LOW_Ph1B_GPIO_PIN      GPIO_PIN_4
+#define LOW_Ph2B_GPIO_BASE     GPIO_PORTB_BASE
+#define LOW_Ph2B_GPIO_PIN      GPIO_PIN_4
+#define LOW_Ph3B_GPIO_BASE     GPIO_PORTA_BASE
+#define LOW_Ph3B_GPIO_PIN      GPIO_PIN_7
 #endif
 
 // High-Side Driver Configuration (PWM)
-#define HIGH_1A_PWM_BASE     PWM0_BASE
-#define HIGH_1A_PWM_OUT_BIT  PWM_OUT_3_BIT
-#define HIGH_2A_PWM_BASE     PWM0_BASE
-#define HIGH_2A_PWM_OUT_BIT  PWM_OUT_5_BIT
-#define HIGH_3A_PWM_BASE     PWM1_BASE
-#define HIGH_3A_PWM_OUT_BIT  PWM_OUT_2_BIT
+#define HIGH_Ph1A_PWM_BASE     PWM0_BASE
+#define HIGH_Ph1A_PWM_OUT_BIT  PWM_OUT_3_BIT
+#define HIGH_Ph2A_PWM_BASE     PWM0_BASE
+#define HIGH_Ph2A_PWM_OUT_BIT  PWM_OUT_5_BIT
+#define HIGH_Ph3A_PWM_BASE     PWM1_BASE
+#define HIGH_Ph3A_PWM_OUT_BIT  PWM_OUT_2_BIT
 
 /**
  * @brief Control the 6 MOSFETs for the BLDC driver.
  *
  * This class abstracts the high-side (PWM) and low-side (GPIO or PWM)
- * control into simple 1A(bool), 1B(bool), etc. methods.
+ * control into simple Ph1A(bool), Ph1B(bool), etc. methods.
  */
 class MosfetController
 {
@@ -62,65 +62,65 @@ public:
     void setup(uint32_t pwm_freq, float duty_cycle);
 
     /**
-     * @brief Control Phase 1 High-Side MOSFET (1A)
+     * @brief Control Phase 1 High-Side MOSFET (Ph1A)
      * @param enable true to enable PWM output, false to disable.
      */
-    void 1A(bool enable) {
-        MAP_PWMOutputState(HIGH_1A_PWM_BASE, HIGH_1A_PWM_OUT_BIT, enable);
+    void Ph1A(bool enable) {
+        MAP_PWMOutputState(HIGH_Ph1A_PWM_BASE, HIGH_Ph1A_PWM_OUT_BIT, enable);
     }
 
     /**
-     * @brief Control Phase 2 High-Side MOSFET (2A)
+     * @brief Control Phase 2 High-Side MOSFET (Ph2A)
      * @param enable true to enable PWM output, false to disable.
      */
-    void 2A(bool enable) {
-        MAP_PWMOutputState(HIGH_2A_PWM_BASE, HIGH_2A_PWM_OUT_BIT, enable);
+    void Ph2A(bool enable) {
+        MAP_PWMOutputState(HIGH_Ph2A_PWM_BASE, HIGH_Ph2A_PWM_OUT_BIT, enable);
     }
 
     /**
-     * @brief Control Phase 3 High-Side MOSFET (3A)
+     * @brief Control Phase 3 High-Side MOSFET (Ph3A)
      * @param enable true to enable PWM output, false to disable.
      */
-    void 3A(bool enable) {
-        MAP_PWMOutputState(HIGH_3A_PWM_BASE, HIGH_3A_PWM_OUT_BIT, enable);
+    void Ph3A(bool enable) {
+        MAP_PWMOutputState(HIGH_Ph3A_PWM_BASE, HIGH_Ph3A_PWM_OUT_BIT, enable);
     }
 
     /**
-     * @brief Control Phase 1 Low-Side MOSFET (1B)
+     * @brief Control Phase 1 Low-Side MOSFET (Ph1B)
      * @param enable true to turn on (GPIO high or PWM enabled), false to turn off.
      */
-    void 1B(bool enable) {
+    void Ph1B(bool enable) {
     #ifdef USE_PWM_LOW_SIDE
-        MAP_PWMOutputState(LOW_1B_PWM_BASE, LOW_1B_PWM_OUT_BIT, enable);
+        MAP_PWMOutputState(LOW_Ph1B_PWM_BASE, LOW_Ph1B_PWM_OUT_BIT, enable);
     #else
-        uint8_t val = enable ? LOW_1B_GPIO_PIN : 0x00;
-        MAP_GPIOPinWrite(LOW_1B_GPIO_BASE, LOW_1B_GPIO_PIN, val);
+        uint8_t val = enable ? LOW_Ph1B_GPIO_PIN : 0x00;
+        MAP_GPIOPinWrite(LOW_Ph1B_GPIO_BASE, LOW_Ph1B_GPIO_PIN, val);
     #endif
     }
 
     /**
-     * @brief Control Phase 2 Low-Side MOSFET (2B)
+     * @brief Control Phase 2 Low-Side MOSFET (Ph2B)
      * @param enable true to turn on (GPIO high or PWM enabled), false to turn off.
      */
-    void 2B(bool enable) {
+    void Ph2B(bool enable) {
     #ifdef USE_PWM_LOW_SIDE
-        MAP_PWMOutputState(LOW_2B_PWM_BASE, LOW_2B_PWM_OUT_BIT, enable);
+        MAP_PWMOutputState(LOW_Ph2B_PWM_BASE, LOW_Ph2B_PWM_OUT_BIT, enable);
     #else
-        uint8_t val = enable ? LOW_2B_GPIO_PIN : 0x00;
-        MAP_GPIOPinWrite(LOW_2B_GPIO_BASE, LOW_2B_GPIO_PIN, val);
+        uint8_t val = enable ? LOW_Ph2B_GPIO_PIN : 0x00;
+        MAP_GPIOPinWrite(LOW_Ph2B_GPIO_BASE, LOW_Ph2B_GPIO_PIN, val);
     #endif
     }
 
     /**
-     * @brief Control Phase 3 Low-Side MOSFET (3B)
+     * @brief Control Phase 3 Low-Side MOSFET (Ph3B)
      * @param enable true to turn on (GPIO high or PWM enabled), false to turn off.
      */
-    void 3B(bool enable) {
+    void Ph3B(bool enable) {
     #ifdef USE_PWM_LOW_SIDE
-        MAP_PWMOutputState(LOW_3B_PWM_BASE, LOW_3B_PWM_OUT_BIT, enable);
+        MAP_PWMOutputState(LOW_Ph3B_PWM_BASE, LOW_Ph3B_PWM_OUT_BIT, enable);
     #else
-        uint8_t val = enable ? LOW_3B_GPIO_PIN : 0x00;
-        MAP_GPIOPinWrite(LOW_3B_GPIO_BASE, LOW_3B_GPIO_PIN, val);
+        uint8_t val = enable ? LOW_Ph3B_GPIO_PIN : 0x00;
+        MAP_GPIOPinWrite(LOW_Ph3B_GPIO_BASE, LOW_Ph3B_GPIO_PIN, val);
     #endif
     }
 
@@ -131,15 +131,15 @@ public:
     void updateDuty(float ui32Width) {
 
         // Pulse Width for all three outputs
-        MAP_PWMPulseWidthSet(PWM0_BASE, PWM_OUT_3, ui32Width); // 1A (PB5)
-        MAP_PWMPulseWidthSet(PWM0_BASE, PWM_OUT_5, ui32Width); // 2A (PE5)
-        MAP_PWMPulseWidthSet(PWM1_BASE, PWM_OUT_2, ui32Width); // 3A (PA6)
+        MAP_PWMPulseWidthSet(PWM0_BASE, PWM_OUT_3, ui32Width); // Ph1A (PB5)
+        MAP_PWMPulseWidthSet(PWM0_BASE, PWM_OUT_5, ui32Width); // Ph2A (PE5)
+        MAP_PWMPulseWidthSet(PWM1_BASE, PWM_OUT_2, ui32Width); // Ph3A (PA6)
 
         // Set pulse widths for low-side if they are PWMs
         #ifdef USE_PWM_LOW_SIDE
-        MAP_PWMPulseWidthSet(LOW_1B_PWM_BASE, LOW_1B_PWM_OUT_BIT, ui32Width); // 1B (PE4)
-        MAP_PWMPulseWidthSet(LOW_2B_PWM_BASE, LOW_2B_PWM_OUT_BIT, ui32Width); // 2B (PB4)
-        MAP_PWMPulseWidthSet(LOW_3B_PWM_BASE, LOW_3B_PWM_OUT_BIT, ui32Width); // 3B (PA7)
+        MAP_PWMPulseWidthSet(LOW_Ph1B_PWM_BASE, LOW_Ph1B_PWM_OUT_BIT, ui32Width); // Ph1B (PE4)
+        MAP_PWMPulseWidthSet(LOW_Ph2B_PWM_BASE, LOW_Ph2B_PWM_OUT_BIT, ui32Width); // Ph2B (PB4)
+        MAP_PWMPulseWidthSet(LOW_Ph3B_PWM_BASE, LOW_Ph3B_PWM_OUT_BIT, ui32Width); // Ph3B (PA7)
         #endif
     }
 
@@ -147,12 +147,12 @@ public:
      * @brief Turn all 6 MOSFETs off.
      */
     void allOff() {
-        1A(false);
-        2A(false);
-        3A(false);
-        1B(false);
-        2B(false);
-        3B(false);
+        Ph1A(false);
+        Ph2A(false);
+        Ph3A(false);
+        Ph1B(false);
+        Ph2B(false);
+        Ph3B(false);
     }
 };
 
