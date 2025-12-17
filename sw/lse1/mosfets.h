@@ -131,9 +131,9 @@ public:
     void updateDuty(float ui32Width) {
 
         // Pulse Width for all three outputs
-        MAP_PWMPulseWidthSet(PWM0_BASE, PWM_OUT_3, ui32Width); // Ph1A (PB5)
-        MAP_PWMPulseWidthSet(PWM0_BASE, PWM_OUT_5, ui32Width); // Ph2A (PE5)
-        MAP_PWMPulseWidthSet(PWM1_BASE, PWM_OUT_2, ui32Width); // Ph3A (PA6)
+        MAP_PWMPulseWidthSet(HIGH_Ph1A_PWM_BASE, HIGH_Ph1A_PWM_OUT_BIT, ui32Width); // Ph1A (PB5)
+        MAP_PWMPulseWidthSet(HIGH_Ph2A_PWM_BASE, HIGH_Ph2A_PWM_OUT_BIT, ui32Width); // Ph2A (PE5)
+        MAP_PWMPulseWidthSet(HIGH_Ph3A_PWM_BASE, HIGH_Ph3A_PWM_OUT_BIT, ui32Width); // Ph3A (PA6)
 
         // Set pulse widths for low-side if they are PWMs
         #ifdef USE_PWM_LOW_SIDE

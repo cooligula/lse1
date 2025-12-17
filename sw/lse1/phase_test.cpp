@@ -88,7 +88,7 @@ void testPhase(int phase, int on){
 // MAIN FUNCTION
 //=============================================================================
 int
-main(void)
+main2(void)
 {
 
     // Set the clocking to run directly from the external crystal/oscillator.
@@ -111,7 +111,7 @@ main(void)
     mosfets.allOff();
 
     // Phase select
-    int phase_test = 2;
+    int phase_test = 3;
     int phase_on = 0;
 
     // Begin phase test loop

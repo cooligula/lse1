@@ -1,4 +1,5 @@
 "./comparators.obj"
+"./main.obj"
 "./mosfets.obj"
 "./phase_test.obj"
 "./startup_ccs.obj"

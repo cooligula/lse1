@@ -46,6 +46,12 @@ void ComparatorController::disableAllInterrupts()
     MAP_GPIOIntDisable(COMP3_GPIO_BASE, COMP_PORTF_PINS); // Disables 3
 }
 
+void ComparatorController::enableAllInterrupts()
+{
+    MAP_GPIOIntEnable(COMP1_GPIO_BASE, COMP_PORTC_PINS); // Enables 1 and 2
+    MAP_GPIOIntEnable(COMP3_GPIO_BASE, COMP_PORTF_PINS); // Enables 3
+}
+
 void ComparatorController::configComparatorInt(ComparatorID id, bool enable, uint32_t edgeType)
 {
     uint32_t gpioBase;

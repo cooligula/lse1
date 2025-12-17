@@ -59,6 +59,11 @@ public:
     void disableAllInterrupts();
     
     /**
+     * @brief Enables interrupts for all comparators.
+     */
+    void enableAllInterrupts();
+
+    /**
      * @brief Sets the interrupt trigger type for all comparator pins.
      * @param ui32IntType The type of interrupt trigger:
      * - GPIO_RISING_EDGE

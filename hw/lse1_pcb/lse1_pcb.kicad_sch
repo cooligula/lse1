@@ -9062,7 +9062,7 @@
 				)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "33k"
 			(at 233.172 170.688 90)
 			(effects
 				(font
@@ -9129,7 +9129,7 @@
 				)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "33k"
 			(at 233.172 202.438 90)
 			(effects
 				(font
@@ -9910,7 +9910,7 @@
 				)
 			)
 		)
-		(property "Value" "47u"
+		(property "Value" "4.7u"
 			(at 190.246 30.48 90)
 			(effects
 				(font
@@ -10818,7 +10818,6 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "396dcef4-0f19-43a2-a2e7-adfad343a4f7")
 		(property "Reference" "#PWR04"
 			(at 189.23 74.93 0)
@@ -10960,7 +10959,7 @@
 				)
 			)
 		)
-		(property "Value" "47u"
+		(property "Value" "4.7u"
 			(at 187.706 173.99 90)
 			(effects
 				(font
@@ -11626,7 +11625,7 @@
 				)
 			)
 		)
-		(property "Value" "C"
+		(property "Value" "4.7n"
 			(at 245.364 143.51 90)
 			(effects
 				(font
@@ -11957,7 +11956,7 @@
 				)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "12k"
 			(at 236.982 178.562 90)
 			(effects
 				(font
@@ -12660,7 +12659,7 @@
 				)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "1k"
 			(at 275.082 45.212 90)
 			(effects
 				(font
@@ -13000,7 +12999,7 @@
 				)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "1k"
 			(at 264.668 51.562 90)
 			(effects
 				(font
@@ -13067,7 +13066,7 @@
 				)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "12k"
 			(at 236.982 210.312 90)
 			(effects
 				(font
@@ -13817,7 +13816,7 @@
 				)
 			)
 		)
-		(property "Value" "C"
+		(property "Value" "4.7n"
 			(at 245.364 176.53 90)
 			(effects
 				(font
@@ -13949,7 +13948,7 @@
 				)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "33k"
 			(at 233.172 137.668 90)
 			(effects
 				(font
@@ -14158,7 +14157,7 @@
 				)
 			)
 		)
-		(property "Value" "47u"
+		(property "Value" "4.7u"
 			(at 188.976 102.87 90)
 			(effects
 				(font
@@ -14186,6 +14185,15 @@
 		)
 		(property "Description" "Unpolarized capacitor"
 			(at 185.42 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Field5" ""
+			(at 185.42 102.87 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14843,7 +14851,7 @@
 				)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "1k"
 			(at 275.082 57.912 90)
 			(effects
 				(font
@@ -17676,7 +17684,7 @@
 				)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "1k"
 			(at 277.368 51.562 90)
 			(effects
 				(font
@@ -18902,7 +18910,7 @@
 				)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "1k"
 			(at 275.082 69.342 90)
 			(effects
 				(font
@@ -19231,7 +19239,7 @@
 				)
 			)
 		)
-		(property "Value" "C"
+		(property "Value" "4.7n"
 			(at 245.364 208.28 90)
 			(effects
 				(font
@@ -19401,7 +19409,7 @@
 				)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "12k"
 			(at 236.982 145.542 90)
 			(effects
 				(font
