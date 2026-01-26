@@ -6,8 +6,6 @@
 Building file: "../main.cpp"
 Invoking: ARM Compiler
 "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
-"../main.cpp", line 203: warning #179-D: variable "phase_period" was declared but never referenced
-"../main.cpp", line 210: warning #179-D: variable "test_duty" was declared but never referenced
 Finished building: "../main.cpp"
  
 Building target: "lse1.out"

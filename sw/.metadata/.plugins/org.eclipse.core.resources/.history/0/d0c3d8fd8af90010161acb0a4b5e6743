@@ -1,0 +1,409 @@
+#include <stdbool.h>
+#include <stdint.h>
+#include "inc/hw_memmap.h"
+#include "driverlib/debug.h"
+#include "driverlib/gpio.h"
+#include "driverlib/pin_map.h"
+#include "driverlib/pwm.h"
+#include "driverlib/rom.h"
+#include "driverlib/rom_map.h"
+#include "driverlib/sysctl.h"
+#include "driverlib/uart.h"
+#include "driverlib/timer.h"
+#include "driverlib/fpu.h"
+#include "utils/uartstdio.h"
+#include "mosfets.h"
+#include "comparators.h"
+#include "adc.h"
+
+#ifdef DEBUG
+void
+__error__(char *pcFilename, uint32_t ui32Line)
+{
+}
+#endif
+
+#define STOP 7
+#define S1 0
+#define S2 1
+#define S3 2
+#define S4 3
+#define S5 4
+#define S6 5
+
+#define RISE 0
+#define FALL 1
+
+// -----------------------------------------------------
+int CLOSED_LOOP = 1;
+// -----------------------------------------------------
+int stall_detect = 0;
+// -----------------------------------------------------
+int potentiometer = 0;
+// -----------------------------------------------------
+
+// Controller instance.
+MosfetController mosfets;
+ComparatorController comps;
+
+// Max duty
+int pwm_freq = 20e3;
+float max_duty = 0.18;
+float min_duty = 0.14;
+uint32_t ui32Period;
+
+// Stalling timer period
+uint32_t stallPeriod;
+
+// Comencem apagant tots els MOSFETs
+int state = STOP;
+
+uint8_t RiseFall = 0;
+
+// Number of cycles in OL ramp
+const int N = 20;
+
+// OL ramp parameter vectors
+float freqfase[N + 1];
+uint32_t dutys[N + 1];
+
+// Dynamic status variables
+volatile int started = 0;
+volatile int moving = 1;
+
+/**
+ * @brief updateClosedLoopState
+ */
+/*
+ void updateClosedLoopState() {//(bool A, bool B, bool C) {
+
+ mosfets.Ph1A(A && !B);
+ mosfets.Ph2A(B && !C);
+ mosfets.Ph3A(C && !A);
+
+ mosfets.Ph1B(!A && B);
+ mosfets.Ph2B(!B && C);
+ mosfets.Ph3B(!C && A);
+ }
+ */
+
+/**
+ * @brief updateState
+ * Configura sortides de GPIOs pels sis estats d'alimentació del motor
+ */
+void updateState(int state)
+{
+    switch (state)
+    {
+    case STOP:
+        mosfets.allOff();
+        break;
+
+    case S1:
+        mosfets.Ph1A(true);
+        mosfets.Ph2A(false);
+        mosfets.Ph3A(false);
+
+        mosfets.Ph1B(false);
+        mosfets.Ph2B(true);
+        mosfets.Ph3B(false);
+        break;
+
+    case S2:
+        mosfets.Ph1A(true);
+        mosfets.Ph2A(false);
+        mosfets.Ph3A(false);
+
+        mosfets.Ph1B(false);
+        mosfets.Ph2B(false);
+        mosfets.Ph3B(true);
+        break;
+
+    case S3:
+        mosfets.Ph1A(false);
+        mosfets.Ph2A(true);
+        mosfets.Ph3A(false);
+
+        mosfets.Ph1B(false);
+        mosfets.Ph2B(false);
+        mosfets.Ph3B(true);
+        break;
+
+    case S4:
+        mosfets.Ph1A(false);
+        mosfets.Ph2A(true);
+        mosfets.Ph3A(false);
+
+        mosfets.Ph1B(true);
+        mosfets.Ph2B(false);
+        mosfets.Ph3B(false);
+        break;
+
+    case S5:
+        mosfets.Ph1A(false);
+        mosfets.Ph2A(false);
+        mosfets.Ph3A(true);
+
+        mosfets.Ph1B(true);
+        mosfets.Ph2B(false);
+        mosfets.Ph3B(false);
+        break;
+
+    case S6:
+        mosfets.Ph1A(false);
+        mosfets.Ph2A(false);
+        mosfets.Ph3A(true);
+
+        mosfets.Ph1B(false);
+        mosfets.Ph2B(true);
+        mosfets.Ph3B(false);
+        break;
+    }
+}
+
+void setupNextInterrupt(int currentState)
+{
+    comps.disableAllInterrupts();
+    switch (currentState)
+    {
+    case STOP:
+        comps.configComparatorInt(COMP_3, true, GPIO_RISING_EDGE);
+        break; // Phase C falling
+    case S1:
+        comps.configComparatorInt(COMP_3, true, GPIO_RISING_EDGE);
+        break; // Phase C falling
+    case S2:
+        comps.configComparatorInt(COMP_2, true, GPIO_FALLING_EDGE);
+        break; // Phase B rising
+    case S3:
+        comps.configComparatorInt(COMP_1, true, GPIO_RISING_EDGE);
+        break; // Phase A falling
+    case S4:
+        comps.configComparatorInt(COMP_3, true, GPIO_FALLING_EDGE);
+        break; // Phase C rising
+    case S5:
+        comps.configComparatorInt(COMP_2, true, GPIO_RISING_EDGE);
+        break; // Phase B falling
+    case S6:
+        comps.configComparatorInt(COMP_1, true, GPIO_FALLING_EDGE);
+        break; // Phase A rising
+    }
+
+    // Clear comparator interrupts
+    comps.clearInterrupts();
+}
+
+bool cl_locked = false;
+volatile int zc_detected_count = 0;
+
+extern void GPIOInt(void)
+{
+    comps.disableAllInterrupts();
+
+    if (CLOSED_LOOP && started)
+    {
+        state = (state + 1) % 6;
+        updateState(state);
+
+        MAP_SysCtlDelay((MAP_SysCtlClockGet() * 2e-4) / 3);
+    }
+
+    // Setup next interrupt
+    setupNextInterrupt(state);
+
+    // Reset stall timer
+    MAP_TimerIntDisable(TIMER0_BASE, TIMER_TIMA_TIMEOUT);
+    MAP_TimerLoadSet(TIMER0_BASE, TIMER_A, stallPeriod);
+    MAP_TimerIntEnable(TIMER0_BASE, TIMER_TIMA_TIMEOUT);
+
+    //MAP_SysCtlDelay((MAP_SysCtlClockGet() * 1e-4) / 3);
+    //zc_detected_count++;
+    comps.clearInterrupts();
+}
+
+void StallInt(void)
+{
+
+    // Disable timer interrupts
+    MAP_TimerIntDisable(TIMER0_BASE, TIMER_TIMA_TIMEOUT);
+
+    // Clear int.
+    MAP_TimerIntClear(TIMER0_BASE, TIMER_TIMA_TIMEOUT);
+
+    // Shut off all mosfets
+    mosfets.allOff();
+
+    // Wait the stalling grace period
+    MAP_SysCtlDelay((MAP_SysCtlClockGet() * 300e-3) / 3);
+
+    // Notify of stalling
+    moving = 0;
+    started = 0;
+
+    // Re-enable int.
+    MAP_TimerIntEnable(TIMER0_BASE, TIMER_TIMA_TIMEOUT);
+}
+
+//=============================================================================
+// MAIN FUNCTION
+//=============================================================================
+int main(void)
+{
+
+    // Set the clocking to run directly from the external crystal/oscillator
+    MAP_SysCtlClockSet(SYSCTL_SYSDIV_1 | SYSCTL_USE_OSC | SYSCTL_OSC_MAIN |
+    SYSCTL_XTAL_16MHZ);
+    ui32Period = (uint32_t) (MAP_SysCtlClockGet() / pwm_freq);
+
+    // Set the PWM clock to the system clock
+    MAP_SysCtlPWMClockSet(SYSCTL_PWMDIV_1);
+
+    // Enable FPU
+    FPUEnable();
+    FPULazyStackingEnable();
+
+    // Stall timer setup
+    MAP_SysCtlPeripheralEnable(SYSCTL_PERIPH_TIMER0); // Enable timer
+    while (!SysCtlPeripheralReady(SYSCTL_PERIPH_TIMER0))
+    {
+    }; // Wait for the Timer0 module to be ready
+    MAP_TimerConfigure(TIMER0_BASE, TIMER_CFG_PERIODIC); // Configure it as a periodic timer
+    stallPeriod = MAP_SysCtlClockGet() * 1; // NO SE PER QUE PERO AIXO FUNCIONA
+    MAP_TimerLoadSet(TIMER0_BASE, TIMER_A, stallPeriod); // Set the timer period: in this case, 10ms
+    TimerIntRegister(TIMER0_BASE, TIMER_A, StallInt); // Set up the timeout handling function
+
+    // ADC setup
+    ADCSetup();
+
+    // MOSFET Setup
+    float initial_duty = 0.16;
+    mosfets.setup(pwm_freq, initial_duty);
+
+    // Disable interrupts for setup
+    MAP_IntMasterDisable();
+    comps.setup(GPIOInt);
+
+    updateState(state); // This will now call mosfets.allOff()
+
+    //float phase_period = 4e-3;
+    int cyclesPerStep = 18;
+
+    float ini_duty = 0.18;
+    float fin_duty = 0.14;
+    float ini_fase = 4e-3;
+    float fin_fase = 1.2e-3;
+    // float test_duty = 0.14 / pwm_freq;
+
+    // Find the open-loop ramp trajectory
+    for (int i = 0; i <= N; i++)
+    {
+        freqfase[i] = (ini_fase + (fin_fase - ini_fase) * i / N);
+        dutys[i] = (uint32_t) (ui32Period
+                * (ini_duty + (fin_duty - ini_duty) * i / N));
+    }
+
+    MAP_IntMasterEnable();
+    comps.clearInterrupts();
+    comps.disableAllInterrupts();
+
+    // Start the stalling timer
+    if (stall_detect)
+    {
+        MAP_TimerEnable(TIMER0_BASE, TIMER_A);
+        MAP_TimerIntEnable(TIMER0_BASE, TIMER_TIMA_TIMEOUT);
+        setupNextInterrupt(state);
+    }
+
+    while (1)
+    {
+
+        if (!started)
+        {
+            // Rampa open loop
+            for (int i = 0; i <= N; i++)
+            {
+
+                // Update duty
+                mosfets.updateDuty(dutys[i]);
+
+                // Wait a few phase cycles for stability
+                for (int j = 0; j <= cyclesPerStep; j++)
+                {
+                    // Advance states
+                    state += 1;
+                    state %= 6;
+                    updateState(state);
+
+                    // Wait the corresponding phase period
+                    MAP_SysCtlDelay((MAP_SysCtlClockGet() * freqfase[i]) / 3);
+
+                    if (!moving)
+                    {
+                        break;
+                        //moving = 1;
+                    }
+                }
+                if (!moving)
+                {
+                    moving = 1;
+                    break;
+                }
+
+            }
+            started = 1;
+        }
+
+        if (!CLOSED_LOOP)
+        {
+            state += 1;
+            state %= 6;
+            updateState(state);
+
+            MAP_SysCtlDelay((MAP_SysCtlClockGet() * freqfase[N]) / 3);
+        }
+        else
+        {
+            // A PARTIR D'AQUI CLOSED LOOP
+
+            if (started != 2)
+            {
+                // Enable interrupts but DON'T stop the loop yet
+                // ---- TO BE DONE ONCE
+                // ---- MAP_IntMasterEnable();
+                // ---- comps.clearInterrupts();
+                // Start looking for the first ZC
+                //MAP_IntMasterEnable();
+                comps.clearInterrupts();
+
+                setupNextInterrupt(state);
+                started = 2;
+            }
+
+            if (potentiometer)
+            {
+                float instDuty = ((float) ADC0_ReadAvg(5) / 4095.0f)
+                        * (max_duty - min_duty) + min_duty;
+                uint32_t newDuty = (uint32_t) (instDuty * ui32Period);
+
+                mosfets.updateDuty(newDuty);
+
+                MAP_SysCtlDelay(MAP_SysCtlClockGet() * 10e-3);
+            }
+
+            //while (!cl_locked) {
+            // Keep commutating at the final frequency
+            //    state = (state + 1) % 6;
+            //    updateState(state);
+            //    setupNextInterrupt(state); // Ensure comparator is looking for the right edge
+
+            // Wait the phase period from the end of the ramp
+            //MAP_SysCtlDelay((MAP_SysCtlClockGet() * freqfase[N]) / 3);
+
+            // If we've seen enough interrupts in the ISR -> stop this manual loop
+            //    if (zc_detected_count > 12) { // Wait for 2 full revS
+            //        cl_locked = true;
+            //    }
+            //while (1) {}
+        }
+    }
+}

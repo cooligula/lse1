@@ -1,5 +1,5 @@
-"./blinky.obj"
+"./proves.obj"
 "./startup_ccs.obj"
-"../blinky_ccs.cmd"
--l"/home/adria/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib"
+"../linker.cmd"
+-l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib"
 -llibc.a

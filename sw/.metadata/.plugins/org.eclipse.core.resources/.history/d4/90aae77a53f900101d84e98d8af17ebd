@@ -1,0 +1,141 @@
+//*****************************************************************************
+//
+// blinky.c - Simple example to blink the on-board LED.
+//
+// Copyright (c) 2012-2020 Texas Instruments Incorporated.  All rights reserved.
+// Software License Agreement
+// 
+// Texas Instruments (TI) is supplying this software for use solely and
+// exclusively on TI's microcontroller products. The software is owned by
+// TI and/or its suppliers, and is protected under applicable copyright
+// laws. You may not combine this software with "viral" open-source
+// software in order to form a larger program.
+// 
+// THIS SOFTWARE IS PROVIDED "AS IS" AND WITH ALL FAULTS.
+// NO WARRANTIES, WHETHER EXPRESS, IMPLIED OR STATUTORY, INCLUDING, BUT
+// NOT LIMITED TO, IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+// A PARTICULAR PURPOSE APPLY TO THIS SOFTWARE. TI SHALL NOT, UNDER ANY
+// CIRCUMSTANCES, BE LIABLE FOR SPECIAL, INCIDENTAL, OR CONSEQUENTIAL
+// DAMAGES, FOR ANY REASON WHATSOEVER.
+// 
+// This is part of revision 2.2.0.295 of the EK-TM4C123GXL Firmware Package.
+//
+//*****************************************************************************
+
+#include <stdint.h>
+#include <stdbool.h>
+#include "inc/hw_memmap.h"
+#include "driverlib/debug.h"
+#include "driverlib/gpio.h"
+#include "driverlib/sysctl.h"
+
+//*****************************************************************************
+//
+//! \addtogroup example_list
+//! <h1>Blinky (blinky)</h1>
+//!
+//! A very simple example that blinks the on-board LED using direct register
+//! access.
+//
+//*****************************************************************************
+
+//*****************************************************************************
+//
+// The error routine that is called if the driver library encounters an error.
+//
+//*****************************************************************************
+#ifdef DEBUG
+void
+__error__(char *pcFilename, uint32_t ui32Line)
+{
+    while(1);
+}
+#endif
+
+//*****************************************************************************
+//
+// Blink the on-board LED.
+//
+//*****************************************************************************
+int main(void)
+{
+    volatile uint32_t ui32Loop;
+
+    // Set the clocking to run directly from the external crystal/oscillator
+    MAP_SysCtlClockSet(SYSCTL_SYSDIV_1 | SYSCTL_USE_OSC | SYSCTL_OSC_MAIN |
+    SYSCTL_XTAL_16MHZ);
+
+    // Set the PWM clock to the system clock
+    MAP_SysCtlPWMClockSet(SYSCTL_PWMDIV_1);
+
+    //
+    // Enable the GPIO port that is used for the on-board LED.
+    //
+    SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOF);
+
+    //
+    // Check if the peripheral access is enabled.
+    //
+    while (!SysCtlPeripheralReady(SYSCTL_PERIPH_GPIOF))
+    {
+    }
+
+    // Enable ADC0 and GPIOE clocks
+    SysCtlPeripheralEnable(SYSCTL_PERIPH_ADC0);
+    SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOE);
+
+    // Wait until peripherals are ready
+    while(!SysCtlPeripheralReady(SYSCTL_PERIPH_ADC0));
+    while(!SysCtlPeripheralReady(SYSCTL_PERIPH_GPIOE));
+    // Configure PE3 as an ADC input (AIN0)
+    GPIOPinTypeADC(GPIO_PORTE_BASE, GPIO_PIN_3);
+
+    // Disable SS3 before configuration
+    ADCSequenceDisable(ADC0_BASE, 3);
+    // Configure SS3 for processor trigger, highest priority
+    ADCSequenceConfigure(ADC0_BASE, 3, ADC_TRIGGER_PROCESSOR, 0);
+
+
+    // PWM enable & setup
+    SysCtlPeripheralEnable(SYSCTL_PERIPH_PWM1); // Farem servir el modul 1, ja que el pin PF3 te M1PWM7
+    GPIOPinConfigure(GPIO_PF3_M1PWM7);
+    GPIOPinTypePWM(GPIO_PORTF_BASE, GPIO_PIN_7);
+
+    float pwm_freq = 20e3;
+    uint32_t ui32Period = (MAP_SysCtlClockGet() / pwm_freq);
+
+    PWMGenPeriodSet(PWM1_BASE, PWM_GEN_3, ui32Period); // GENERADOR 3 O 4 IDK
+
+    // Pulse width in clock ticks
+    float duty_cycle = 0.5;
+    uint32_t ui32Width = (uint32_t) (ui32Period * duty_cycle);
+
+    // Pulse Width for all three outputs
+    MAP_PWMPulseWidthSet(PWM1_BASE, PWM_OUT_7, ui32Width);
+
+    //
+    // Enable the GPIO pin for the LED (PF3).  Set the direction as output, and
+    // enable the GPIO pin for digital function.
+    //
+    GPIOPinTypeGPIOOutput(GPIO_PORTC_BASE, GPIO_PIN_4); // PF3
+
+    // Enable the reference voltage pin
+    GPIOPinWrite(GPIO_PORTC_BASE, GPIO_PIN_4, GPIO_PIN_4);
+
+    MAP_IntMasterEnable();
+
+    //
+    // Loop forever.
+    //
+    while (1)
+    {
+        // Read potentiometer position
+        ui32Width = ADC_Value / 4095.0;
+
+        // Update PWM value
+        MAP_PWMPulseWidthSet(PWM1_BASE, PWM_OUT_7, ui32Width);
+
+        // Small delay
+        MAP_SysCtlDelay((MAP_SysCtlClockGet() * 1e-3) / 3);
+    }
+}

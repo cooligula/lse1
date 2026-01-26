@@ -128,18 +128,18 @@ public:
      * @brief Update duty cycle value
      * @param duty_cycle The width of the desired pulse (in seconds).
      */
-    void updateDuty(float ui32Width) {
+    void updateDuty(uint32_t newDuty) {
 
         // Pulse Width for all three outputs
-        MAP_PWMPulseWidthSet(HIGH_Ph1A_PWM_BASE, HIGH_Ph1A_PWM_OUT_BIT, ui32Width); // Ph1A (PB5)
-        MAP_PWMPulseWidthSet(HIGH_Ph2A_PWM_BASE, HIGH_Ph2A_PWM_OUT_BIT, ui32Width); // Ph2A (PE5)
-        MAP_PWMPulseWidthSet(HIGH_Ph3A_PWM_BASE, HIGH_Ph3A_PWM_OUT_BIT, ui32Width); // Ph3A (PA6)
+        MAP_PWMPulseWidthSet(PWM0_BASE, PWM_OUT_3, newDuty); // 1A (PB5)
+        MAP_PWMPulseWidthSet(PWM0_BASE, PWM_OUT_5, newDuty); // 2A (PE5)
+        MAP_PWMPulseWidthSet(PWM1_BASE, PWM_OUT_2, newDuty); // 3A (PA6)
 
         // Set pulse widths for low-side if they are PWMs
         #ifdef USE_PWM_LOW_SIDE
-        MAP_PWMPulseWidthSet(LOW_Ph1B_PWM_BASE, LOW_Ph1B_PWM_OUT_BIT, ui32Width); // Ph1B (PE4)
-        MAP_PWMPulseWidthSet(LOW_Ph2B_PWM_BASE, LOW_Ph2B_PWM_OUT_BIT, ui32Width); // Ph2B (PB4)
-        MAP_PWMPulseWidthSet(LOW_Ph3B_PWM_BASE, LOW_Ph3B_PWM_OUT_BIT, ui32Width); // Ph3B (PA7)
+        MAP_PWMPulseWidthSet(LOW_Ph1B_PWM_BASE, LOW_Ph1B_PWM_OUT_BIT, newDuty); // 1B (PE4)
+        MAP_PWMPulseWidthSet(LOW_Ph2B_PWM_BASE, LOW_Ph2B_PWM_OUT_BIT, newDuty); // 2B (PB4)
+        MAP_PWMPulseWidthSet(LOW_Ph3B_PWM_BASE, LOW_Ph3B_PWM_OUT_BIT, newDuty); // 3B (PA7)
         #endif
     }
 

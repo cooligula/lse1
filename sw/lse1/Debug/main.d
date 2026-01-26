@@ -26,11 +26,15 @@ main.obj: C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/rom.h
 main.obj: C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/rom_map.h
 main.obj: C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/sysctl.h
 main.obj: C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/uart.h
+main.obj: C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/timer.h
+main.obj: C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/fpu.h
 main.obj: C:/ti/TivaWare_C_Series-2.2.0.295/utils/uartstdio.h
 main.obj: C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/stdarg.h
 main.obj: ../mosfets.h
 main.obj: ../comparators.h
 main.obj: C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h
+main.obj: ../adc.h
+main.obj: C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/adc.h
 
 ../main.cpp:
 
@@ -84,6 +88,10 @@ C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/sysctl.h:
 
 C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/uart.h:
 
+C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/timer.h:
+
+C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/fpu.h:
+
 C:/ti/TivaWare_C_Series-2.2.0.295/utils/uartstdio.h:
 
 C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/stdarg.h:
@@ -93,4 +101,8 @@ C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/stdarg.h:
 ../comparators.h:
 
 C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h:
+
+../adc.h:
+
+C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/adc.h:
 

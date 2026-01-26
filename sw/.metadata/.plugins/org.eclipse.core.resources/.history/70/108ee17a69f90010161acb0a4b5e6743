@@ -1,0 +1,46 @@
+#include "driverlib/adc.h"
+
+/**
+ * @brief ADCSetup
+ * Inicialitza el pin PE3 com una entrada ADC
+ */
+void ADCSetup(void)
+{
+// Configure pin PE3 as ADC input
+SysCtlPeripheralEnable(SYSCTL_PERIPH_ADC0);
+SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOE);
+
+
+while(!SysCtlPeripheralReady(SYSCTL_PERIPH_ADC0) | !SysCtlPeripheralReady(SYSCTL_PERIPH_GPIOE)){}
+
+
+GPIOPinTypeADC(GPIO_PORTE_BASE, GPIO_PIN_3);
+
+ADCSequenceDisable(ADC0_BASE, 3); // Disable SS3 before configuration
+ADCSequenceConfigure(ADC0_BASE, 3, ADC_TRIGGER_PROCESSOR, 0); // Configure SS3 for processor trigger, highest priority
+// Configure SS3 step 0 to read AIN0
+// ADC_CTL_END marks the end of the sequence
+ADCSequenceStepConfigure(ADC0_BASE, 3, 0, ADC_CTL_CH0 | ADC_CTL_END);
+ADCSequenceEnable(ADC0_BASE, 3);   // Enable SS3
+}
+
+/**
+ * @brief ADC0_ReadAvg
+ * Retorna un valor de l'ADC0 fent el promig de N mesures
+ */
+uint32_t ADC0_ReadAvg(uint8_t N)
+{
+    uint32_t sum = 0;
+    uint32_t value;
+    volatile uint8_t i = 0;
+    for(i = 0; i < N; i++)
+    {
+        // Trigger SS3 conversion
+        ADCProcessorTrigger(ADC0_BASE, 3);
+
+        // Read the ADC value
+        ADCSequenceDataGet(ADC0_BASE, 3, &value);
+        sum += value;  // Use single-read function
+    }
+    return (float)(sum / N);
+}

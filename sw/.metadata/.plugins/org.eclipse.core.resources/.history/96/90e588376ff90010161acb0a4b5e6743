@@ -1,0 +1,87 @@
+#include "mosfets.h"
+#include "driverlib/pin_map.h"
+
+void MosfetController::setup(uint32_t pwm_freq, float duty_cycle)
+{
+    // The PWM peripheral must be enabled for use.
+    // Habilitem els moduls 0 i 1 pq els necessitem els dos
+    MAP_SysCtlPeripheralEnable(SYSCTL_PERIPH_PWM0);
+    MAP_SysCtlPeripheralEnable(SYSCTL_PERIPH_PWM1);
+
+    // Enable the GPIO port that is used for the PWM output.
+    MAP_SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOA);
+    MAP_SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOB);
+    MAP_SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOE);
+
+    // Wait for peripherals to be ready
+    while(!MAP_SysCtlPeripheralReady(SYSCTL_PERIPH_GPIOA) ||
+          !MAP_SysCtlPeripheralReady(SYSCTL_PERIPH_GPIOB) ||
+          !MAP_SysCtlPeripheralReady(SYSCTL_PERIPH_GPIOE) ||
+          !MAP_SysCtlPeripheralReady(SYSCTL_PERIPH_PWM0)  ||
+          !MAP_SysCtlPeripheralReady(SYSCTL_PERIPH_PWM1));
+
+    // Configure the PWM function for this pin
+    // 1A (High-side)
+    MAP_GPIOPinConfigure(GPIO_PB5_M0PWM3);
+    MAP_GPIOPinTypePWM(GPIO_PORTB_BASE, GPIO_PIN_5);
+    // 2A (High-side)
+    MAP_GPIOPinConfigure(GPIO_PE5_M0PWM5);
+    MAP_GPIOPinTypePWM(GPIO_PORTE_BASE, GPIO_PIN_5);
+    // 3A (High-side)
+    MAP_GPIOPinConfigure(GPIO_PA6_M1PWM2);
+    MAP_GPIOPinTypePWM(GPIO_PORTA_BASE, GPIO_PIN_6);
+
+    // Enable Low GPIOs
+    #ifndef USE_PWM_LOW_SIDE
+    MAP_GPIOPinTypeGPIOOutput(LOW_Ph1B_GPIO_BASE, LOW_Ph1B_GPIO_PIN); // 1B (Low-side)
+    MAP_GPIOPinTypeGPIOOutput(LOW_Ph2B_GPIO_BASE, LOW_Ph2B_GPIO_PIN); // 2B (Low-side)
+    MAP_GPIOPinTypeGPIOOutput(LOW_Ph3B_GPIO_BASE, LOW_Ph3B_GPIO_PIN); // 3B (Low-side)
+    #else
+    // 1B (Low-side) - PE4 (M0PWM4)
+    MAP_GPIOPinConfigure(GPIO_PE4_M0PWM4);
+    MAP_GPIOPinTypePWM(GPIO_PORTE_BASE, GPIO_PIN_4);
+    // 2B (Low-side) - PB4 (M0PWM2)
+    MAP_GPIOPinConfigure(GPIO_PB4_M0PWM2);
+    MAP_GPIOPinTypePWM(GPIO_PORTB_BASE, GPIO_PIN_4);
+    // 3B (Low-side) - PA7 (M1PWM3)
+    MAP_GPIOPinConfigure(GPIO_PA7_M1PWM3);
+    MAP_GPIOPinTypePWM(GPIO_PORTA_BASE, GPIO_PIN_7);
+    #endif
+
+
+    // Configure PWM0 to count up/down without synchronization.
+    MAP_PWMGenConfigure(PWM0_BASE, PWM_GEN_1, PWM_GEN_MODE_UP_DOWN |
+                        PWM_GEN_MODE_NO_SYNC); // 1A (M0PWM3), 2B (M0PWM2)
+    MAP_PWMGenConfigure(PWM0_BASE, PWM_GEN_2, PWM_GEN_MODE_UP_DOWN |
+                        PWM_GEN_MODE_NO_SYNC); // 1B (M0PWM4), 2A (M0PWM5)
+    MAP_PWMGenConfigure(PWM1_BASE, PWM_GEN_1, PWM_GEN_MODE_UP_DOWN |
+                        PWM_GEN_MODE_NO_SYNC); // 3A (M1PWM2), 3B (M1PWM3)
+
+    // Period in clock ticks
+    uint32_t ui32Period = (MAP_SysCtlClockGet() / pwm_freq);
+    
+    // Period for all three generators
+    MAP_PWMGenPeriodSet(PWM0_BASE, PWM_GEN_1, ui32Period); // Gen 1 (1A, 2B)
+    MAP_PWMGenPeriodSet(PWM0_BASE, PWM_GEN_2, ui32Period); // Gen 2 (1B, 2A)
+    MAP_PWMGenPeriodSet(PWM1_BASE, PWM_GEN_1, ui32Period); // Gen 1 (3A, 3B)
+    
+    // Pulse width in clock ticks
+    uint32_t ui32Width = (ui32Period * (uint32_t)duty_cycle);
+
+    // Pulse Width for all three outputs
+    MAP_PWMPulseWidthSet(PWM0_BASE, PWM_OUT_3, ui32Width); // 1A (PB5)
+    MAP_PWMPulseWidthSet(PWM0_BASE, PWM_OUT_5, ui32Width); // 2A (PE5)
+    MAP_PWMPulseWidthSet(PWM1_BASE, PWM_OUT_2, ui32Width); // 3A (PA6)
+
+    // Set pulse widths for low-side if they are PWMs
+    #ifdef USE_PWM_LOW_SIDE
+    MAP_PWMPulseWidthSet(LOW_Ph1B_PWM_BASE, LOW_Ph1B_PWM_OUT_BIT, ui32Width); // 1B (PE4)
+    MAP_PWMPulseWidthSet(LOW_Ph2B_PWM_BASE, LOW_Ph2B_PWM_OUT_BIT, ui32Width); // 2B (PB4)
+    MAP_PWMPulseWidthSet(LOW_Ph3B_PWM_BASE, LOW_Ph3B_PWM_OUT_BIT, ui32Width); // 3B (PA7)
+    #endif
+
+    // Enable PWM generators
+    MAP_PWMGenEnable(PWM0_BASE, PWM_GEN_1);
+    MAP_PWMGenEnable(PWM0_BASE, PWM_GEN_2);
+    MAP_PWMGenEnable(PWM1_BASE, PWM_GEN_1);
+}

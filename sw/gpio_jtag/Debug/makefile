@@ -2,7 +2,9 @@
 # Automatically-generated file. Do not edit!
 ################################################################################
 
-CG_TOOL_ROOT := /home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS
+SHELL = cmd.exe
+
+CG_TOOL_ROOT := C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS
 
 GEN_OPTS__FLAG := 
 GEN_CMDS__FLAG := 
@@ -10,26 +12,20 @@ GEN_CMDS__FLAG :=
 ORDERED_OBJS += \
 "./gpio_jtag.obj" \
 "./startup_ccs.obj" \
-"./drivers/buttons.obj" \
-"./utils/uartstdio.obj" \
 "../gpio_jtag_ccs.cmd" \
 $(GEN_CMDS__FLAG) \
--l"/home/adria/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" \
+-l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" \
 -llibc.a \
 
 -include ../makefile.init
 
-RM := rm -rf
-RMDIR := rm -rf
+RM := DEL /F
+RMDIR := RMDIR /S/Q
 
 # All of the sources participating in the build are defined here
 -include sources.mk
 -include subdir_vars.mk
--include drivers/subdir_vars.mk
--include utils/subdir_vars.mk
 -include subdir_rules.mk
--include drivers/subdir_rules.mk
--include utils/subdir_rules.mk
 -include objects.mk
 
 ifneq ($(MAKECMDGOALS),clean)
@@ -140,7 +136,7 @@ all: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 gpio_jtag.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 	@echo 'Building target: "$@"'
 	@echo 'Invoking: ARM Linker'
-	"/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"gpio_jtag_ccs.map" --heap_size=0 --stack_size=256 -i"/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="gpio_jtag_linkInfo.xml" --rom_model -o "gpio_jtag.out" $(ORDERED_OBJS)
+	"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"gpio_jtag_ccs.map" --heap_size=0 --stack_size=256 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="gpio_jtag_linkInfo.xml" --rom_model -o "gpio_jtag.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: "$@"'
 	@echo ' '
 	@$(MAKE) --no-print-directory post-build
@@ -148,13 +144,13 @@ gpio_jtag.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 # Other Targets
 clean:
 	-$(RM) $(EXE_OUTPUTS__QUOTED)
-	-$(RM) "gpio_jtag.obj" "startup_ccs.obj" "drivers/buttons.obj" "utils/uartstdio.obj" 
-	-$(RM) "gpio_jtag.d" "startup_ccs.d" "drivers/buttons.d" "utils/uartstdio.d" 
+	-$(RM) "gpio_jtag.obj" "startup_ccs.obj" 
+	-$(RM) "gpio_jtag.d" "startup_ccs.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 
 post-build:
-	-"/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/tiobj2bin" "gpio_jtag.out" "gpio_jtag.bin" "/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/mkhex4bin"
+	-"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "gpio_jtag.out" "gpio_jtag.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
 	-@echo ' '
 
 .PHONY: all clean dependents
