@@ -58,6 +58,16 @@ uint32_t stallPeriod;
 volatile uint32_t isr_execution_count = 0;
 volatile int commutation_error_count = 0;
 
+// Stores the time (in clock ticks) between the last two commutation steps
+volatile uint32_t measured_ticks = 0; 
+
+// Current Duty Cycle State (Start at a safe middle value, e.g., 14%)
+float current_duty_percent = 0.14; 
+
+// Controller Limits
+#define MIN_DUTY_CLAMP 0.14f // 12%
+#define MAX_DUTY_CLAMP 0.22f // 18%
+
 // Comencem apagant tots els MOSFETs
 int state = STOP;
 
@@ -73,6 +83,9 @@ uint32_t dutys[N + 1];
 // Dynamic status variables
 volatile int started = 0;
 volatile int moving = 1;
+
+uint32_t target_ticks = 0;
+uint32_t adc_val = 0;
 
 /**
  * @brief updateClosedLoopState
@@ -228,8 +241,9 @@ volatile int zc_detected_count = 0;
 
 extern void GPIOInt(void)
 {
-    int realState = getRealRotorState();
+    comps.disableAllInterrupts();
 
+    int realState = getRealRotorState();
     // Allow for a +/- 1 state margin of error due to timing, but if it's off by more...
     if (realState != -1 && realState != state && realState != (state + 1)%6)
     //if (realState != state)
@@ -249,8 +263,6 @@ extern void GPIOInt(void)
 
     isr_execution_count++; 
     
-    comps.disableAllInterrupts();
-
     if (CLOSED_LOOP && started)
     {
         state = (state + 1) % 6;
@@ -259,16 +271,20 @@ extern void GPIOInt(void)
         MAP_SysCtlDelay((MAP_SysCtlClockGet() * 2e-4) / 3);
     }
 
-    // Setup next interrupt
-    setupNextInterrupt(state);
+
+    uint32_t timer_current_value = MAP_TimerValueGet(TIMER0_BASE, TIMER_A);
+    
+    // The time elapsed is the Load Value minus what is Left
+    measured_ticks = stallPeriod - timer_current_value;
 
     // Reset stall timer
     MAP_TimerIntDisable(TIMER0_BASE, TIMER_TIMA_TIMEOUT);
     MAP_TimerLoadSet(TIMER0_BASE, TIMER_A, stallPeriod);
     MAP_TimerIntEnable(TIMER0_BASE, TIMER_TIMA_TIMEOUT);
 
-    //MAP_SysCtlDelay((MAP_SysCtlClockGet() * 1e-4) / 3);
-    //zc_detected_count++;
+    // Setup next interrupt
+    setupNextInterrupt(state);
+
     comps.clearInterrupts();
 }
 
@@ -359,6 +375,7 @@ int main(void)
     comps.disableAllInterrupts();
 
     // Start the stalling timer
+    MAP_TimerEnable(TIMER0_BASE, TIMER_A);
     if (stall_detect)
     {
         MAP_TimerEnable(TIMER0_BASE, TIMER_A);
@@ -376,6 +393,12 @@ int main(void)
 
         if (!started)
         {
+            // Disable interrupts for ramp
+            MAP_TimerIntDisable(TIMER0_BASE, TIMER_TIMA_TIMEOUT); 
+            
+            comps.disableAllInterrupts();
+            comps.clearInterrupts();
+
             moving = 1;
 
             state = S6;
@@ -430,18 +453,16 @@ int main(void)
 
             if (started != 2)
             {
-                // Enable interrupts but DON'T stop the loop yet
-                // ---- TO BE DONE ONCE
-                // ---- MAP_IntMasterEnable();
-                // ---- comps.clearInterrupts();
-                // Start looking for the first ZC
-                //MAP_IntMasterEnable();
                 comps.clearInterrupts();
+                MAP_TimerIntClear(TIMER0_BASE, TIMER_TIMA_TIMEOUT);
+                MAP_TimerLoadSet(TIMER0_BASE, TIMER_A, stallPeriod);
+                measured_ticks = 0;
 
                 setupNextInterrupt(state);
                 started = 2;
             }
 
+            /*/
             if (potentiometer)
             {
                 float instDuty = ((float) ADC0_ReadAvg(5) / 4095.0f)
@@ -451,6 +472,50 @@ int main(void)
                 mosfets.updateDuty(newDuty);
 
                 MAP_SysCtlDelay(MAP_SysCtlClockGet() * 10e-3);
+            }
+            */
+
+            if (potentiometer)// && started == 2)
+            {
+                // 1. DETERMINE TARGET SPEED FROM POTENTIOMETER
+                // Map ADC (0-4095) to a Target Period (Time per step in ticks)
+                // High ADC = Fast Speed = Low Period
+                // Low ADC  = Slow Speed = High Period
+                
+                adc_val = ADC0_ReadAvg(5);
+                uint32_t min_speed_ticks = 8000; 
+                uint32_t max_speed_ticks = 3000;
+                
+                target_ticks = min_speed_ticks -
+                    ((adc_val * (min_speed_ticks - max_speed_ticks)) / 4095);
+
+                // CALCULATE ERROR AND ADJUST DUTY (Integral Control)
+                // "Deadband" is a small margin of error (e.g. 2000 ticks) where we don't change anything
+                // to prevent the motor from "hunting" (revving up and down).
+                uint32_t deadband = 50; 
+                float step_size = 0.0001f; // How fast it reacts. Too big = unstable.
+
+                if (measured_ticks > (target_ticks + deadband)) 
+                {
+                    // Motor is taking TOO LONG (Too Slow) -> Increase Power
+                    current_duty_percent += step_size;
+                }
+                else if (measured_ticks < (target_ticks - deadband))
+                {
+                    // Motor is taking TOO LITTLE TIME (Too Fast) -> Decrease Power
+                    current_duty_percent -= step_size;
+                }
+
+                // Clamping
+                if (current_duty_percent > MAX_DUTY_CLAMP) current_duty_percent = MAX_DUTY_CLAMP;
+                if (current_duty_percent < MIN_DUTY_CLAMP) current_duty_percent = MIN_DUTY_CLAMP;
+
+                // Apply new duty
+                uint32_t newDuty = (uint32_t) (current_duty_percent * ui32Period);
+                mosfets.updateDuty(newDuty);
+
+                // Small delay to keep the control loop stable
+                MAP_SysCtlDelay(MAP_SysCtlClockGet() * 5e-3); 
             }
 
             if (isr_execution_count == last_isr_count)
