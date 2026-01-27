@@ -37,7 +37,7 @@ __error__(char *pcFilename, uint32_t ui32Line)
 // -----------------------------------------------------
 int CLOSED_LOOP = 1;
 // -----------------------------------------------------
-int stall_detect = 1;
+int stall_detect = 0;
 // -----------------------------------------------------
 int potentiometer = 1;
 // -----------------------------------------------------
@@ -54,6 +54,9 @@ uint32_t ui32Period;
 
 // Stalling timer period
 uint32_t stallPeriod;
+// Counter to track interrupt activity
+volatile uint32_t isr_execution_count = 0;
+volatile int commutation_error_count = 0;
 
 // Comencem apagant tots els MOSFETs
 int state = STOP;
@@ -167,25 +170,25 @@ void setupNextInterrupt(int currentState)
     switch (currentState)
     {
     case STOP: // Equivalent a S6
-        comps.configComparatorInt(COMP_1, true, GPIO_FALLING_EDGE);
+        comps.configComparatorInt(COMP_1, true, GPIO_RISING_EDGE);
         break; // Phase A rising
     case S1:
-        comps.configComparatorInt(COMP_3, true, GPIO_RISING_EDGE);
+        comps.configComparatorInt(COMP_3, true, GPIO_FALLING_EDGE);
         break; // Phase C falling
     case S2:
-        comps.configComparatorInt(COMP_2, true, GPIO_FALLING_EDGE);
+        comps.configComparatorInt(COMP_2, true, GPIO_RISING_EDGE);
         break; // Phase B rising
     case S3:
-        comps.configComparatorInt(COMP_1, true, GPIO_RISING_EDGE);
+        comps.configComparatorInt(COMP_1, true, GPIO_FALLING_EDGE);
         break; // Phase A falling
     case S4:
-        comps.configComparatorInt(COMP_3, true, GPIO_FALLING_EDGE);
+        comps.configComparatorInt(COMP_3, true, GPIO_RISING_EDGE);
         break; // Phase C rising
     case S5:
-        comps.configComparatorInt(COMP_2, true, GPIO_RISING_EDGE);
+        comps.configComparatorInt(COMP_2, true, GPIO_FALLING_EDGE);
         break; // Phase B falling
     case S6:
-        comps.configComparatorInt(COMP_1, true, GPIO_FALLING_EDGE);
+        comps.configComparatorInt(COMP_1, true, GPIO_RISING_EDGE);
         break; // Phase A rising
     }
 
@@ -193,11 +196,59 @@ void setupNextInterrupt(int currentState)
     comps.clearInterrupts();
 }
 
+/**
+ * Reads the raw comparator states to determine the physical rotor sector (S1-S6).
+ * This allows the code to "find" the rotor if it gets lost.
+ */
+int getRealRotorState(void)
+{
+    // Read the raw boolean state of the comparators using your existing library
+    bool A = comps.readA();
+    bool B = comps.readB();
+    bool C = comps.readC();
+
+    // Combine into a 3-bit Hall-style code (A | B | C)
+    int hallCode = (A << 2) | (B << 1) | (C << 0);
+
+    // Map the 3-bit code to your S1-S6 states based on your commutation table
+    switch (hallCode)
+    {
+    case 5: return S1; // 101 -> S1 (Wait for C Fall)
+    case 4: return S2; // 100 -> S2 (Wait for B Rise)
+    case 6: return S3; // 110 -> S3 (Wait for A Fall)
+    case 2: return S4; // 010 -> S4 (Wait for C Rise)
+    case 3: return S5; // 011 -> S5 (Wait for B Fall)
+    case 1: return S6; // 001 -> S6 (Wait for A Rise)
+    default: return -1; // Invalid state (000 or 111)
+    }
+}
+
 bool cl_locked = false;
 volatile int zc_detected_count = 0;
 
 extern void GPIOInt(void)
 {
+    int realState = getRealRotorState();
+
+    // Allow for a +/- 1 state margin of error due to timing, but if it's off by more...
+    if (realState != -1 && realState != state && realState != (state + 1)%6)
+    //if (realState != state)
+    {
+        // FORCE RESYNC
+        state = realState; 
+        updateState(state);
+
+        // Count errors
+        commutation_error_count++;
+    }
+    else 
+    {
+        // Decrement errors if all good (to avoid stopping for minor skips)
+        if (commutation_error_count > 0) commutation_error_count--;
+    }
+
+    isr_execution_count++; 
+    
     comps.disableAllInterrupts();
 
     if (CLOSED_LOOP && started)
@@ -270,7 +321,7 @@ int main(void)
     }; // Wait for the Timer0 module to be ready
     MAP_TimerConfigure(TIMER0_BASE, TIMER_CFG_PERIODIC); // Configure it as a periodic timer
     stallPeriod = MAP_SysCtlClockGet() * 1; // NO SE PER QUE PERO AIXO FUNCIONA
-    MAP_TimerLoadSet(TIMER0_BASE, TIMER_A, stallPeriod); // Set the timer period: in this case, 10ms
+    MAP_TimerLoadSet(TIMER0_BASE, TIMER_A, stallPeriod); // Set the timer period: in this case, 10ms?
     TimerIntRegister(TIMER0_BASE, TIMER_A, StallInt); // Set up the timeout handling function
 
     // ADC setup
@@ -315,12 +366,22 @@ int main(void)
         // setupNextInterrupt(state);
     }
 
+    // Variable to track the last seen ISR count
+    uint32_t last_isr_count = 0;
+    // Timeout counter to detect a stall/manual spin
+    uint32_t manual_spin_timeout = 0;
+
     while (1)
     {
 
         if (!started)
         {
             moving = 1;
+
+            state = S6;
+            updateState(state);
+            MAP_SysCtlDelay((MAP_SysCtlClockGet() * 500e-3) / 3); // Hold for 500ms
+            
             // Rampa open loop
             for (int i = 0; i <= N; i++)
             {
@@ -390,6 +451,54 @@ int main(void)
                 mosfets.updateDuty(newDuty);
 
                 MAP_SysCtlDelay(MAP_SysCtlClockGet() * 10e-3);
+            }
+
+            if (isr_execution_count == last_isr_count)
+            {
+                // No interrupts have fired recently -> Potential stall or manual spin
+                manual_spin_timeout++;
+
+                // If we have been "silent" for enough loop cycles
+                if (manual_spin_timeout > 10)
+                {
+                    MAP_IntMasterDisable(); 
+                    comps.disableAllInterrupts();
+                    comps.clearInterrupts();
+
+                    mosfets.allOff();
+                    state = S6;
+                    started = 0;
+
+                    MAP_IntMasterEnable();
+                    // Reset timeout so we don't spam the resync
+                    manual_spin_timeout = 0; 
+                }
+            }
+            else if (commutation_error_count > 5) 
+            {
+                // We get interrupts but wrong ones
+                
+                MAP_IntMasterDisable(); 
+                comps.disableAllInterrupts();
+                comps.clearInterrupts();
+
+                mosfets.allOff();
+                state = S6;
+                started = 0;
+                
+                // Reset counters
+                manual_spin_timeout = 0;
+                commutation_error_count = 0;
+                last_isr_count = 0;
+
+                MAP_IntMasterEnable();
+            }
+            else
+            {
+                // Interrupts are firing! The motor is running normally.
+                // Reset the timeout and update our tracker.
+                manual_spin_timeout = 0;
+                last_isr_count = isr_execution_count;
             }
 
             //while (!cl_locked) {
