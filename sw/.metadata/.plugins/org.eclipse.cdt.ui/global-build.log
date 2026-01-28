@@ -12440,3 +12440,1245 @@ gmake[1]: 'lse1.out' is up to date.
 gmake[1]: 'lse1.out' is up to date.
 
 **** Build Finished ****
+
+**** Clean-only build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 clean -O 
+ 
+DEL /F  "lse1.out" 
+DEL /F "comparators.obj" "main.obj" "mosfets.obj" "phase_test.obj" "startup_ccs.obj" 
+DEL /F "startup_ccs.d" 
+DEL /F "comparators.d" "main.d" "mosfets.d" "phase_test.d" 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+startup_ccs.d:4: *** target pattern contains no '%'.  Stop.
+
+**** Build Finished ****
+
+**** Clean-only build of configuration Debug for project blinky ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 clean -O 
+ 
+DEL /F  "blinky.out" 
+DEL /F "proves.obj" "startup_ccs.obj" 
+DEL /F "proves.d" "startup_ccs.d" 
+
+**** Build Finished ****
+
+**** Clean-only build of configuration Debug for project blinky ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 clean -O 
+ 
+DEL /F  "blinky.out" 
+DEL /F "proves.obj" "startup_ccs.obj" 
+DEL /F "proves.d" "startup_ccs.d" 
+
+**** Build Finished ****
+
+**** Clean-only build of configuration Debug for project gpio_jtag ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 clean -O 
+ 
+DEL /F  "gpio_jtag.out" 
+DEL /F "gpio_jtag.obj" "startup_ccs.obj" 
+DEL /F "gpio_jtag.d" "startup_ccs.d" 
+
+**** Build Finished ****
+
+**** Clean-only build of configuration Debug for project gpio_jtag ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 clean -O 
+ 
+DEL /F  "gpio_jtag.out" 
+DEL /F "gpio_jtag.obj" "startup_ccs.obj" 
+DEL /F "gpio_jtag.d" "startup_ccs.d" 
+
+**** Build Finished ****
+
+**** Clean-only build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 clean -O 
+ 
+rm -rf  "lse1.out" 
+rm -rf "comparators.obj" "main.obj" "mosfets.obj" "phase_test.obj" "startup_ccs.obj" 
+rm -rf "startup_ccs.d" 
+rm -rf "comparators.d" "main.d" "mosfets.d" "phase_test.d" 
+Finished clean
+ 
+
+**** Build Finished ****
+
+**** Clean-only build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 clean -O 
+ 
+rm -rf  "lse1.out" 
+rm -rf "comparators.obj" "main.obj" "mosfets.obj" "phase_test.obj" "startup_ccs.obj" 
+rm -rf "startup_ccs.d" 
+rm -rf "comparators.d" "main.d" "mosfets.d" "phase_test.d" 
+Finished clean
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+Building file: "../startup_ccs.c"
+Invoking: ARM Compiler
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="/var/home/adria/Documents/lse1/sw/lse1" --include_path="/var/home/adria/ti/TivaWare_C_Series-2.2.0.295" --include_path="/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="startup_ccs.d_raw"  "../startup_ccs.c"
+Finished building: "../startup_ccs.c"
+ 
+Building file: "../comparators.cpp"
+Invoking: ARM Compiler
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="/var/home/adria/Documents/lse1/sw/lse1" --include_path="/var/home/adria/ti/TivaWare_C_Series-2.2.0.295" --include_path="/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="comparators.d_raw"  "../comparators.cpp"
+Finished building: "../comparators.cpp"
+ 
+Building file: "../mosfets.cpp"
+Invoking: ARM Compiler
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="/var/home/adria/Documents/lse1/sw/lse1" --include_path="/var/home/adria/ti/TivaWare_C_Series-2.2.0.295" --include_path="/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="mosfets.d_raw"  "../mosfets.cpp"
+Finished building: "../mosfets.cpp"
+ 
+Building file: "../phase_test.cpp"
+Invoking: ARM Compiler
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="/var/home/adria/Documents/lse1/sw/lse1" --include_path="/var/home/adria/ti/TivaWare_C_Series-2.2.0.295" --include_path="/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="phase_test.d_raw"  "../phase_test.cpp"
+Finished building: "../phase_test.cpp"
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="/var/home/adria/Documents/lse1/sw/lse1" --include_path="/var/home/adria/ti/TivaWare_C_Series-2.2.0.295" --include_path="/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"/var/home/adria/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="/var/home/adria/Documents/lse1/sw/lse1" --include_path="/var/home/adria/ti/TivaWare_C_Series-2.2.0.295" --include_path="/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"/var/home/adria/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="/var/home/adria/Documents/lse1/sw/lse1" --include_path="/var/home/adria/ti/TivaWare_C_Series-2.2.0.295" --include_path="/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"/var/home/adria/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="/var/home/adria/Documents/lse1/sw/lse1" --include_path="/var/home/adria/ti/TivaWare_C_Series-2.2.0.295" --include_path="/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"/var/home/adria/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="/var/home/adria/Documents/lse1/sw/lse1" --include_path="/var/home/adria/ti/TivaWare_C_Series-2.2.0.295" --include_path="/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"/var/home/adria/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="/var/home/adria/Documents/lse1/sw/lse1" --include_path="/var/home/adria/ti/TivaWare_C_Series-2.2.0.295" --include_path="/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"/var/home/adria/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="/var/home/adria/Documents/lse1/sw/lse1" --include_path="/var/home/adria/ti/TivaWare_C_Series-2.2.0.295" --include_path="/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"/var/home/adria/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="/var/home/adria/Documents/lse1/sw/lse1" --include_path="/var/home/adria/ti/TivaWare_C_Series-2.2.0.295" --include_path="/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"/var/home/adria/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="/var/home/adria/Documents/lse1/sw/lse1" --include_path="/var/home/adria/ti/TivaWare_C_Series-2.2.0.295" --include_path="/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"/var/home/adria/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="/var/home/adria/Documents/lse1/sw/lse1" --include_path="/var/home/adria/ti/TivaWare_C_Series-2.2.0.295" --include_path="/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"/var/home/adria/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="/var/home/adria/Documents/lse1/sw/lse1" --include_path="/var/home/adria/ti/TivaWare_C_Series-2.2.0.295" --include_path="/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"/var/home/adria/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="/var/home/adria/Documents/lse1/sw/lse1" --include_path="/var/home/adria/ti/TivaWare_C_Series-2.2.0.295" --include_path="/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"/var/home/adria/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="/var/home/adria/Documents/lse1/sw/lse1" --include_path="/var/home/adria/ti/TivaWare_C_Series-2.2.0.295" --include_path="/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"/var/home/adria/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="/var/home/adria/Documents/lse1/sw/lse1" --include_path="/var/home/adria/ti/TivaWare_C_Series-2.2.0.295" --include_path="/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"/var/home/adria/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="/var/home/adria/Documents/lse1/sw/lse1" --include_path="/var/home/adria/ti/TivaWare_C_Series-2.2.0.295" --include_path="/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+"../main.cpp", line 83: warning #179-D: variable "MIN_BLANK_LOOPS" was declared but never referenced
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"/var/home/adria/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="/var/home/adria/Documents/lse1/sw/lse1" --include_path="/var/home/adria/ti/TivaWare_C_Series-2.2.0.295" --include_path="/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"/var/home/adria/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="/var/home/adria/Documents/lse1/sw/lse1" --include_path="/var/home/adria/ti/TivaWare_C_Series-2.2.0.295" --include_path="/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"/var/home/adria/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="/var/home/adria/Documents/lse1/sw/lse1" --include_path="/var/home/adria/ti/TivaWare_C_Series-2.2.0.295" --include_path="/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"/var/home/adria/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="/var/home/adria/Documents/lse1/sw/lse1" --include_path="/var/home/adria/ti/TivaWare_C_Series-2.2.0.295" --include_path="/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"/var/home/adria/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="/var/home/adria/Documents/lse1/sw/lse1" --include_path="/var/home/adria/ti/TivaWare_C_Series-2.2.0.295" --include_path="/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"/var/home/adria/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="/var/home/adria/Documents/lse1/sw/lse1" --include_path="/var/home/adria/ti/TivaWare_C_Series-2.2.0.295" --include_path="/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"/var/home/adria/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="/var/home/adria/Documents/lse1/sw/lse1" --include_path="/var/home/adria/ti/TivaWare_C_Series-2.2.0.295" --include_path="/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"/var/home/adria/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="/var/home/adria/Documents/lse1/sw/lse1" --include_path="/var/home/adria/ti/TivaWare_C_Series-2.2.0.295" --include_path="/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"/var/home/adria/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="/var/home/adria/Documents/lse1/sw/lse1" --include_path="/var/home/adria/ti/TivaWare_C_Series-2.2.0.295" --include_path="/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"/var/home/adria/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="/var/home/adria/Documents/lse1/sw/lse1" --include_path="/var/home/adria/ti/TivaWare_C_Series-2.2.0.295" --include_path="/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"/var/home/adria/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="/var/home/adria/Documents/lse1/sw/lse1" --include_path="/var/home/adria/ti/TivaWare_C_Series-2.2.0.295" --include_path="/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"/var/home/adria/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="/var/home/adria/Documents/lse1/sw/lse1" --include_path="/var/home/adria/ti/TivaWare_C_Series-2.2.0.295" --include_path="/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"/var/home/adria/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="/var/home/adria/Documents/lse1/sw/lse1" --include_path="/var/home/adria/ti/TivaWare_C_Series-2.2.0.295" --include_path="/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"/var/home/adria/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="/var/home/adria/Documents/lse1/sw/lse1" --include_path="/var/home/adria/ti/TivaWare_C_Series-2.2.0.295" --include_path="/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"/var/home/adria/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="/var/home/adria/Documents/lse1/sw/lse1" --include_path="/var/home/adria/ti/TivaWare_C_Series-2.2.0.295" --include_path="/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"/var/home/adria/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="/var/home/adria/Documents/lse1/sw/lse1" --include_path="/var/home/adria/ti/TivaWare_C_Series-2.2.0.295" --include_path="/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"/var/home/adria/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="/var/home/adria/Documents/lse1/sw/lse1" --include_path="/var/home/adria/ti/TivaWare_C_Series-2.2.0.295" --include_path="/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"/var/home/adria/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="/var/home/adria/Documents/lse1/sw/lse1" --include_path="/var/home/adria/ti/TivaWare_C_Series-2.2.0.295" --include_path="/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"/var/home/adria/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="/var/home/adria/Documents/lse1/sw/lse1" --include_path="/var/home/adria/ti/TivaWare_C_Series-2.2.0.295" --include_path="/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"/var/home/adria/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="/var/home/adria/Documents/lse1/sw/lse1" --include_path="/var/home/adria/ti/TivaWare_C_Series-2.2.0.295" --include_path="/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"/var/home/adria/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="/var/home/adria/Documents/lse1/sw/lse1" --include_path="/var/home/adria/ti/TivaWare_C_Series-2.2.0.295" --include_path="/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"/var/home/adria/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="/var/home/adria/Documents/lse1/sw/lse1" --include_path="/var/home/adria/ti/TivaWare_C_Series-2.2.0.295" --include_path="/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"/var/home/adria/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="/var/home/adria/Documents/lse1/sw/lse1" --include_path="/var/home/adria/ti/TivaWare_C_Series-2.2.0.295" --include_path="/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"/var/home/adria/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="/var/home/adria/Documents/lse1/sw/lse1" --include_path="/var/home/adria/ti/TivaWare_C_Series-2.2.0.295" --include_path="/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"/var/home/adria/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="/var/home/adria/Documents/lse1/sw/lse1" --include_path="/var/home/adria/ti/TivaWare_C_Series-2.2.0.295" --include_path="/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"/var/home/adria/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="/var/home/adria/Documents/lse1/sw/lse1" --include_path="/var/home/adria/ti/TivaWare_C_Series-2.2.0.295" --include_path="/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"/var/home/adria/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="/var/home/adria/Documents/lse1/sw/lse1" --include_path="/var/home/adria/ti/TivaWare_C_Series-2.2.0.295" --include_path="/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"/var/home/adria/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "/var/home/adria/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "/var/home/adria/ti/ccs1281/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+/var/home/adria/ti/ccs1281/ccs/utils/bin/gmake -k -j 20 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
