@@ -41,6 +41,10 @@ int stall_detect = 0;
 // -----------------------------------------------------
 int potentiometer = 1;
 // -----------------------------------------------------
+int PID_control = 0;
+// -----------------------------------------------------
+int legacy = 0;
+// -----------------------------------------------------
 
 // Controller instance.
 MosfetController mosfets;
@@ -48,8 +52,6 @@ ComparatorController comps;
 
 // Max duty
 int pwm_freq = 20e3;
-float max_duty = 0.18;
-float min_duty = 0.14;
 uint32_t ui32Period;
 
 // Stalling timer period
@@ -59,10 +61,23 @@ volatile uint32_t isr_execution_count = 0;
 volatile int commutation_error_count = 0;
 
 // Stores the time (in clock ticks) between the last two commutation steps
-volatile uint32_t measured_ticks = 0; 
+volatile uint32_t measuredTicks = 0;
+
+// PID variables
+volatile float error = 0.0f;
+volatile float errAcum = 0.0f;
+volatile float errPrev = 0.0f;
+volatile float setpoint = 0.0f;
+float DutyMinLim = 0.14f;
+float DutyMaxLim = 0.6f;
+float TFaseMax = 0.9e-3f; // s
+float TFaseMin = 0.5e-3f; // s
+volatile float NoLoadDuty = 0.0f;
+volatile float PID_Duty = 0.0f;
+volatile uint8_t counter = 0;
 
 // Current Duty Cycle State (Start at a safe middle value, e.g., 14%)
-float current_duty_percent = 0.14; 
+float current_duty_percent = 0.14;
 
 // Controller Limits
 #define MIN_DUTY_CLAMP 0.14f // 12%
@@ -209,6 +224,15 @@ void setupNextInterrupt(int currentState)
     comps.clearInterrupts();
 }
 
+float PID(float cycleTime, float error, float errPrev, float errAcum)
+{
+    float K_p = 10000.0f;
+    float K_i = 30000.0f; //50000.0f; //3*K_p;
+    float K_d = 0.0f;
+
+    return K_p * error + K_i * errAcum + K_d * (error - errPrev) / cycleTime;
+}
+
 /**
  * Reads the raw comparator states to determine the physical rotor sector (S1-S6).
  * This allows the code to "find" the rotor if it gets lost.
@@ -226,14 +250,30 @@ int getRealRotorState(void)
     // Map the 3-bit code to your S1-S6 states based on your commutation table
     switch (hallCode)
     {
-    case 5: return S1; // 101 -> S1 (Wait for C Fall)
-    case 4: return S2; // 100 -> S2 (Wait for B Rise)
-    case 6: return S3; // 110 -> S3 (Wait for A Fall)
-    case 2: return S4; // 010 -> S4 (Wait for C Rise)
-    case 3: return S5; // 011 -> S5 (Wait for B Fall)
-    case 1: return S6; // 001 -> S6 (Wait for A Rise)
-    default: return -1; // Invalid state (000 or 111)
+    case 5:
+        return S1; // 101 -> S1 (Wait for C Fall)
+    case 4:
+        return S2; // 100 -> S2 (Wait for B Rise)
+    case 6:
+        return S3; // 110 -> S3 (Wait for A Fall)
+    case 2:
+        return S4; // 010 -> S4 (Wait for C Rise)
+    case 3:
+        return S5; // 011 -> S5 (Wait for B Fall)
+    case 1:
+        return S6; // 001 -> S6 (Wait for A Rise)
+    default:
+        return -1; // Invalid state (000 or 111)
     }
+}
+
+// Reads a TFase value (such as the setpoint) and returns the duty value for no torque
+float TFaseToDuty(float TFase)
+{
+    float instDuty = -6186719601.0f * TFase * TFase * TFase;
+    instDuty += 16659072.0f * TFase * TFase;
+    instDuty += -15016.0f * TFase + 4.675f;
+    return instDuty;
 }
 
 bool cl_locked = false;
@@ -243,46 +283,99 @@ extern void GPIOInt(void)
 {
     comps.disableAllInterrupts();
 
-    int realState = getRealRotorState();
-    // Allow for a +/- 1 state margin of error due to timing, but if it's off by more...
-    if (realState != -1 && realState != state && realState != (state + 1)%6)
-    //if (realState != state)
+    if (legacy)
     {
-        // FORCE RESYNC
-        state = realState; 
-        updateState(state);
+        int realState = getRealRotorState();
+        // Allow for a +/- 1 state margin of error due to timing, but if it's off by more...
+        if (realState != -1 && realState != state
+                && realState != (state + 1) % 6)
+        //if (realState != state)
+        {
+            // FORCE RESYNC
+            state = realState;
+            updateState(state);
 
-        // Count errors
-        commutation_error_count++;
+            // Count errors
+            commutation_error_count++;
+        }
+        else
+        {
+            // Decrement errors if all good (to avoid stopping for minor skips)
+            if (commutation_error_count > 0)
+                commutation_error_count--;
+        }
     }
-    else 
+
+    isr_execution_count++;
+
+    uint32_t timer_current_value = MAP_TimerValueGet(TIMER0_BASE, TIMER_A);
+
+    // The time elapsed is the Load Value minus what is Left
+    uint32_t measuredTicks = stallPeriod - timer_current_value;
+
+    if (PID_control)
     {
-        // Decrement errors if all good (to avoid stopping for minor skips)
-        if (commutation_error_count > 0) commutation_error_count--;
+        float cycleTime = (float) measuredTicks / (float) MAP_SysCtlClockGet(); // Time since last GPIOInt (s)
+
+                // Compute new PID duty from estimated instantaneous duty
+                //float inst_x = (float) measuredTicks / MAP_SysCtlClockGet();
+                //float instDuty = -6186719601.0f * cycleTime * cycleTime * cycleTime;
+                //instDuty += 16659072.0f * cycleTime * cycleTime;
+                //instDuty += -15016.0f * cycleTime + 4.675f;
+
+        //error = setpoint - instDuty;
+        error = cycleTime - setpoint; // Measured period - intended period: less than intended -> greater speed -> negative error
+        errAcum += error * cycleTime;
+
+        if (errAcum > 0.05f)
+            errAcum = 0.05f;
+        if (errAcum < -0.05f)
+            errAcum = -0.05f;
+        float PID_Duty = NoLoadDuty + PID(cycleTime, error, errPrev, errAcum);
+
+        //PID_Duty += PID(cycleTime, error, errPrev, errAcum);
+
+        if (PID_Duty > DutyMaxLim)
+            (PID_Duty = DutyMaxLim);
+        else if (PID_Duty < DutyMinLim)
+            (PID_Duty = DutyMinLim);
+
+        uint32_t newDuty = (uint32_t) (PID_Duty * ui32Period);
+        mosfets.updateDuty(newDuty);
+
+        // Update previous error
+        errPrev = error;
+
+        if (error < 0.05e-3)
+        {
+            counter++;
+
+            if (counter >= 10)
+            {
+                errAcum = 0.0f;
+            }
+        }
     }
 
-    isr_execution_count++; 
-    
     if (CLOSED_LOOP && started)
     {
         state = (state + 1) % 6;
         updateState(state);
 
-        MAP_SysCtlDelay((MAP_SysCtlClockGet() * 2e-4) / 3);
+        //MAP_SysCtlDelay(measuredTicks * 0.1 / 3);
+        //MAP_SysCtlDelay((MAP_SysCtlClockGet() * 2e-4) / 3);
+
     }
 
+    // 30 degree delay
+    MAP_SysCtlDelay((MAP_SysCtlClockGet() * 2e-6) / 3);
 
-    uint32_t timer_current_value = MAP_TimerValueGet(TIMER0_BASE, TIMER_A);
-    
-    // The time elapsed is the Load Value minus what is Left
-    measured_ticks = stallPeriod - timer_current_value;
-
-    // Reset stall timer
+// Reset stall timer
     MAP_TimerIntDisable(TIMER0_BASE, TIMER_TIMA_TIMEOUT);
     MAP_TimerLoadSet(TIMER0_BASE, TIMER_A, stallPeriod);
     MAP_TimerIntEnable(TIMER0_BASE, TIMER_TIMA_TIMEOUT);
 
-    // Setup next interrupt
+// Setup next interrupt
     setupNextInterrupt(state);
 
     comps.clearInterrupts();
@@ -291,24 +384,24 @@ extern void GPIOInt(void)
 void StallInt(void)
 {
 
-    // Disable timer interrupts
+// Disable timer interrupts
     MAP_TimerIntDisable(TIMER0_BASE, TIMER_TIMA_TIMEOUT);
 
-    // Clear int.
+// Clear int.
     MAP_TimerIntClear(TIMER0_BASE, TIMER_TIMA_TIMEOUT);
 
-    // Shut off all mosfets
+// Shut off all mosfets
     mosfets.allOff();
 
-    // Wait the stalling grace period
+// Wait the stalling grace period
     MAP_SysCtlDelay((MAP_SysCtlClockGet() * 300e-3) / 3);
 
-    // Notify of stalling
+// Notify of stalling
     moving = 0;
     started = 0;
     state = STOP;
 
-    // Re-enable int.
+// Re-enable int.
     MAP_TimerIntEnable(TIMER0_BASE, TIMER_TIMA_TIMEOUT);
 }
 
@@ -318,19 +411,19 @@ void StallInt(void)
 int main(void)
 {
 
-    // Set the clocking to run directly from the external crystal/oscillator
+// Set the clocking to run directly from the external crystal/oscillator
     MAP_SysCtlClockSet(SYSCTL_SYSDIV_1 | SYSCTL_USE_OSC | SYSCTL_OSC_MAIN |
     SYSCTL_XTAL_16MHZ);
     ui32Period = (uint32_t) (MAP_SysCtlClockGet() / pwm_freq);
 
-    // Set the PWM clock to the system clock
+// Set the PWM clock to the system clock
     MAP_SysCtlPWMClockSet(SYSCTL_PWMDIV_1);
 
-    // Enable FPU
+// Enable FPU
     FPUEnable();
     FPULazyStackingEnable();
 
-    // Stall timer setup
+// Stall timer setup
     MAP_SysCtlPeripheralEnable(SYSCTL_PERIPH_TIMER0); // Enable timer
     while (!SysCtlPeripheralReady(SYSCTL_PERIPH_TIMER0))
     {
@@ -340,29 +433,29 @@ int main(void)
     MAP_TimerLoadSet(TIMER0_BASE, TIMER_A, stallPeriod); // Set the timer period: in this case, 10ms?
     TimerIntRegister(TIMER0_BASE, TIMER_A, StallInt); // Set up the timeout handling function
 
-    // ADC setup
+// ADC setup
     ADCSetup();
 
-    // MOSFET Setup
+// MOSFET Setup
     float initial_duty = 0.16;
     mosfets.setup(pwm_freq, initial_duty);
 
-    // Disable interrupts for setup
+// Disable interrupts for setup
     MAP_IntMasterDisable();
     comps.setup(GPIOInt);
 
     updateState(state); // This will now call mosfets.allOff()
 
-    //float phase_period = 4e-3;
+//float phase_period = 4e-3;
     int cyclesPerStep = 32;
 
     float ini_duty = 0.18;
     float fin_duty = 0.14;
     float ini_fase = 4e-3; // ms
-    float fin_fase = 1.2e-3; // ms
-    // float test_duty = 0.14 / pwm_freq;
+    float fin_fase = 1.5e-3; // ms
+// float test_duty = 0.14 / pwm_freq;
 
-    // Find the open-loop ramp trajectory
+// Find the open-loop ramp trajectory
     for (int i = 0; i <= N; i++)
     {
         freqfase[i] = (ini_fase + (fin_fase - ini_fase) * i / N) / 2;
@@ -374,7 +467,7 @@ int main(void)
     comps.clearInterrupts();
     comps.disableAllInterrupts();
 
-    // Start the stalling timer
+// Start the stalling timer
     MAP_TimerEnable(TIMER0_BASE, TIMER_A);
     if (stall_detect)
     {
@@ -383,9 +476,9 @@ int main(void)
         // setupNextInterrupt(state);
     }
 
-    // Variable to track the last seen ISR count
+// Variable to track the last seen ISR count
     uint32_t last_isr_count = 0;
-    // Timeout counter to detect a stall/manual spin
+// Timeout counter to detect a stall/manual spin
     uint32_t manual_spin_timeout = 0;
 
     while (1)
@@ -394,8 +487,8 @@ int main(void)
         if (!started)
         {
             // Disable interrupts for ramp
-            MAP_TimerIntDisable(TIMER0_BASE, TIMER_TIMA_TIMEOUT); 
-            
+            MAP_TimerIntDisable(TIMER0_BASE, TIMER_TIMA_TIMEOUT);
+
             comps.disableAllInterrupts();
             comps.clearInterrupts();
 
@@ -404,7 +497,7 @@ int main(void)
             state = S6;
             updateState(state);
             MAP_SysCtlDelay((MAP_SysCtlClockGet() * 500e-3) / 3); // Hold for 500ms
-            
+
             // Rampa open loop
             for (int i = 0; i <= N; i++)
             {
@@ -436,6 +529,8 @@ int main(void)
                 }
 
             }
+            PID_Duty = fin_duty;
+            errAcum = 0.0f;
             started = 1;
         }
         else if (!CLOSED_LOOP)
@@ -456,77 +551,115 @@ int main(void)
                 comps.clearInterrupts();
                 MAP_TimerIntClear(TIMER0_BASE, TIMER_TIMA_TIMEOUT);
                 MAP_TimerLoadSet(TIMER0_BASE, TIMER_A, stallPeriod);
-                measured_ticks = 0;
+                measuredTicks = 0;
 
                 setupNextInterrupt(state);
                 started = 2;
             }
 
-            /*/
             if (potentiometer)
             {
-                float instDuty = ((float) ADC0_ReadAvg(5) / 4095.0f)
-                        * (max_duty - min_duty) + min_duty;
-                uint32_t newDuty = (uint32_t) (instDuty * ui32Period);
 
-                mosfets.updateDuty(newDuty);
-
-                MAP_SysCtlDelay(MAP_SysCtlClockGet() * 10e-3);
-            }
-            */
-
-            if (potentiometer)// && started == 2)
-            {
-                // 1. DETERMINE TARGET SPEED FROM POTENTIOMETER
-                // Map ADC (0-4095) to a Target Period (Time per step in ticks)
-                // High ADC = Fast Speed = Low Period
-                // Low ADC  = Slow Speed = High Period
-                
-                adc_val = ADC0_ReadAvg(5);
-                uint32_t min_speed_ticks = 8000; 
-                uint32_t max_speed_ticks = 3000;
-                
-                target_ticks = min_speed_ticks -
-                    ((adc_val * (min_speed_ticks - max_speed_ticks)) / 4095);
-
-                // CALCULATE ERROR AND ADJUST DUTY (Integral Control)
-                // "Deadband" is a small margin of error (e.g. 2000 ticks) where we don't change anything
-                // to prevent the motor from "hunting" (revving up and down).
-                uint32_t deadband = 50; 
-                float step_size = 0.0001f; // How fast it reacts. Too big = unstable.
-
-                if (measured_ticks > (target_ticks + deadband)) 
+                if (PID_control) // Potentiometer sets setpoint
                 {
-                    // Motor is taking TOO LONG (Too Slow) -> Increase Power
-                    current_duty_percent += step_size;
+                    setpoint = (TFaseMin - TFaseMax) * (float) ADC0_ReadAvg(5)
+                            / 4095.0f + TFaseMax; // Expected phase period
+                    NoLoadDuty = TFaseToDuty(setpoint); // Observed duty under no load
+                    //float setFloat = (TFaseMin - TFaseMax) * (float) ADC0_ReadAvg(5) / 4095.0 + TFaseMax;
+                    //setpoint = setFloat * MAP_SysCtlClockGet(); // This allows us to compare TFase to counted ticks
                 }
-                else if (measured_ticks < (target_ticks - deadband))
+                else
                 {
-                    // Motor is taking TOO LITTLE TIME (Too Fast) -> Decrease Power
-                    current_duty_percent -= step_size;
+                    // Direct potentiometer calculation
+                    float readDuty = ((float) ADC0_ReadAvg(5) / 4095.0f)
+                            * (DutyMaxLim - DutyMinLim) + DutyMinLim;
+                    uint32_t newDuty = (uint32_t) (readDuty * ui32Period);
+
+                    mosfets.updateDuty(newDuty);
+
+                    MAP_SysCtlDelay(MAP_SysCtlClockGet() * 10e-3);
                 }
-
-                // Clamping
-                if (current_duty_percent > MAX_DUTY_CLAMP) current_duty_percent = MAX_DUTY_CLAMP;
-                if (current_duty_percent < MIN_DUTY_CLAMP) current_duty_percent = MIN_DUTY_CLAMP;
-
-                // Apply new duty
-                uint32_t newDuty = (uint32_t) (current_duty_percent * ui32Period);
-                mosfets.updateDuty(newDuty);
-
-                // Small delay to keep the control loop stable
-                MAP_SysCtlDelay(MAP_SysCtlClockGet() * 5e-3); 
             }
 
-            if (isr_execution_count == last_isr_count)
-            {
-                // No interrupts have fired recently -> Potential stall or manual spin
-                manual_spin_timeout++;
+            /*if (potentiometer) // && started == 2)
+             {
+             // 1. DETERMINE TARGET SPEED FROM POTENTIOMETER
+             // Map ADC (0-4095) to a Target Period (Time per step in ticks)
+             // High ADC = Fast Speed = Low Period
+             // Low ADC  = Slow Speed = High Period
 
-                // If we have been "silent" for enough loop cycles
-                if (manual_spin_timeout > 10)
+             adc_val = ADC0_ReadAvg(5);
+
+             uint32_t min_speed_ticks = 8000;
+             uint32_t max_speed_ticks = 3000;
+
+             target_ticks = min_speed_ticks
+             - ((adc_val * (min_speed_ticks - max_speed_ticks))
+             / 4095);
+
+             // CALCULATE ERROR AND ADJUST DUTY (Integral Control)
+             // "Deadband" is a small margin of error (e.g. 2000 ticks) where we don't change anything
+             // to prevent the motor from "hunting" (revving up and down).
+             if (legacy)
+             {
+             uint32_t deadband = 50;
+             float step_size = 0.0001f; // How fast it reacts. Too big = unstable.
+
+             if (measured_ticks > (target_ticks + deadband))
+             {
+             // Motor is taking TOO LONG (Too Slow) -> Increase Power
+             current_duty_percent += step_size;
+             }
+             else if (measured_ticks < (target_ticks - deadband))
+             {
+             // Motor is taking TOO LITTLE TIME (Too Fast) -> Decrease Power
+             current_duty_percent -= step_size;
+             }
+
+             // Clamping
+             if (current_duty_percent > MAX_DUTY_CLAMP)
+             current_duty_percent = MAX_DUTY_CLAMP;
+             if (current_duty_percent < MIN_DUTY_CLAMP)
+             current_duty_percent = MIN_DUTY_CLAMP;
+             }
+
+             // Apply new duty
+             uint32_t newDuty =
+             (uint32_t) (current_duty_percent * ui32Period);
+             mosfets.updateDuty(newDuty);
+
+             // Small delay to keep the control loop stable
+             MAP_SysCtlDelay(MAP_SysCtlClockGet() * 5e-3);
+             }
+             */
+            if (legacy)
+            {
+                if (isr_execution_count == last_isr_count)
                 {
-                    MAP_IntMasterDisable(); 
+                    // No interrupts have fired recently -> Potential stall or manual spin
+                    manual_spin_timeout++;
+
+                    // If we have been "silent" for enough loop cycles
+                    if (manual_spin_timeout > 10)
+                    {
+                        MAP_IntMasterDisable();
+                        comps.disableAllInterrupts();
+                        comps.clearInterrupts();
+
+                        mosfets.allOff();
+                        state = S6;
+                        started = 0;
+
+                        MAP_IntMasterEnable();
+                        // Reset timeout so we don't spam the resync
+                        manual_spin_timeout = 0;
+                    }
+                }
+                else if (commutation_error_count > 5)
+                {
+                    // We get interrupts but wrong ones
+
+                    MAP_IntMasterDisable();
                     comps.disableAllInterrupts();
                     comps.clearInterrupts();
 
@@ -534,36 +667,20 @@ int main(void)
                     state = S6;
                     started = 0;
 
+                    // Reset counters
+                    manual_spin_timeout = 0;
+                    commutation_error_count = 0;
+                    last_isr_count = 0;
+
                     MAP_IntMasterEnable();
-                    // Reset timeout so we don't spam the resync
-                    manual_spin_timeout = 0; 
                 }
-            }
-            else if (commutation_error_count > 5) 
-            {
-                // We get interrupts but wrong ones
-                
-                MAP_IntMasterDisable(); 
-                comps.disableAllInterrupts();
-                comps.clearInterrupts();
-
-                mosfets.allOff();
-                state = S6;
-                started = 0;
-                
-                // Reset counters
-                manual_spin_timeout = 0;
-                commutation_error_count = 0;
-                last_isr_count = 0;
-
-                MAP_IntMasterEnable();
-            }
-            else
-            {
-                // Interrupts are firing! The motor is running normally.
-                // Reset the timeout and update our tracker.
-                manual_spin_timeout = 0;
-                last_isr_count = isr_execution_count;
+                else
+                {
+                    // Interrupts are firing! The motor is running normally.
+                    // Reset the timeout and update our tracker.
+                    manual_spin_timeout = 0;
+                    last_isr_count = isr_execution_count;
+                }
             }
 
             //while (!cl_locked) {

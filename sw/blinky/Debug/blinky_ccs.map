@@ -1,7 +1,7 @@
 ******************************************************************************
                   TI ARM Linker PC v20.2.7                     
 ******************************************************************************
->> Linked Sun Jan 25 00:03:29 2026
+>> Linked Mon Feb  2 18:55:12 2026
 
 OUTPUT FILE NAME:   <blinky.out>
 ENTRY POINT SYMBOL: "_c_int00_noinit_noargs"  address: 00000be1

@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="updateState"/>
+		<item key="selection" value="PID("/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
-			<item value="updatestate"/>
-			<item value="sysctldel"/>
-			<item value="sysctlclock"/>
+			<item value="pid("/>
+			<item value="cycletime"/>
+			<item value="dutymaxlim"/>
+			<item value=" setpoint"/>
+			<item value="setpoint"/>
+			<item value="erracum"/>
+			<item value="sysctlclo"/>
 			<item value="sysctl"/>
-			<item value="moving"/>
-			<item value="setupnext"/>
-			<item value="state ="/>
-			<item value="stallperiod"/>
-			<item value="max_duty"/>
-			<item value="31"/>
-			<item value="15"/>
-			<item value="ui32per"/>
-			<item value="initial_"/>
-			<item value="duty_cy"/>
-			<item value="0.2"/>
+			<item value="SETPOINT"/>
+			<item value="pid"/>
+			<item value="measuredTicks"/>
+			<item value="stallPeriod"/>
+			<item value="measured_ticks"/>
+			<item value="fin_fase"/>
+			<item value="freqfase"/>
 		</list>
 		<list key="replacehistory">
 		</list>

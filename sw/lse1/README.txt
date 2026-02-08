@@ -1,0 +1,1 @@
+El fitxer main_basic.cpp conté el programa principal tal i com s'explica a la memòria: el fitxer main_dynamic incorpora el dynamic blank time.

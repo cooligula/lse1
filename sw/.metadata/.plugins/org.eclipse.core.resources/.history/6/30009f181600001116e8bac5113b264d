@@ -1,0 +1,73 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+SHELL = cmd.exe
+
+# Add inputs and outputs from these tool invocations to the build variables 
+CPP_SRCS += \
+../comparators.cpp \
+../main.cpp \
+../main_basic.cpp \
+../main_dynamic.cpp \
+../mosfets.cpp \
+../phase_test.cpp 
+
+CMD_SRCS += \
+../pwm_invert_ccs.cmd 
+
+C_SRCS += \
+../startup_ccs.c 
+
+C_DEPS += \
+./startup_ccs.d 
+
+OBJS += \
+./comparators.obj \
+./main.obj \
+./main_basic.obj \
+./main_dynamic.obj \
+./mosfets.obj \
+./phase_test.obj \
+./startup_ccs.obj 
+
+CPP_DEPS += \
+./comparators.d \
+./main.d \
+./main_basic.d \
+./main_dynamic.d \
+./mosfets.d \
+./phase_test.d 
+
+OBJS__QUOTED += \
+"comparators.obj" \
+"main.obj" \
+"main_basic.obj" \
+"main_dynamic.obj" \
+"mosfets.obj" \
+"phase_test.obj" \
+"startup_ccs.obj" 
+
+C_DEPS__QUOTED += \
+"startup_ccs.d" 
+
+CPP_DEPS__QUOTED += \
+"comparators.d" \
+"main.d" \
+"main_basic.d" \
+"main_dynamic.d" \
+"mosfets.d" \
+"phase_test.d" 
+
+CPP_SRCS__QUOTED += \
+"../comparators.cpp" \
+"../main.cpp" \
+"../main_basic.cpp" \
+"../main_dynamic.cpp" \
+"../mosfets.cpp" \
+"../phase_test.cpp" 
+
+C_SRCS__QUOTED += \
+"../startup_ccs.c" 
+
+
