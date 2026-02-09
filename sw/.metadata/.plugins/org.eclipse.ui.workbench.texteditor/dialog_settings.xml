@@ -1,30 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="PID("/>
+		<item key="selection" value="30 degr"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
-			<item value="pid("/>
-			<item value="cycletime"/>
+			<item value="30 degr"/>
+			<item value="max_duty"/>
 			<item value="dutymaxlim"/>
-			<item value=" setpoint"/>
+			<item value="min_duty"/>
+			<item value="pid("/>
+			<item value="pid_control"/>
+			<item value="potentiometer"/>
+			<item value="pid_duty"/>
+			<item value="gpioint"/>
+			<item value="NoTorqueDuty"/>
+			<item value="notorqueduty"/>
+			<item value="tfasetoduty"/>
+			<item value="notorque"/>
+			<item value="setpoint ="/>
 			<item value="setpoint"/>
-			<item value="erracum"/>
-			<item value="sysctlclo"/>
-			<item value="sysctl"/>
-			<item value="SETPOINT"/>
-			<item value="pid"/>
-			<item value="measuredTicks"/>
-			<item value="stallPeriod"/>
-			<item value="measured_ticks"/>
-			<item value="fin_fase"/>
-			<item value="freqfase"/>
 		</list>
 		<list key="replacehistory">
+			<item value="NoLoadDuty"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

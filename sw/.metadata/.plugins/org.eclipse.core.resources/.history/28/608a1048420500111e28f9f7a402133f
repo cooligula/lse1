@@ -368,7 +368,7 @@ extern void GPIOInt(void)
     }
 
     // 30 degree delay
-    // MAP_SysCtlDelay((MAP_SysCtlClockGet() * 2e-6) / 3);
+    MAP_SysCtlDelay((MAP_SysCtlClockGet() * 2e-6) / 3);
 
 // Reset stall timer
     MAP_TimerIntDisable(TIMER0_BASE, TIMER_TIMA_TIMEOUT);
