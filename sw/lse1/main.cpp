@@ -53,6 +53,7 @@ ComparatorController comps;
 // Max duty
 int pwm_freq = 20e3;
 uint32_t ui32Period;
+volatile float readDuty = 0.0f;
 
 // Stalling timer period
 uint32_t stallPeriod;
@@ -69,12 +70,13 @@ volatile float errAcum = 0.0f;
 volatile float errPrev = 0.0f;
 volatile float setpoint = 0.0f;
 float DutyMinLim = 0.12f;
-float DutyMaxLim = 0.91f;
-float TFaseMax = 0.45e-3f; // s
-float TFaseMin = 0.2e-3f; // s
+float DutyMaxLim = 0.90f;
+float TFaseMax = 2e-3f; // s 0.45
+float TFaseMin = 1.3e-3f; // s 0.2
 volatile float NoLoadDuty = 0.0f;
 volatile float PID_Duty = 0.0f;
 volatile uint8_t counter = 0;
+volatile float cycleTime = 2e-3; //
 
 // Current Duty Cycle State (Start at a safe middle value, e.g., 14%)
 float current_duty_percent = 0.14;
@@ -226,9 +228,9 @@ void setupNextInterrupt(int currentState)
 
 float PID(float cycleTime, float error, float errPrev, float errAcum)
 {
-    float K_p = 10000.0f;
-    float K_i = 30000.0f; //50000.0f; //3*K_p;
-    float K_d = 0.0f;
+    float K_p = 1000.0f;
+    float K_i = 3000.0f; //50000.0f; //3*K_p;
+    float K_d = 1.0f;
 
     return K_p * error + K_i * errAcum + K_d * (error - errPrev) / cycleTime;
 }
@@ -270,27 +272,30 @@ int getRealRotorState(void)
 // Reads a TFase value (such as the setpoint) and returns the duty value for no torque
 float TFaseToDuty(float TFase)
 {
-    float instDuty = -6186719601.0f * TFase * TFase * TFase;
-    instDuty += 16659072.0f * TFase * TFase;
-    instDuty += -15016.0f * TFase + 4.675f;
+    float instDuty = -65996143.7f * TFase * TFase * TFase;
+    instDuty += 927234.6f * TFase * TFase;
+    instDuty += -3282.9f * TFase + 3.614f;
     return instDuty;
 }
 
-void CalculateLimits() {
+void CalculateLimits()
+{
     // Clamp lowest speed (polynomial is flat at low speeds)
     TFaseMax = 4.5e-3;
 
     float required_startup_duty = TFaseToDuty(TFaseMax);
-    if (required_startup_duty > DutyMinLim) {
+    if (required_startup_duty > DutyMinLim)
+    {
         DutyMinLim = required_startup_duty; // Auto-raise the floor
     }
 
-
     // The polynomial is usually good here. We find the period for 80% duty.
     float test_period = 2.0e-3; // Start search from our new slow limit
-    while (test_period > 0.1e-3) {
+    while (test_period > 0.1e-3)
+    {
         // We look for the moment the predicted duty crosses our Max Limit
-        if (TFaseToDuty(test_period) >= DutyMaxLim) {
+        if (TFaseToDuty(test_period) >= DutyMaxLim)
+        {
             TFaseMin = test_period;
             break;
         }
@@ -331,13 +336,25 @@ extern void GPIOInt(void)
     isr_execution_count++;
 
     uint32_t timer_current_value = MAP_TimerValueGet(TIMER0_BASE, TIMER_A);
-
     // The time elapsed is the Load Value minus what is Left
     uint32_t measuredTicks = stallPeriod - timer_current_value;
+    int update_PID = 0;
 
-    if (PID_control)
+    // We will compute the period at every S1 activation (for example)
+    if (state % 6 == S1)
     {
-        float cycleTime = (float) measuredTicks / (float) MAP_SysCtlClockGet(); // Time since last GPIOInt (s)
+        // Reset stall timer
+        MAP_TimerIntDisable(TIMER0_BASE, TIMER_TIMA_TIMEOUT);
+        MAP_TimerLoadSet(TIMER0_BASE, TIMER_A, stallPeriod);
+        MAP_TimerIntEnable(TIMER0_BASE, TIMER_TIMA_TIMEOUT);
+
+        // Allow for PID update
+        update_PID = 1;
+    }
+
+    if (PID_control && update_PID)
+    {
+        cycleTime = ((float)measuredTicks) / ((float)MAP_SysCtlClockGet()); // Time since last GPIOInt (s)
 
                 // Compute new PID duty from estimated instantaneous duty
                 //float inst_x = (float) measuredTicks / MAP_SysCtlClockGet();
@@ -349,10 +366,12 @@ extern void GPIOInt(void)
         error = cycleTime - setpoint; // Measured period - intended period: less than intended -> greater speed -> negative error
         errAcum += error * cycleTime;
 
-        if (errAcum > 0.06f)
-            errAcum = 0.06f;
-        if (errAcum < -0.06f)
-            errAcum = -0.06f;
+        float errAcum_limit = 0.15f;
+        if (errAcum > errAcum_limit)
+            errAcum = errAcum_limit;
+        if (errAcum < -errAcum_limit)
+            errAcum = -errAcum_limit;
+        //volatile float test = PID(cycleTime, error, errPrev, errAcum);
         float PID_Duty = NoLoadDuty + PID(cycleTime, error, errPrev, errAcum);
 
         //PID_Duty += PID(cycleTime, error, errPrev, errAcum);
@@ -369,16 +388,16 @@ extern void GPIOInt(void)
         errPrev = error;
 
         /*
-        if (error < 0.05e-3)
-        {
-            counter++;
+         if (error < 0.05e-3)
+         {
+         counter++;
 
-            if (counter >= 10)
-            {
-                errAcum = 0.0f;
-            }
-        }
-        */
+         if (counter >= 10)
+         {
+         errAcum = 0.0f;
+         }
+         }
+         */
     }
 
     if (CLOSED_LOOP && started)
@@ -394,10 +413,7 @@ extern void GPIOInt(void)
     // 30 degree delay
     // MAP_SysCtlDelay((MAP_SysCtlClockGet() * 2e-6) / 3);
 
-// Reset stall timer
-    MAP_TimerIntDisable(TIMER0_BASE, TIMER_TIMA_TIMEOUT);
-    MAP_TimerLoadSet(TIMER0_BASE, TIMER_A, stallPeriod);
-    MAP_TimerIntEnable(TIMER0_BASE, TIMER_TIMA_TIMEOUT);
+
 
 // Setup next interrupt
     setupNextInterrupt(state);
@@ -560,7 +576,7 @@ int main(void)
             float ramp_end_period = freqfase[N];
             setpoint = ramp_end_period;
 
-            NoLoadDuty = (float)dutys[N] / (float)ui32Period;
+            NoLoadDuty = (float) dutys[N] / (float) ui32Period;
 
             errAcum = 0.0f;
             error = 0.0f;
@@ -600,43 +616,49 @@ int main(void)
                 if (PID_control) // Potentiometer sets setpoint
                 {
                     /*
-                    setpoint = (TFaseMin - TFaseMax) * (float) ADC0_ReadAvg(5)
-                            / 4095.0f + TFaseMax; // Expected phase period
-                    NoLoadDuty = TFaseToDuty(setpoint); // Observed duty under no load
+                     setpoint = (TFaseMin - TFaseMax) * (float) ADC0_ReadAvg(5)
+                     / 4095.0f + TFaseMax; // Expected phase period
+                     NoLoadDuty = TFaseToDuty(setpoint); // Observed duty under no load
 
-                    if (NoLoadDuty < DutyMinLim) NoLoadDuty = DutyMinLim;
-                    if (NoLoadDuty > DutyMaxLim) NoLoadDuty = DutyMaxLim;
+                     if (NoLoadDuty < DutyMinLim) NoLoadDuty = DutyMinLim;
+                     if (NoLoadDuty > DutyMaxLim) NoLoadDuty = DutyMaxLim;
 
-                    //float setFloat = (TFaseMin - TFaseMax) * (float) ADC0_ReadAvg(5) / 4095.0 + TFaseMax;
-                    //setpoint = setFloat * MAP_SysCtlClockGet(); // This allows us to compare TFase to counted ticks
+                     //float setFloat = (TFaseMin - TFaseMax) * (float) ADC0_ReadAvg(5) / 4095.0 + TFaseMax;
+                     //setpoint = setFloat * MAP_SysCtlClockGet(); // This allows us to compare TFase to counted ticks
                      *
                      */
-                    float raw_target = (TFaseMin - TFaseMax) * (float)ADC0_ReadAvg(5) / 4095.0f + TFaseMax;
+                    float raw_target = (TFaseMin - TFaseMax)
+                            * (float) ADC0_ReadAvg(5) / 4095.0f + TFaseMax;
 
                     // Instead of jumping instantly, move 'setpoint' slowly towards 'raw_target'
                     // Simulates physical inertia of the rotor
                     float max_step = 0.00005f; // 50us per interrupt step. Adjust for acceleration feel.
 
-                    if (setpoint > raw_target + max_step) {
+                    if (setpoint > raw_target + max_step)
+                    {
                         setpoint -= max_step; // Speeding up (Period decreasing)
                     }
-                    else if (setpoint < raw_target - max_step) {
+                    else if (setpoint < raw_target - max_step)
+                    {
                         setpoint += max_step; // Slowing down (Period increasing)
                     }
-                    else {
+                    else
+                    {
                         setpoint = raw_target; // Close enough
                     }
 
                     // Recalculate FeedForward based on the RAMPHED setpoint
                     NoLoadDuty = TFaseToDuty(setpoint);
 
-                    if (NoLoadDuty < DutyMinLim) NoLoadDuty = DutyMinLim;
-                    if (NoLoadDuty > DutyMaxLim) NoLoadDuty = DutyMaxLim;
+                    if (NoLoadDuty < DutyMinLim)
+                        NoLoadDuty = DutyMinLim;
+                    if (NoLoadDuty > DutyMaxLim)
+                        NoLoadDuty = DutyMaxLim;
                 }
                 else
                 {
                     // Direct potentiometer calculation
-                    float readDuty = ((float) ADC0_ReadAvg(5) / 4095.0f)
+                    readDuty = ((float) ADC0_ReadAvg(5) / 4095.0f)
                             * (DutyMaxLim - DutyMinLim) + DutyMinLim;
                     uint32_t newDuty = (uint32_t) (readDuty * ui32Period);
 

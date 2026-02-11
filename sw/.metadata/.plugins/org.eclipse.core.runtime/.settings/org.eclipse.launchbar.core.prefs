@@ -2,8 +2,10 @@ LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=win32
 activeLaunchTarget=null\:---
-configDescList=org.eclipse.launchbar.core.descriptorType.default\:blinky,org.eclipse.launchbar.core.descriptorType.default\:lse1
+configDescList=org.eclipse.launchbar.core.descriptorType.default\:target_config.ccxml,org.eclipse.launchbar.core.descriptorType.default\:blinky,org.eclipse.launchbar.core.descriptorType.default\:lse1
 eclipse.preferences.version=1
 org.eclipse.launchbar.core.descriptorType.default\:blinky/activeLaunchMode=debug
 org.eclipse.launchbar.core.descriptorType.default\:blinky/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
-org.eclipse.launchbar.core.descriptorType.default\:lse1/activeLaunchMode=debug
+org.eclipse.launchbar.core.descriptorType.default\:lse1/activeLaunchMode=run
+org.eclipse.launchbar.core.descriptorType.default\:target_config.ccxml/activeLaunchMode=debug
+org.eclipse.launchbar.core.descriptorType.default\:target_config.ccxml/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
