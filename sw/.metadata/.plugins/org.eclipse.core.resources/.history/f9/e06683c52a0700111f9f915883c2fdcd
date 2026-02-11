@@ -71,8 +71,8 @@ volatile float errPrev = 0.0f;
 volatile float setpoint = 0.0f;
 float DutyMinLim = 0.12f;
 float DutyMaxLim = 0.90f;
-float TFaseMax = 2.7e-3f; // s 0.45
-float TFaseMin = 1.23e-3f; // s 0.2
+float TFaseMax = 2e-3f; // s 0.45
+float TFaseMin = 1.3e-3f; // s 0.2
 volatile float NoLoadDuty = 0.0f;
 volatile float PID_Duty = 0.0f;
 volatile uint8_t counter = 0;
@@ -387,6 +387,17 @@ extern void GPIOInt(void)
         // Update previous error
         errPrev = error;
 
+        /*
+         if (error < 0.05e-3)
+         {
+         counter++;
+
+         if (counter >= 10)
+         {
+         errAcum = 0.0f;
+         }
+         }
+         */
     }
 
     if (CLOSED_LOOP && started)
@@ -458,8 +469,8 @@ int main(void)
     {
     }; // Wait for the Timer0 module to be ready
     MAP_TimerConfigure(TIMER0_BASE, TIMER_CFG_PERIODIC); // Configure it as a periodic timer
-    stallPeriod = MAP_SysCtlClockGet() * 1;
-    MAP_TimerLoadSet(TIMER0_BASE, TIMER_A, stallPeriod);
+    stallPeriod = MAP_SysCtlClockGet() * 1; // NO SE PER QUE PERO AIXO FUNCIONA
+    MAP_TimerLoadSet(TIMER0_BASE, TIMER_A, stallPeriod); // Set the timer period: in this case, 10ms?
     TimerIntRegister(TIMER0_BASE, TIMER_A, StallInt); // Set up the timeout handling function
 
 // ADC setup
@@ -484,7 +495,7 @@ int main(void)
     float ini_duty = 0.18;
     float fin_duty = 0.14;
     float ini_fase = 4e-3; // ms
-    float fin_fase = 1.2e-3; // ms
+    float fin_fase = 1.5e-3; // ms
 // float test_duty = 0.14 / pwm_freq;
 
 // Find the open-loop ramp trajectory
@@ -636,7 +647,7 @@ int main(void)
                         setpoint = raw_target; // Close enough
                     }
 
-                    // Recalculate FeedForward based on the setpoint
+                    // Recalculate FeedForward based on the RAMPHED setpoint
                     NoLoadDuty = TFaseToDuty(setpoint);
 
                     if (NoLoadDuty < DutyMinLim)
@@ -708,7 +719,7 @@ int main(void)
              MAP_SysCtlDelay(MAP_SysCtlClockGet() * 5e-3);
              }
              */
-            if (true)
+            if (legacy)
             {
                 if (isr_execution_count == last_isr_count)
                 {
@@ -716,7 +727,7 @@ int main(void)
                     manual_spin_timeout++;
 
                     // If we have been "silent" for enough loop cycles
-                    if (manual_spin_timeout > 1000)
+                    if (manual_spin_timeout > 10)
                     {
                         MAP_IntMasterDisable();
                         comps.disableAllInterrupts();

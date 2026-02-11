@@ -716,7 +716,7 @@ int main(void)
                     manual_spin_timeout++;
 
                     // If we have been "silent" for enough loop cycles
-                    if (manual_spin_timeout > 1000)
+                    if (manual_spin_timeout > 10)
                     {
                         MAP_IntMasterDisable();
                         comps.disableAllInterrupts();

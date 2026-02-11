@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="PID("/>
+		<item key="selection" value="GPIOInt"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="gpioint"/>
+			<item value="0.06"/>
 			<item value="pid("/>
+			<item value="tfasetoduty"/>
+			<item value="noload"/>
 			<item value="error ="/>
 			<item value="error"/>
 			<item value="setpoint"/>
-			<item value="gpioint"/>
 			<item value="30 degr"/>
 			<item value="max_duty"/>
 			<item value="dutymaxlim"/>
@@ -20,9 +23,6 @@
 			<item value="pid_control"/>
 			<item value="potentiometer"/>
 			<item value="pid_duty"/>
-			<item value="NoTorqueDuty"/>
-			<item value="notorqueduty"/>
-			<item value="tfasetoduty"/>
 		</list>
 		<list key="replacehistory">
 			<item value="NoLoadDuty"/>

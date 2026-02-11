@@ -459,7 +459,7 @@ int main(void)
     }; // Wait for the Timer0 module to be ready
     MAP_TimerConfigure(TIMER0_BASE, TIMER_CFG_PERIODIC); // Configure it as a periodic timer
     stallPeriod = MAP_SysCtlClockGet() * 1;
-    MAP_TimerLoadSet(TIMER0_BASE, TIMER_A, stallPeriod);
+    MAP_TimerLoadSet(TIMER0_BASE, TIMER_A, stallPeriod); // Set the timer period: in this case, 10ms?
     TimerIntRegister(TIMER0_BASE, TIMER_A, StallInt); // Set up the timeout handling function
 
 // ADC setup
@@ -636,7 +636,7 @@ int main(void)
                         setpoint = raw_target; // Close enough
                     }
 
-                    // Recalculate FeedForward based on the setpoint
+                    // Recalculate FeedForward based on the RAMPHED setpoint
                     NoLoadDuty = TFaseToDuty(setpoint);
 
                     if (NoLoadDuty < DutyMinLim)
@@ -708,7 +708,7 @@ int main(void)
              MAP_SysCtlDelay(MAP_SysCtlClockGet() * 5e-3);
              }
              */
-            if (true)
+            if (legacy)
             {
                 if (isr_execution_count == last_isr_count)
                 {
@@ -716,7 +716,7 @@ int main(void)
                     manual_spin_timeout++;
 
                     // If we have been "silent" for enough loop cycles
-                    if (manual_spin_timeout > 1000)
+                    if (manual_spin_timeout > 10)
                     {
                         MAP_IntMasterDisable();
                         comps.disableAllInterrupts();
