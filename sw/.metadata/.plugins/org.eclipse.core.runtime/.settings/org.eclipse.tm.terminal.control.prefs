@@ -1,0 +1,4 @@
+BACKGROUND=238,210,185
+SELECTION_FOREGROUND=128,64,0
+TerminalPrefInvertColors=true
+eclipse.preferences.version=1

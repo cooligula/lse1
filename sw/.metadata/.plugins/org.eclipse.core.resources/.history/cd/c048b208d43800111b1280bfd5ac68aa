@@ -694,7 +694,7 @@ int main(void)
 
             }
 
-            if (PID_control && (SPI | potentiometer)) // Potentiometer sets setpoint
+            if (PID_control) // Potentiometer sets setpoint
             {
                 /*
                  setpoint = (TFaseMin - TFaseMax) * (float) ADC0_ReadAvg(5)
