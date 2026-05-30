@@ -26,6 +26,7 @@ main.obj: C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/rom.h
 main.obj: C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/rom_map.h
 main.obj: C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/sysctl.h
 main.obj: C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/uart.h
+main.obj: C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ssi.h
 main.obj: C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/timer.h
 main.obj: C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/fpu.h
 main.obj: C:/ti/TivaWare_C_Series-2.2.0.295/utils/uartstdio.h
@@ -87,6 +88,8 @@ C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/rom_map.h:
 C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/sysctl.h:
 
 C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/uart.h:
+
+C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ssi.h:
 
 C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/timer.h:
 

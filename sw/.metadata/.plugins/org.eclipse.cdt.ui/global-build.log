@@ -18555,3 +18555,2156 @@ Finished building target: "lse1.out"
  
 
 **** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'main.obj' failed
+"../main.cpp", line 4: fatal error #1965: cannot open source file "ti/drivers/SPI.h"
+1 catastrophic error detected in the compilation of "../main.cpp".
+Compilation terminated.
+gmake: *** [main.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+"../main.cpp", line 574: warning #179-D: variable "cyclesPerStep" was declared but never referenced
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+"../main.cpp", line 574: warning #179-D: variable "cyclesPerStep" was declared but never referenced
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+"../main.cpp", line 574: warning #179-D: variable "cyclesPerStep" was declared but never referenced
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+"../main.cpp", line 579: warning #179-D: variable "cyclesPerStep" was declared but never referenced
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+"../main.cpp", line 579: warning #179-D: variable "cyclesPerStep" was declared but never referenced
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+"../main.cpp", line 579: warning #179-D: variable "cyclesPerStep" was declared but never referenced
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+"../main.cpp", line 579: warning #179-D: variable "cyclesPerStep" was declared but never referenced
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+"../main.cpp", line 579: warning #179-D: variable "cyclesPerStep" was declared but never referenced
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'main.obj' failed
+"../main.cpp", line 705: error #20: identifier "int_setpoint" is undefined
+"../main.cpp", line 712: error #20: identifier "int_setpoint" is undefined
+"../main.cpp", line 730: error #20: identifier "int_setpoint" is undefined
+"../main.cpp", line 761: error #20: identifier "int_setpoint" is undefined
+4 errors detected in the compilation of "../main.cpp".
+gmake: *** [main.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building file: "../main_new.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main_new.d_raw"  "../main_new.cpp"
+Finished building: "../main_new.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./main_new.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+error #10056: symbol "StallInt()" redefined: first defined in "./main.obj"; redefined in "./main_new.obj"
+error #10056: symbol "setupNextInterrupt(int)" redefined: first defined in "./main.obj"; redefined in "./main_new.obj"
+error #10056: symbol "TFaseToDuty(float)" redefined: first defined in "./main.obj"; redefined in "./main_new.obj"
+error #10056: symbol "adc_val" redefined: first defined in "./main.obj"; redefined in "./main_new.obj"
+error #10056: symbol "pwm_freq" redefined: first defined in "./main.obj"; redefined in "./main_new.obj"
+error #10056: symbol "DutyMaxLim" redefined: first defined in "./main.obj"; redefined in "./main_new.obj"
+error #10056: symbol "NoLoadDuty" redefined: first defined in "./main.obj"; redefined in "./main_new.obj"
+error #10056: symbol "CalculateLimits()" redefined: first defined in "./main.obj"; redefined in "./main_new.obj"
+error #10056: symbol "measuredTicks" redefined: first defined in "./main.obj"; redefined in "./main_new.obj"
+error #10056: symbol "updateState(int)" redefined: first defined in "./main.obj"; redefined in "./main_new.obj"
+error #10056: symbol "getRealRotorState()" redefined: first defined in "./main.obj"; redefined in "./main_new.obj"
+error #10056: symbol "TFaseMin" redefined: first defined in "./main.obj"; redefined in "./main_new.obj"
+error #10056: symbol "legacy" redefined: first defined in "./main.obj"; redefined in "./main_new.obj"
+error #10056: symbol "CLOSED_LOOP" redefined: first defined in "./main.obj"; redefined in "./main_new.obj"
+error #10056: symbol "readDuty" redefined: first defined in "./main.obj"; redefined in "./main_new.obj"
+error #10056: symbol "moving" redefined: first defined in "./main.obj"; redefined in "./main_new.obj"
+error #10056: symbol "RiseFall" redefined: first defined in "./main.obj"; redefined in "./main_new.obj"
+error #10056: symbol "state" redefined: first defined in "./main.obj"; redefined in "./main_new.obj"
+error #10056: symbol "error" redefined: first defined in "./main.obj"; redefined in "./main_new.obj"
+error #10056: symbol "potentiometer" redefined: first defined in "./main.obj"; redefined in "./main_new.obj"
+error #10056: symbol "target_ticks" redefined: first defined in "./main.obj"; redefined in "./main_new.obj"
+error #10056: symbol "started" redefined: first defined in "./main.obj"; redefined in "./main_new.obj"
+error #10056: symbol "isr_execution_count" redefined: first defined in "./main.obj"; redefined in "./main_new.obj"
+error #10056: symbol "ADCSetup()" redefined: first defined in "./main.obj"; redefined in "./main_new.obj"
+error #10056: symbol "setpoint" redefined: first defined in "./main.obj"; redefined in "./main_new.obj"
+error #10056: symbol "cl_locked" redefined: first defined in "./main.obj"; redefined in "./main_new.obj"
+error #10056: symbol "TFaseMax" redefined: first defined in "./main.obj"; redefined in "./main_new.obj"
+error #10056: symbol "GPIOInt()" redefined: first defined in "./main.obj"; redefined in "./main_new.obj"
+error #10056: symbol "errPrev" redefined: first defined in "./main.obj"; redefined in "./main_new.obj"
+error #10056: symbol "PID(float, float, float, float)" redefined: first defined in "./main.obj"; redefined in "./main_new.obj"
+error #10056: symbol "PID_control" redefined: first defined in "./main.obj"; redefined in "./main_new.obj"
+error #10056: symbol "main" redefined: first defined in "./main.obj"; redefined in "./main_new.obj"
+error #10056: symbol "cycleTime" redefined: first defined in "./main.obj"; redefined in "./main_new.obj"
+error #10056: symbol "ADC0_ReadAvg(unsigned char)" redefined: first defined in "./main.obj"; redefined in "./main_new.obj"
+error #10056: symbol "counter" redefined: first defined in "./main.obj"; redefined in "./main_new.obj"
+error #10056: symbol "PID_Duty" redefined: first defined in "./main.obj"; redefined in "./main_new.obj"
+error #10056: symbol "DutyMinLim" redefined: first defined in "./main.obj"; redefined in "./main_new.obj"
+error #10056: symbol "commutation_error_count" redefined: first defined in "./main.obj"; redefined in "./main_new.obj"
+error #10056: symbol "errAcum" redefined: first defined in "./main.obj"; redefined in "./main_new.obj"
+error #10056: symbol "current_duty_percent" redefined: first defined in "./main.obj"; redefined in "./main_new.obj"
+error #10056: symbol "zc_detected_count" redefined: first defined in "./main.obj"; redefined in "./main_new.obj"
+error #10056: symbol "stall_detect" redefined: first defined in "./main.obj"; redefined in "./main_new.obj"
+error #10010: errors encountered during linking; "lse1.out" not built
+ 
+>> Compilation failure
+makefile:141: recipe for target 'lse1.out' failed
+gmake[1]: *** [lse1.out] Error 1
+makefile:137: recipe for target 'all' failed
+gmake: *** [all] Error 2
+
+**** Build Finished ****
+
+**** Clean-only build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 clean -O 
+ 
+DEL /F  "lse1.out" 
+DEL /F "comparators.obj" "main.obj" "main_new.obj" "mosfets.obj" "phase_test.obj" "startup_ccs.obj" 
+DEL /F "startup_ccs.d" 
+DEL /F "comparators.d" "main.d" "main_new.d" "mosfets.d" "phase_test.d" 
+No se pudo encontrar C:\Users\PC\Desktop\LSE\lse1\sw\lse1\Debug\lse1.out
+Finished clean
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../comparators.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="comparators.d_raw"  "../comparators.cpp"
+Finished building: "../comparators.cpp"
+ 
+Building file: "../mosfets.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="mosfets.d_raw"  "../mosfets.cpp"
+Finished building: "../mosfets.cpp"
+ 
+Building file: "../phase_test.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="phase_test.d_raw"  "../phase_test.cpp"
+Finished building: "../phase_test.cpp"
+ 
+Building file: "../startup_ccs.c"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="startup_ccs.d_raw"  "../startup_ccs.c"
+Finished building: "../startup_ccs.c"
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Clean-only build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 clean -O 
+ 
+DEL /F  "lse1.out" 
+DEL /F "comparators.obj" "main.obj" "mosfets.obj" "phase_test.obj" "startup_ccs.obj" 
+DEL /F "startup_ccs.d" 
+DEL /F "comparators.d" "main.d" "mosfets.d" "phase_test.d" 
+Finished clean
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../comparators.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="comparators.d_raw"  "../comparators.cpp"
+Finished building: "../comparators.cpp"
+ 
+Building file: "../startup_ccs.c"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="startup_ccs.d_raw"  "../startup_ccs.c"
+Finished building: "../startup_ccs.c"
+ 
+Building file: "../mosfets.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="mosfets.d_raw"  "../mosfets.cpp"
+Finished building: "../mosfets.cpp"
+ 
+Building file: "../phase_test.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="phase_test.d_raw"  "../phase_test.cpp"
+Finished building: "../phase_test.cpp"
+ 
+Building file: "../main_old.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main_old.d_raw"  "../main_old.cpp"
+Finished building: "../main_old.cpp"
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./main_old.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+error #10056: symbol "StallInt()" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "setupNextInterrupt(int)" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "TFaseToDuty(float)" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "adc_val" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "pwm_freq" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "DutyMaxLim" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "NoLoadDuty" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "CalculateLimits()" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "measuredTicks" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "updateState(int)" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "getRealRotorState()" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "TFaseMin" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "legacy" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "CLOSED_LOOP" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "readDuty" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "moving" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "RiseFall" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "state" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "error" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "potentiometer" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "target_ticks" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "started" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "isr_execution_count" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "ADCSetup()" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "setpoint" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "cl_locked" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "TFaseMax" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "GPIOInt()" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "errPrev" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "PID(float, float, float, float)" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "PID_control" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "main" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "cycleTime" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "ADC0_ReadAvg(unsigned char)" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "counter" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "PID_Duty" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "DutyMinLim" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "commutation_error_count" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "errAcum" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "current_duty_percent" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "zc_detected_count" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "stall_detect" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10010: errors encountered during linking; "lse1.out" not built
+ 
+>> Compilation failure
+makefile:141: recipe for target 'lse1.out' failed
+gmake[1]: *** [lse1.out] Error 1
+makefile:137: recipe for target 'all' failed
+gmake: *** [all] Error 2
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./main_old.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+error #10056: symbol "StallInt()" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "setupNextInterrupt(int)" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "TFaseToDuty(float)" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "adc_val" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "pwm_freq" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "DutyMaxLim" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "NoLoadDuty" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "CalculateLimits()" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "measuredTicks" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "updateState(int)" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "getRealRotorState()" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "TFaseMin" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "legacy" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "CLOSED_LOOP" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "readDuty" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "moving" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "RiseFall" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "state" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "error" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "potentiometer" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "target_ticks" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "started" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "isr_execution_count" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "ADCSetup()" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "setpoint" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "cl_locked" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "TFaseMax" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "GPIOInt()" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "errPrev" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "PID(float, float, float, float)" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "PID_control" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "main" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "cycleTime" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "ADC0_ReadAvg(unsigned char)" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "counter" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "PID_Duty" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "DutyMinLim" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "commutation_error_count" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "errAcum" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "current_duty_percent" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "zc_detected_count" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10056: symbol "stall_detect" redefined: first defined in "./main.obj"; redefined in "./main_old.obj"
+error #10010: errors encountered during linking; "lse1.out" not built
+ 
+>> Compilation failure
+makefile:141: recipe for target 'lse1.out' failed
+gmake[1]: *** [lse1.out] Error 1
+makefile:137: recipe for target 'all' failed
+gmake: *** [all] Error 2
+
+**** Build Finished ****
+
+**** Clean-only build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 clean -O 
+ 
+DEL /F  "lse1.out" 
+DEL /F "comparators.obj" "main.obj" "main_old.obj" "mosfets.obj" "phase_test.obj" "startup_ccs.obj" 
+DEL /F "startup_ccs.d" 
+DEL /F "comparators.d" "main.d" "main_old.d" "mosfets.d" "phase_test.d" 
+No se pudo encontrar C:\Users\PC\Desktop\LSE\lse1\sw\lse1\Debug\lse1.out
+Finished clean
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../comparators.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="comparators.d_raw"  "../comparators.cpp"
+Finished building: "../comparators.cpp"
+ 
+Building file: "../startup_ccs.c"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="startup_ccs.d_raw"  "../startup_ccs.c"
+Finished building: "../startup_ccs.c"
+ 
+Building file: "../mosfets.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="mosfets.d_raw"  "../mosfets.cpp"
+Finished building: "../mosfets.cpp"
+ 
+Building file: "../phase_test.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="phase_test.d_raw"  "../phase_test.cpp"
+Finished building: "../phase_test.cpp"
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+"../main.cpp", line 730: warning #179-D: variable "raw_target" was declared but never referenced
+"../main.cpp", line 735: warning #179-D: variable "max_step" was declared but never referenced
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+"../main.cpp", line 730: warning #179-D: variable "raw_target" was declared but never referenced
+"../main.cpp", line 735: warning #179-D: variable "max_step" was declared but never referenced
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'main.obj' failed
+"../main.cpp", line 349: warning #552-D: variable "update_PID" was set but never used
+"../main.cpp", line 759: error #20: identifier "newDuty" is undefined
+1 error detected in the compilation of "../main.cpp".
+gmake: *** [main.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+"../main.cpp", line 349: warning #552-D: variable "update_PID" was set but never used
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+"../main.cpp", line 349: warning #552-D: variable "update_PID" was set but never used
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+"../main.cpp", line 349: warning #552-D: variable "update_PID" was set but never used
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+"../main.cpp", line 349: warning #552-D: variable "update_PID" was set but never used
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+gmake[1]: 'lse1.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'main.obj' failed
+"../main.cpp", line 311: error #20: identifier "instDuty" is undefined
+1 error detected in the compilation of "../main.cpp".
+gmake: *** [main.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lse1 ****
+
+"C:\\ti\\ccs1280\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.cpp"
+Invoking: ARM Compiler
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Users/PC/Desktop/LSE/lse1/sw/lse1" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.cpp"
+Finished building: "../main.cpp"
+ 
+Building target: "lse1.out"
+Invoking: ARM Linker
+"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"pwm_invert_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lse1_linkInfo.xml" --rom_model -o "lse1.out" "./comparators.obj" "./main.obj" "./mosfets.obj" "./phase_test.obj" "./startup_ccs.obj" "../pwm_invert_ccs.cmd"  -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "lse1.out"
+ 
+"C:/ti/ccs1280/ccs/utils/tiobj2bin/tiobj2bin" "lse1.out" "lse1.bin" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1280/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1280/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****

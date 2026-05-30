@@ -1,7 +1,6 @@
 #include <stdbool.h>
 #include <stdint.h>
 #include "inc/hw_memmap.h"
-#include <ti/drivers/SPI.h>
 #include "driverlib/debug.h"
 #include "driverlib/gpio.h"
 #include "driverlib/pin_map.h"
@@ -39,9 +38,9 @@ __error__(char *pcFilename, uint32_t ui32Line)
 // -----------------------------------------------------
 int CLOSED_LOOP = 1;
 // -----------------------------------------------------
-int stall_detect = 0;
+int stall_detect = 1;
 // -----------------------------------------------------
-int potentiometer = 1;
+int potentiometer = 0;
 // -----------------------------------------------------
 int PID_control = 1;
 // -----------------------------------------------------
@@ -53,6 +52,9 @@ int legacy = 0;
 // Controller instance.
 MosfetController mosfets;
 ComparatorController comps;
+
+// Create a global counter to track successful receptions
+volatile uint32_t spi_rx_count = 0;
 
 // Max duty
 int pwm_freq = 20e3;
@@ -69,20 +71,28 @@ volatile int commutation_error_count = 0;
 volatile uint32_t measuredTicks = 0;
 
 // PID variables
-volatile float error = 0.0f;
-volatile float errAcum = 0.0f;
-volatile float errPrev = 0.0f;
-volatile float setpoint = 0.0f;
-uint32_t int_setpoint = 0;
-
 float DutyMinLim = 0.12f;
-float DutyMaxLim = 0.90f;
+float DutyMaxLim = 0.90f; //90f;
+/* LSE1
 float TFaseMax = 2.7e-3f; // s 0.45
 float TFaseMin = 1.23e-3f; // s 0.2
+*/
+
+/* LSE2 */
+float TFaseMax = 3.87e-3f;
+float TFaseMin = 1.66e-3f;
+
+
 volatile float NoLoadDuty = 0.0f;
 volatile float PID_Duty = 0.0f;
 volatile uint8_t counter = 0;
 volatile float cycleTime = 2e-3; //
+
+volatile float error = 0.0f;
+volatile float errAcum = 0.0f;
+volatile float errPrev = 0.0f;
+volatile float setpoint = TFaseMax; //0.0f;
+uint32_t int_setpoint = 0;
 
 // Current Duty Cycle State (Start at a safe middle value, e.g., 14%)
 float current_duty_percent = 0.14;
@@ -97,7 +107,7 @@ int state = STOP;
 uint8_t RiseFall = 0;
 
 // Number of cycles in OL ramp
-const int N = 30;
+const int N = 25;
 
 // OL ramp parameter vectors
 float freqfase[N + 1];
@@ -278,9 +288,26 @@ int getRealRotorState(void)
 // Reads a TFase value (such as the setpoint) and returns the duty value for no torque
 float TFaseToDuty(float TFase)
 {
-    float instDuty = -65996143.7f * TFase * TFase * TFase;
+    // DRET SENSE HELIX (LSE1)
+    /*float instDuty = -65996143.7f * TFase * TFase * TFase;
     instDuty += 927234.6f * TFase * TFase;
-    instDuty += -3282.9f * TFase + 3.614f;
+    instDuty += -3282.9f * TFase + 3.614f;*/
+
+    // ESQUERRE + HELIX
+    /*float instDuty = 57542804800.0f * TFase * TFase * TFase * TFase;
+    instDuty += -666513789.0f * TFase * TFase * TFase;
+    instDuty += 2878405.92f * TFase * TFase;
+    instDuty += -5651.31203f * TFase;
+    instDuty += 4.74006f;*/
+
+    // DRET + HELIX
+    float instDuty = 24981740700.0f * TFase * TFase * TFase * TFase;
+    instDuty += -351341993.0f * TFase * TFase * TFase;
+    instDuty += 1848090.72f * TFase * TFase;
+    instDuty += -4439.78587f * TFase;
+    instDuty += 4.58242f;
+
+
     return instDuty;
 }
 
@@ -470,35 +497,35 @@ void initSPI(void)
     // SPI SETUP ----------------------------- https://e2e.ti.com/support/microcontrollers/arm-based-microcontrollers-group/arm-based-microcontrollers/f/arm-based-microcontrollers-forum/1216291/tm4c123gh6pm-ssidataget-blocking-for-spi-slave
 
     // Habilitem periferics
-    SysCtlPeripheralEnable(SYSCTL_PERIPH_SSI2); // Habilitem el modul SPI 2 (Tx: PB7; Rx: PB6; Clk: PB4; FSS: PB5)
-    SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOB); // Habilitem el port B
+    SysCtlPeripheralEnable(SYSCTL_PERIPH_SSI3); // Habilitem el modul SPI 2 (Tx: PB7; Rx: PB6; Clk: PB4; FSS: PB5)
+    SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOD); // Habilitem el port B
 
     // Seleccionem funcions dels pins
-    GPIOPinConfigure(GPIO_PB4_SSI2CLK);
-    GPIOPinConfigure(GPIO_PB5_SSI2FSS);
-    GPIOPinConfigure(GPIO_PB6_SSI2RX);
-    GPIOPinConfigure(GPIO_PB7_SSI2TX);
+    GPIOPinConfigure(GPIO_PD0_SSI3CLK);
+    GPIOPinConfigure(GPIO_PD1_SSI3FSS);
+    GPIOPinConfigure(GPIO_PD2_SSI3RX);
+    GPIOPinConfigure(GPIO_PD3_SSI3TX);
 
     // Configure the GPIO settings for the SSI pins.  This function also gives
     // control of these pins to the SSI hardware.
-    GPIOPinTypeSSI(GPIO_PORTB_BASE,
-    GPIO_PIN_4 | GPIO_PIN_5 | GPIO_PIN_6 | GPIO_PIN_7);
+    GPIOPinTypeSSI(GPIO_PORTD_BASE,
+    GPIO_PIN_0 | GPIO_PIN_1 | GPIO_PIN_2 | GPIO_PIN_3);
 
     // Configure and enable the SSI port for SPI slave mode.
-    SSIDisable(SSI2_BASE);
-    SSIConfigSetExpClk(SSI2_BASE, SysCtlClockGet(), SSI_FRF_MOTO_MODE_0, // Coses polaritat i fase ni idea
-                       SSI_MODE_SLAVE, 1000000, 8);
+    SSIDisable(SSI3_BASE);
+    SSIConfigSetExpClk(SSI3_BASE, MAP_SysCtlClockGet(), SSI_FRF_MOTO_MODE_0, // Coses polaritat i fase ni idea
+                       SSI_MODE_SLAVE, 1000000, 16);
     //SSIConfigSetExpClk(SSI1_BASE, SysCtlClockGet(), SSI_FRF_MOTO_MODE_0, SSI_MODE_SLAVE_OD, 1000000, 8);
 
     // Advance mode settings. Legacy is default.
     //SSIAdvModeSet(SSI1_BASE, SSI_ADV_MODE_LEGACY);
 
     // Enable the SSI module.
-    SSIEnable(SSI2_BASE);
+    SSIEnable(SSI3_BASE);
 
     // Read residual data from the SSI port so we don't read any junk.
     uint32_t RxData;
-    while (SSIDataGetNonBlocking(SSI2_BASE, &RxData))
+    while (SSIDataGetNonBlocking(SSI3_BASE, &RxData))
         ;
 
     // IMPORTANT: SSIDataGetNonBlocking
@@ -507,10 +534,22 @@ void initSPI(void)
 }
 
 // Lectura de SPI
-void readSPI(uint32_t value)
+/*void readSPI(uint32_t value)
+ {
+ while (SSIDataGetNonBlocking(SSI3_BASE, &value))
+ ;
+ }*/
+// Lectura de SPI
+void readSPI(uint32_t *value)
 {
-    while (SSIDataGetNonBlocking(SSI2_BASE, &value))
-        ;
+    uint32_t tempData;
+
+    // Loop through the FIFO. If there's new data, overwrite our value with the freshest one.
+    while (SSIDataGetNonBlocking(SSI3_BASE, &tempData))
+    {
+        *value = tempData;
+        spi_rx_count++;
+    }
 }
 
 //=============================================================================
@@ -561,11 +600,11 @@ int main(void)
     //CalculateLimits();
 
 //float phase_period = 4e-3;
-    int cyclesPerStep = 32;
+    int cyclesPerStep = 10;
 
-    float ini_duty = 0.18;
-    float fin_duty = 0.14;
-    float ini_fase = 4e-3; // ms
+    float ini_duty = 0.5;
+    float fin_duty = 0.2;
+    float ini_fase = 12e-3; // ms
     float fin_fase = 1.2e-3; // ms
 // float test_duty = 0.14 / pwm_freq;
 
@@ -597,6 +636,9 @@ int main(void)
 
     while (1)
     {
+
+        //readSPI(&int_setpoint);
+        //spi_rx_count = 69;
 
         if (!started)
         {
@@ -644,8 +686,12 @@ int main(void)
 
             }
 
-            float ramp_end_period = freqfase[N];
-            setpoint = ramp_end_period;
+            if (PID_control) {
+                setpoint = freqfase[N] * 6;
+            } else {
+                setpoint = freqfase[N];
+            }
+
 
             NoLoadDuty = (float) dutys[N] / (float) ui32Period;
 
@@ -657,6 +703,7 @@ int main(void)
             errAcum = 0.0f;
             started = 1;
         }
+
         else if (!CLOSED_LOOP)
         {
             state += 1;
@@ -684,17 +731,19 @@ int main(void)
             if (SPI)
             {
 
-                readSPI(int_setpoint);
+                readSPI(&int_setpoint);
+                spi_rx_count = 70;
 
             }
             else if (potentiometer)
             {
 
                 int_setpoint = ADC0_ReadAvg(5);
+                //int_setpoint = 105;
 
             }
 
-            if (PID_control && (SPI | potentiometer)) // Potentiometer sets setpoint
+            if (PID_control && (SPI || potentiometer)) // Potentiometer sets setpoint
             {
                 /*
                  setpoint = (TFaseMin - TFaseMax) * (float) ADC0_ReadAvg(5)
@@ -708,25 +757,27 @@ int main(void)
                  //setpoint = setFloat * MAP_SysCtlClockGet(); // This allows us to compare TFase to counted ticks
                  *
                  */
-                float raw_target = (TFaseMin - TFaseMax) * (float) int_setpoint
+                //float raw_target = (TFaseMax - TFaseMin) * (float) int_setpoint
+                //        / 4095.0f + TFaseMin;
+                setpoint = (TFaseMin - TFaseMax) * (float) int_setpoint
                         / 4095.0f + TFaseMax;
 
                 // Instead of jumping instantly, move 'setpoint' slowly towards 'raw_target'
                 // Simulates physical inertia of the rotor
-                float max_step = 0.00005f; // 50us per interrupt step. Adjust for acceleration feel.
+                // AQUIII float max_step = 0.00005f; // 50us per interrupt step. Adjust for acceleration feel.
 
-                if (setpoint > raw_target + max_step)
-                {
-                    setpoint -= max_step; // Speeding up (Period decreasing)
-                }
-                else if (setpoint < raw_target - max_step)
-                {
-                    setpoint += max_step; // Slowing down (Period increasing)
-                }
-                else
-                {
-                    setpoint = raw_target; // Close enough
-                }
+                /*if (setpoint > raw_target + max_step)
+                 {
+                 setpoint -= max_step; // Speeding up (Period decreasing)
+                 }
+                 else if (setpoint < raw_target - max_step)
+                 {
+                 setpoint += max_step; // Slowing down (Period increasing)
+                 }
+                 else
+                 {
+                 setpoint = raw_target; // Close enough
+                 }*/
 
                 // Recalculate FeedForward based on the setpoint
                 NoLoadDuty = TFaseToDuty(setpoint);
@@ -735,10 +786,12 @@ int main(void)
                     NoLoadDuty = DutyMinLim;
                 if (NoLoadDuty > DutyMaxLim)
                     NoLoadDuty = DutyMaxLim;
+
+
             }
             else
             {
-                // Direct potentiometer calculation
+                // Direct duty calculation
                 readDuty = ((float) int_setpoint / 4095.0f)
                         * (DutyMaxLim - DutyMinLim) + DutyMinLim;
                 uint32_t newDuty = (uint32_t) (readDuty * ui32Period);
@@ -748,57 +801,6 @@ int main(void)
                 MAP_SysCtlDelay(MAP_SysCtlClockGet() * 10e-3);
             }
 
-            /*if (potentiometer) // && started == 2)
-             {
-             // 1. DETERMINE TARGET SPEED FROM POTENTIOMETER
-             // Map ADC (0-4095) to a Target Period (Time per step in ticks)
-             // High ADC = Fast Speed = Low Period
-             // Low ADC  = Slow Speed = High Period
-
-             adc_val = ADC0_ReadAvg(5);
-
-             uint32_t min_speed_ticks = 8000;
-             uint32_t max_speed_ticks = 3000;
-
-             target_ticks = min_speed_ticks
-             - ((adc_val * (min_speed_ticks - max_speed_ticks))
-             / 4095);
-
-             // CALCULATE ERROR AND ADJUST DUTY (Integral Control)
-             // "Deadband" is a small margin of error (e.g. 2000 ticks) where we don't change anything
-             // to prevent the motor from "hunting" (revving up and down).
-             if (legacy)
-             {
-             uint32_t deadband = 50;
-             float step_size = 0.0001f; // How fast it reacts. Too big = unstable.
-
-             if (measured_ticks > (target_ticks + deadband))
-             {
-             // Motor is taking TOO LONG (Too Slow) -> Increase Power
-             current_duty_percent += step_size;
-             }
-             else if (measured_ticks < (target_ticks - deadband))
-             {
-             // Motor is taking TOO LITTLE TIME (Too Fast) -> Decrease Power
-             current_duty_percent -= step_size;
-             }
-
-             // Clamping
-             if (current_duty_percent > MAX_DUTY_CLAMP)
-             current_duty_percent = MAX_DUTY_CLAMP;
-             if (current_duty_percent < MIN_DUTY_CLAMP)
-             current_duty_percent = MIN_DUTY_CLAMP;
-             }
-
-             // Apply new duty
-             uint32_t newDuty =
-             (uint32_t) (current_duty_percent * ui32Period);
-             mosfets.updateDuty(newDuty);
-
-             // Small delay to keep the control loop stable
-             MAP_SysCtlDelay(MAP_SysCtlClockGet() * 5e-3);
-             }
-             */
             if (true)
             {
                 if (isr_execution_count == last_isr_count)
@@ -850,20 +852,6 @@ int main(void)
                 }
             }
 
-            //while (!cl_locked) {
-            // Keep commutating at the final frequency
-            //    state = (state + 1) % 6;
-            //    updateState(state);
-            //    setupNextInterrupt(state); // Ensure comparator is looking for the right edge
-
-            // Wait the phase period from the end of the ramp
-            //MAP_SysCtlDelay((MAP_SysCtlClockGet() * freqfase[N]) / 3);
-
-            // If we've seen enough interrupts in the ISR -> stop this manual loop
-            //    if (zc_detected_count > 12) { // Wait for 2 full revS
-            //        cl_locked = true;
-            //    }
-            //while (1) {}
         }
     }
 }
